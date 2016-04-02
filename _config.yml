@@ -1,0 +1,34 @@
+﻿# Site settings
+title: LifeBlogs
+email: your-email@domain.com
+description: "Personal Blogs."
+baseurl: ""
+url: "http://lifegh.github.io/"
+
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'tag'
+
+
+# Social account
+# twitter:  username
+weibo:    3040028271
+github:   lifegh
+# codepen:  username
+# dribbble: username
+
+
+# Comment
+disqus_shortname: lifedis
+
+
+# Google Analytics
+# google_analytics: tracking_ID
+
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+gems:
+  - jekyll-sitemap
