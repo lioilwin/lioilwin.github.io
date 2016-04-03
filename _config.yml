@@ -4,6 +4,7 @@ email: your-email@domain.com
 description: "Personal Blogs."
 baseurl: ""
 url: "http://lifegh.github.io/"
+encoding: UTF-8
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
