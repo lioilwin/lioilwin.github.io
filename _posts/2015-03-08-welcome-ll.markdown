@@ -1,7 +1,9 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-tags: Jekyll
+title:  "Welcome my Blogs!"
+date:   2015-03-08 22:21:49
+categories: cate Blogs
+tags: Tags blog
 ---
 
 jnfsk
