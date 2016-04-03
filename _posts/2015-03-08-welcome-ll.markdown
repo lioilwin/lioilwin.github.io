@@ -15,7 +15,7 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
-```
+```ruby
 def print_hi(name)
   puts "Hi, #{name}"
 end
