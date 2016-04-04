@@ -1,6 +1,6 @@
 ### 我的博客 My Blogs
 * 基于[Jekyll](https://github.com/jekyll/jekyll)和[3-Jekyll](https://github.com/P233/3-Jekyll)主题修改而成 (Buit with [Jekyll](https://github.com/jekyll/jekyll) and [3-Jekyll](https://github.com/P233/3-Jekyll) theme)
-* 部署在[GitHub](http://lifegh.github.io/)和[Coding](http://lifec.coding.me/lifec)
+* 部署在[GitHub](http://lifegh.github.io/)和[Coding](http://lifec.coding.me)
 
 ###使用说明:
 1. _config.yml设置
