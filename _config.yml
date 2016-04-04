@@ -1,10 +1,10 @@
 ﻿# Site settings
 title: LifeBlogs
-email: your-email@domain.com
-description: "Personal Blogs."
+email: wswfeng@foxmail.com
+description: > # this means to ignore newlines until "baseurl:"
+ "个人博客 Personal Blogs"
 baseurl: ""
 url: "http://lifegh.github.io/"
-encoding: UTF-8
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
@@ -17,7 +17,6 @@ weibo:    3040028271
 github:   lifegh
 # codepen:  username
 # dribbble: username
-
 
 # Comment
 disqus_shortname: lifedis

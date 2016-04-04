@@ -5,7 +5,7 @@
 
 // # Breakpoints
 $breakpoint-hide-sidebar: 1280px
-$breakpoint-mobile: 767px
+$breakpoint-mobile: 339px
 
 // # Font
 $font: 'Open Sans', 'Hiragino Sans GB', sans-serif
@@ -13,58 +13,54 @@ $font: 'Open Sans', 'Hiragino Sans GB', sans-serif
 // # Sidebar Background Gradient
 $gradient-start: #C2E987
 $gradient-end:   #309E85
-$sidebar-bg: linear-gradient(180deg, $gradient-start, $gradient-end)
-
+$sidebar-bg: linear-gradient(90deg, $gradient-start, $gradient-end)
 
 // # Sidebar Left
-$sidebar-left-width: 170px
+$sidebar-left-width: 128px
+// # Sidebar Right
+$sidebar-right-width: 211px
+// # Sidebar width
+$sidebar-width: $sidebar-left-width + $sidebar-right-width
 
 // Avatar
 $avatar-size: 128px
-$avatar-border-size: 4px
-$avatar-border-color: rgba(255, 255, 255, .75)
+$avatar-border-size: 3px
+$avatar-border-color: rgba(255, 255, 255, 0.75)
 
 // Social icons
-$social-icon-outer-padding: 10px
+$social-icon-outer-padding: 1px
 $social-icon-size: 22px
-$social-icon-margin: 1px
-$social-icon-color: rgba(255, 255, 255, .6)
-$social-icon-hover-color: #FFF
+$social-icon-margin: 0px
+$social-icon-color: #fff
+$social-icon-hover-color: #000
 
 // Tags
-$tag-height: 50px
+$tag-height: 35px
 $tag-font-size: 17px
-$tag-color: rgba(0, 0, 255, .7)
-$tag-hover-color: rgba(255, 255, 255, .85)
-$tag-active-color: $gradient-end
-$tag-border-color: rgba(255, 255, 255, .5)
-
-
-// # Sidebar Right
-$sidebar-right-width: 380px
+$tag-color: rgba(255, 255, 255, 1)
+$tag-hover-color: rgba(0, 0, 0, 1)
+$tag-active-color: rgba(0, 0, 0, 0.9)
+$tag-border-color: #fff
 
 // Search
-$search-box-height: 64px
+$search-box-height: 35px
 $search-box-font-size: 18px
 $search-box-color: #FFF
-$search-box-placeholder: rgba(255, 255, 255, .7)
-$search-box-bg: rgba(255, 255, 255, .3)
+$search-box-placeholder: rgba(255, 255, 255, 1)
+$search-box-bg: rgba(255, 255, 255, .45)
 
 // Toc
-$toc-color: #55606F
+$toc-color: #000
 $toc-bg: $tag-border-color
 $toc-font-size: 16px
 $toc-line-height: 22px
 $toc-bullet-size: 18px
-$toc-bullet-unread: $gradient-end
+$toc-bullet-unread: $tag-border-color
 $toc-bullet-read: $toc-color
 
-// # Sidebar width
-$sidebar-width: $sidebar-left-width + $sidebar-right-width + 1
-
 // # Post
-$post-max-width: 800px
-$post-width-at-3-columns: 80%
+$post-max-width: 3080px
+$post-width-at-3-columns: 95%
 $post-width-at-1-column: 720px
 $post-meta-color: #BCC1C4
 $post-title-color: #283444
@@ -75,17 +71,16 @@ $post-bg: #F8F8F8
 $post-img-border-color: darken($post-bg, 4%)
 $post-img-border-width: 4px
 $post-code-inline-color: lighten($post-text-color, 10%)
-$post-code-inline-bg: darken($post-bg, 2%)
+$post-code-inline-bg: darken($post-bg, 13%)
 $post-code-font: 'Droid Sans Mono', monospace
-$post-code-block-bg: #FDFDFD
+$post-code-block-bg: #fff
 $post-font-size: 18px
-$post-line-height: 1.6
+$post-line-height: 1.5
 $post-paragraph-spacing: 30px
 $post-hr-color: darken($post-bg, 5%)
 $post-share-bg: darken($post-bg, 1%)
 $post-share-color: $post-meta-color
 $post-share-hover-color: $gradient-end
-
 
 // # Footer (copyright)
 $footer-color: $post-meta-color
@@ -93,13 +88,9 @@ $footer-link-hover-color: $gradient-end
 $footer-font-size: 14px
 $footer-line-height: 20px
 
-
-
 // # Menu button position
 $menu-top: 20px
 $menu-right: 30px
-
-
 
 // # Customise webkit scrollbar
 $toc-scrollbar-width: 3px
