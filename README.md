@@ -8,4 +8,4 @@
 	* Disqus_shortname启用Disqus评论
 	* filter选项选择使用tag或category作为文章分类
 1. /css/main.sass中，定制界面样式
-1. /assets/img/avatar.jpg是头像图片，rcode.jpg 在浏览器不兼容时提示扫描二维码。
+1. /assets/img/avatar.jpg是头像图片，qrcode.jpg 在浏览器不兼容时提示扫描二维码。

@@ -2,9 +2,10 @@
 title: LifeBlogs
 email: wswfeng@foxmail.com
 description: > # this means to ignore newlines until "baseurl:"
- "个人博客 Personal Blogs"
+ "Life博客 Life Blogs"
 baseurl: ""
 url: "http://lifegh.github.io/"
+permalink: /:year/:title
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
