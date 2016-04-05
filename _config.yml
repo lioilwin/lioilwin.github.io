@@ -23,7 +23,7 @@ disqus_shortname: lifedis
 
 
 # Google Analytics
-# google_analytics: tracking_ID
+google_analytics: UA-75974143-1 #UA-75974143-2
 
 
 # Build settings
