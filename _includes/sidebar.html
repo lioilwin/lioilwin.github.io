@@ -1,4 +1,5 @@
-<aside id="sidebar">
+﻿<aside id="sidebar">
+
   <div id="sidebar-left">
     <a id="sidebar-avatar" href="{{ "/" | prepend: site.baseurl }}">
       <img id="sidebar-avatar-img" alt="{{ site.tittle }}" src="{{ "/assets/img/avatar.jpg" | prepend: site.baseurl }}"/>
@@ -10,17 +11,17 @@
       {% include social.html %}
     </div>
 
-    <ul id="sidebar-tags">
-      <li class="sidebar-tag active" data-filter="all">全部文章</li>
+    <ul id="sidebar-tags">           
       {% if site.filter == 'category' %}
         {% for category in site.categories %}
           <li class="sidebar-tag" data-filter="{{ category | first }}">{{ category | first }}</li>
         {% endfor %}
-      {% elsif site.filter == 'tag' %}
-        {% for tag in site.tags %}
-          <li class="sidebar-tag" data-filter="{{ tag | first }}">{{ tag | first }}</li>
-        {% endfor %}
-      {% endif %}
+      {% elsif site.filter == 'tag' %}		
+      	{% for tag in site.tags %}	
+       	  <li class="sidebar-tag" data-filter="{{ tag | first }}">{{ tag | first  }}</li>
+       	{% endfor %}
+      {% endif %}      
+      <li class="sidebar-tag active " data-filter="all">全部文章</li>
     </ul>
   </div>
 
@@ -45,4 +46,5 @@
       {% endif %}
     </nav>
   </div>
+
 </aside>
