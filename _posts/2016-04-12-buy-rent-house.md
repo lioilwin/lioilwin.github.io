@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 卖房！租房？
+title: (转)卖房！租房？
 tags: 人生百态
 ---
 [原文地址](http://qijunjie.baijia.baidu.com/article/403791)(作者：齐俊杰 2016年04月12日 10:29)

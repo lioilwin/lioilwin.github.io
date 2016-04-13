@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 静态网站生成器大总结(Static-Site-Generators)
+title: (转)静态网站生成器大总结(Static-Site-Generators)
 tags: 工具软件
 ---
 静态网站(博客)生成器到底有多少呢？GitHub用户对静态博客生成程序进行了大规模总结(好多啊，本宝被吓傻了……)<br>

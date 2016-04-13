@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 为何要写博客，要工作？
+title: (转)为何要写博客，要工作？
 tags: 人生百态
 ---
 
