@@ -4,7 +4,7 @@ title: (转)老人穷游几十年 称"年轻野惯了心收不回"
 tags: 人生百态
 ---
 
-<embed src="/assets/siqing.mp3" height="46" />
+<embed src="/assets/qlyyyxq.mp3" height="46" />
 
 [原文地址](http://news.163.com/16/0413/14/BKHNLM7K00011229.html)
 
