@@ -3,7 +3,7 @@ layout: post
 title: (转)钱多轻松离家近？
 tags: 人生百态
 ---
-
+<embed src="/assets/yuanmenzhanzi.mp3" height="46" />
 原文来自简书(作者:沐丞)[链接](http://www.jianshu.com/p/fb4a53aabc85)
 
 # <center> 01</center>
