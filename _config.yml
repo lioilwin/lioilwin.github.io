@@ -1,10 +1,10 @@
 # Site settings
-title: LifeBlogs
+title: lioil博客win
 email: wswfeng@foxmail.com
 description: > # this means to ignore newlines until "baseurl:"
- "Life博客 Life Blogs"
+ "lioil博客win"
 baseurl: ""
-url: "http://lifegh.github.io"
+url: "http://lioil.win"
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.

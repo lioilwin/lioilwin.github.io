@@ -3,6 +3,8 @@ layout: post
 title: 狄更斯·双城记开头---歪解
 tags: 人生百态
 ---
+<embed src="/assets/yuanmenzhanzi.mp3" height="46" />
+<br/>
 双城记开头是在任何时代都是最好的写照，但现在特别应景，多少漂居，多少蜗居，多少蚁族……
 
 * 富人面前应有尽有；穷人面前一无所有；
