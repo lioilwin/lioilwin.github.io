@@ -17,9 +17,10 @@ tags: 人生百态
 	}
 </script>
 <audio controls="controls" id="audio" style="position:fixed; right:15px">
-	<source src="/assets/yuanmenzhanzi.mp3" type="audio/mpeg">	
+	<source src="/assets/yuanmenzhanzi.mp3" type="audio/mpeg">
+	<embed  src="/assets/yuanmenzhanzi.mp3">
 </audio><br/><br/>
-<button  style="position:fixed; right:15px" onclick="change()">隐/显音乐条</button>
+<button  style="position:fixed; right:15px; font-weight:900; color:blue;" onclick="change()">隐/显音乐条</button>
 
 双城记开头是在任何时代都是最好的写照，但现在特别应景，多少漂居，多少蜗居，多少蚁族……
 

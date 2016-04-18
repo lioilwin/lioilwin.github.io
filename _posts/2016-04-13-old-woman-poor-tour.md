@@ -20,7 +20,7 @@ tags: 人生百态
 	<source src="/assets/qlyyyxq.mp3" type="audio/mpeg">
 	<embed  src="/assets/qlyyyxq.mp3">
 </audio><br/><br/>
-<button  style="position:fixed; right:15px" onclick="change()">隐/显音乐条</button>
+<button style="position:fixed; right:15px; font-weight:900; color:blue;" onclick="change()">隐/显音乐条</button>
 
 [原文地址](http://news.163.com/16/0413/14/BKHNLM7K00011229.html)
 

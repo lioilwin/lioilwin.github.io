@@ -20,7 +20,7 @@ tags: 人生百态
 	<source src="/assets/silangtanmu.mp3" type="audio/mpeg">
 	<embed  src="/assets/silangtanmu.mp3">
 </audio><br/><br/>
-<button  style="position:fixed; right:15px" onclick="change()">隐/显音乐条</button>
+<button  style="position:fixed; right:15px; font-weight:900; color:blue;" onclick="change()">隐/显音乐条</button>
 
 这个话题由来已久，这篇文章从低等生物到人的生理和心理的角度，都作了很好的解答！
 

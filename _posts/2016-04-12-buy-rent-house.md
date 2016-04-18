@@ -20,7 +20,7 @@ tags: 人生百态
 	<source src="/assets/silangtanmu.mp3" type="audio/mpeg">
 	<embed  src="/assets/silangtanmu.mp3">
 </audio><br/><br/>
-<button  style="position:fixed; right:15px" onclick="change()">隐/显音乐条</button>
+<button  style="position:fixed; right:15px; font-weight:900; color:blue;" onclick="change()">隐/显音乐条</button>
 
 [原文地址](http://qijunjie.baijia.baidu.com/article/403791)(作者：齐俊杰 2016年04月12日 10:29)
 
