@@ -3,11 +3,27 @@ layout: post
 date: 2016-04-04 22:00
 title: lioil博客win
 ---
-<center><embed src="/assets/hongsushou.mp3" height="46" /></center>
+
+<script>
+	var flag=true;
+	function change(){	
+		if(flag){
+			document.getElementById('audio').style.right='-1000px';
+			flag=false;
+		}else{
+			document.getElementById('audio').style.right='15px';
+			flag=true;
+		}
+	}
+</script>
+<audio controls="controls" id="audio" style="position:fixed; right:15px">
+	<source src="/assets/hongsushou.mp3" type="audio/mpeg">
+	<embed  src="/assets/hongsushou.mp3">
+</audio><br/><br/>
+<button  style="position:fixed; right:15px" onclick="change()">隐/显音乐条</button>
+
 <div id="home" class="container">
 <h1>你好！Hi！</h1>
-</div>
-<center>
 Github博客:lioil.win<br/>
 Coding博客:c.lioil.win<br/>
 谷歌邮箱: wswsfe@gmail.com</br>
@@ -16,7 +32,7 @@ Coding博客:c.lioil.win<br/>
 本博客基于<a href="https://github.com/jekyll/jekyll">Jekyll</a>和<a href="https://github.com/P233/3-Jekyll">3-Jekyll</a>主题修改而成；<br/>
 同时部署在<a href="http://lioil.win">GitHub</a>和<a href="http://c.lioil.win">Coding</a>网站以防被X等意外；<br/>
 点击链接看<a href="https://github.com/lifegh/lifegh.github.io">GitHub</a>和<a href="https://coding.net/u/lifec/p/lifec/git">Coding</a>源码，若有任何改进意见，欢迎讨论！<br/>
-</center><br/>
+</div>
 
 <p>关于为何要写博客，已转载一篇文章，从低等动物的生理和心理到人类全方位地解释了为何工作等等疑问，我深感赞同！
 接下来就是在何处写？互联网上的各种网站排布混乱广告丛生，简直忍无可忍啊。故而我们都需要有一个由自己控制的网络空间，

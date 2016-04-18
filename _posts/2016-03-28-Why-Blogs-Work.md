@@ -3,7 +3,25 @@ layout: post
 title: (转)为何要写博客，要工作？
 tags: 人生百态
 ---
-<embed src="/assets/silangtanmu.mp3" height="46" />
+
+<script>
+	var flag=true;
+	function change(){	
+		if(flag){
+			document.getElementById('audio').style.right='-1000px';
+			flag=false;
+		}else{
+			document.getElementById('audio').style.right='15px';
+			flag=true;
+		}
+	}
+</script>
+<audio controls="controls" id="audio" style="position:fixed; right:15px">
+	<source src="/assets/silangtanmu.mp3" type="audio/mpeg">
+	<embed  src="/assets/silangtanmu.mp3">
+</audio><br/><br/>
+<button  style="position:fixed; right:15px" onclick="change()">隐/显音乐条</button>
+
 这个话题由来已久，这篇文章从低等生物到人的生理和心理的角度，都作了很好的解答！
 
 转载来源：[周欣悦 中山大学心理学教授 \[2012年5月刊总第49期\]](http://www.ceibsreview.com/show/index/classid/5/id/1902)
