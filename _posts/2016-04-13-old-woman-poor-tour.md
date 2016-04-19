@@ -24,9 +24,9 @@ tags: 人生百态
 </audio>
 <button id="button" style="position:fixed; width:38px; right:0px; background:#666; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
 
-[原文地址](http://news.163.com/16/0413/14/BKHNLM7K00011229.html)
+[原文地址](http://news.qq.com/a/20160413/039065.htm)
 
-![](http://img1.cache.netease.com/catchpic/0/0D/0DF5569B6586B94460FA285FA17D7CE9.jpg)
+![](http://img1.gtimg.com/news/pics/hv1/129/229/2051/133424799.jpg)
 <center> 西湖留影，阿姨说出来走走就开心</center>
 
 穿上冲锋衣，踏上户外运动鞋，她开始了泉州大街小巷的“孤独”之旅；怀着少女般的情愫，品味古城的每个角落，她用诗情画意的笔墨，描绘古地佛国的风土人情。
