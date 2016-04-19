@@ -1,8 +1,8 @@
 # Site settings
-title: lioil博客win
+title: lioil.win博客
 email: wswfeng@foxmail.com
 description: > # this means to ignore newlines until "baseurl:"
- "lioil博客win"
+ "lioil.win博客"
 baseurl: ""
 url: "http://lioil.win"
 
