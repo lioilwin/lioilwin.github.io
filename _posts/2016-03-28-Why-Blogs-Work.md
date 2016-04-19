@@ -8,19 +8,21 @@ tags: 人生百态
 	var flag=true;
 	function change(){	
 		if(flag){
-			document.getElementById('audio').style.right='-1000px';
+			document.getElementById("audio").style.right="-1000px";
+			document.getElementById("button").innerHTML="显示";
 			flag=false;
 		}else{
-			document.getElementById('audio').style.right='15px';
+			document.getElementById("audio").style.right="38px";
+			document.getElementById("button").innerHTML="隐藏";
 			flag=true;
 		}
 	}
 </script>
-<audio controls="controls" id="audio" style="position:fixed; right:15px">
+<audio controls="controls" id="audio" style="position:fixed; right:38px">
 	<source src="/assets/silangtanmu.mp3" type="audio/mpeg">
 	<embed  src="/assets/silangtanmu.mp3">
-</audio><br/><br/>
-<button  style="position:fixed; right:15px; font-weight:900; color:blue;" onclick="change()">隐/显音乐条</button>
+</audio>
+<button id="button" style="position:fixed; width:38px; right:0px; background:#666; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
 
 这个话题由来已久，这篇文章从低等生物到人的生理和心理的角度，都作了很好的解答！
 
