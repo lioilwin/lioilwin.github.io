@@ -1,29 +1,32 @@
 ---
 layout: post
 date: 2016-04-04 22:00
-title: lioil博客win
+title: lioil.win博客
 ---
 
 <script>
 	var flag=true;
 	function change(){	
 		if(flag){
-			document.getElementById('audio').style.right='-1000px';
+			document.getElementById("audio").style.right="-1000px";
+			document.getElementById("button").innerHTML="显示";
 			flag=false;
 		}else{
-			document.getElementById('audio').style.right='15px';
+			document.getElementById("audio").style.right="60px";
+			document.getElementById("button").innerHTML="隐藏";
 			flag=true;
 		}
 	}
 </script>
-<audio controls="controls" id="audio" style="position:fixed; right:15px">
+<audio controls="controls" id="audio" style="position:fixed; right:60px">
 	<source src="/assets/hongsushou.mp3" type="audio/mpeg">
 	<embed  src="/assets/hongsushou.mp3">
-</audio><br/><br/>
-<button style="position:fixed; right:15px; font-weight:900; color:blue;" onclick="change()">隐/显音乐条</button>
+</audio>
+<button id="button" style="position:fixed; width:40px; right:20px; background:#666; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
 
 <div id="home" class="container">
-<h1>你好！Hi！</h1>
+<strong>
+你好！Hi!<br/><br/>
 Github博客:lioil.win<br/>
 Coding博客:c.lioil.win<br/>
 谷歌邮箱: wswsfe@gmail.com</br>
@@ -32,6 +35,7 @@ Coding博客:c.lioil.win<br/>
 本博客基于<a href="https://github.com/jekyll/jekyll">Jekyll</a>和<a href="https://github.com/P233/3-Jekyll">3-Jekyll</a>主题修改而成；<br/>
 同时部署在<a href="http://lioil.win">GitHub</a>和<a href="http://c.lioil.win">Coding</a>网站以防被X等意外；<br/>
 点击链接看<a href="https://github.com/lifegh/lifegh.github.io">GitHub</a>和<a href="https://coding.net/u/lifec/p/lifec/git">Coding</a>源码，若有任何改进意见，欢迎讨论！<br/>
+</strong>
 </div>
 <br/>
 <p>关于为何要写博客，已转载一篇文章，从低等动物的生理和心理到人类全方位地解释了为何工作等等疑问，我深感赞同！
