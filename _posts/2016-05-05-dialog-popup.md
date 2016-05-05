@@ -1,4 +1,8 @@
-对话框自定义弹出或滑出动画
+---
+layout: post
+title: 对话框自定义弹出或滑出动画，消除对话框左右间隙
+tags: Android
+---
 
 ### 第一步：设计要弹出窗口xml布局
 
@@ -78,7 +82,7 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.approval_dialog);
 		
-		//MATCH_PARENT填充对话框左右的间隙（有些版本会出现空隙，而有些没有，我的就出现了）
+		//MATCH_PARENT消除对话框左右间隙（有些版本会出现空隙，而有些没有，我的就出现了）
 		getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		
 		btn_take_photo = (TextView) this.findViewById(R.id.take_photo);
