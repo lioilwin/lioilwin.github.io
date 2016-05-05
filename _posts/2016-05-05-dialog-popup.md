@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 对话框自定义弹出或滑出动画，消除对话框左右间隙
+title: 自定义对话框滑出动画，消除对话框左右间隙
 tags: Android
 ---
 
@@ -145,6 +145,7 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
 ```
 
 ### 第三步：
+
 #### 在AndroidManifest.xml中配置SelectPicPopupWindow
 
 ```xml
