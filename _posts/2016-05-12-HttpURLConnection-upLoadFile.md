@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HttpURLConnection上传文件
-tags: Adroid
+tags: Android
 ---
 
 HttpURLConnection上传文件

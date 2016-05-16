@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在windows10中adb重启失败
-tags: Andriod
+tags: Android
 ---
 
 adb突然故障死掉！
