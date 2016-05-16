@@ -29,19 +29,23 @@ private String uploadFile(File file, String RequestURL) {
 			conn.setRequestProperty("Content-Type", CONTENT_TYPE + ";boundary=" + BOUNDARY);
 
 			if (file != null) {
+			
+				// dos输出流post请求数据
 				DataOutputStream dos = new DataOutputStream(conn.getOutputStream());
 				StringBuffer sb = new StringBuffer();
 				sb.append(PREFIX);
 				sb.append(BOUNDARY);
-				sb.append(LINE_END);
+				sb.append(LINE_END);	
 				
-				//网上很多例子都没有说清楚这里，服务器所需参数name="", filename=""（等号右边固定）
-				sb.append(
-						"Content-Disposition: form-data; name=\"upfile\"; filename=\"" + file.getName() + "\"" + LINE_END);
-				
+				// 网上很多例子没有说清楚这里，服务器所需参数name="", filename=""（等号左边固定，右边填参数）
+				sb.append("Content-Disposition: form-data; name=\"upfile\"; filename=\"" + file.getName() + "\"" + LINE_END);				
 				sb.append("Content-Type: application/octet-stream; charset=" + CHARSET + LINE_END);
 				sb.append(LINE_END);
+				
+				// dos输出流加入文件开始边界
 				dos.write(sb.toString().getBytes());
+				
+				// dos输出流加入文件原始二进制数据
 				InputStream is = new FileInputStream(file);
 				byte[] bytes = new byte[1024];
 				int len = 0;
@@ -51,14 +55,16 @@ private String uploadFile(File file, String RequestURL) {
 				is.close();
 				dos.write(LINE_END.getBytes());
 				byte[] end_data = (PREFIX + BOUNDARY + PREFIX + LINE_END).getBytes();
+				
+				// dos输出流加入文件结束边界
 				dos.write(end_data);
 				dos.flush();
 
 				// 获取响应码 200=成功 当响应成功，获取响应的流
 				int res = conn.getResponseCode();
 				Log.d(TAG, "---ResponseCode:" + res);
-
-				// 编码utf-8, 以防乱码
+				
+				// 输入流返回响应数据; 编码utf-8, 以防乱码
 				BufferedReader buffR = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
 				StringBuffer sb1 = new StringBuffer();
 				String line = "";
