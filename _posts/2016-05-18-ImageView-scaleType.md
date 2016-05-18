@@ -1,4 +1,9 @@
-图片控件scaleType属性
+---
+layout: post
+title: 图片控件scaleType属性
+tags: Android
+---
+
 centerInside: 图片按比例缩小适应控件，但不会放大
 fitCenter: 图片按比例缩小放大适应控件
 fixXY：图片拉伸占满控件，比例会改变
