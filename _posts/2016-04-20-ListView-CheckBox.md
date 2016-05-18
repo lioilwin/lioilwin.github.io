@@ -26,32 +26,11 @@ tags: Android
 ```java
 
 public class MyAdapter extends BaseAdapter {
-	······
-	@Override  
-	public int getCount() {  
-		return list.size();  
-	}  
-	@Override  
-	public Object getItem(int arg0) {  
-		return list.get(arg0);  
-	}  
-	@Override  
-	public long getItemId(int arg0) {  
-		return 0;  
-	}	
-	······
 	
-	// 记录每个item的checkbox状态
-	public static HashMap<Integer, Boolean> isSelected;  
-	
-	// 初始化所有checkbox为未选择  
-	public void init() {  
-		isSelected = new HashMap<Integer, Boolean>();  
-		for (int i = 0; i < list.size(); i++) {  
-			isSelected.put(i, false);  
-		}  
+	public MyAdapter(···,HashMap<Integer, Boolean> isSelected){
+		······
 	}
-
+	
 	@Override  
 	public View getView(int position, View convertView, ViewGroup arg2) {              
 		if (convertView == null) {  
@@ -76,20 +55,27 @@ public class MyAdapter extends BaseAdapter {
 
 public class MainActivity extends Activity {
 	······
+	private HashMap<Integer, Boolean> isSelected
+	······
+	// 初始化所有checkbox为未选择  
+	isSelected = new HashMap<Integer, Boolean>();  
+	for (int i = 0; i < list.size(); i++) {  
+		isSelected.put(i, false);  
+	}
+	······	
 	// 设置带checkbox的listview    
-	xxx.setAdapter(new MyAdapter(·····));
-	xxx.setOnItemClickListener(new OnItemClickListener() { 
+	listview.setAdapter(new MyAdapter(·····, isSelected));
+	listview.setOnItemClickListener(new OnItemClickListener() { 
 		@Override  
 		public void onItemClick(AdapterView<?> arg0, View view,  
-				int position, long arg3) {
-			
+				int position, long arg3) {			
 			// 获取checkbox控件
-			ViewHolder holder = (ViewHolder) view.getTag();
-			
+			ViewHolder holder = (ViewHolder) view.getTag();		
 			// 点击item切换checkbox状态
 			holder.cb.toggle();		
-			MyAdapter.isSelected.put(position, holder.cb.isChecked());
-			 
+			isSelected.put(position, holder.cb.isChecked());
+			// 通知适配器checkbox状态改变
+			adapter.notifyDataSetChanged();			 
 		}  
 
 	});
@@ -99,9 +85,9 @@ public class MainActivity extends Activity {
 		@Override  
 		public void onClick(View arg0) {
 			for(int i=0;i<list.size();i++){  
-				MyAdapter.isSelected.put(i,true);
+				isSelected.put(i,true);
 			}
-			adapter.notifyDataSetChanged(); // 注意通知适配器数据改变 
+			adapter.notifyDataSetChanged();
 			 
 		}  
 	});  
@@ -111,11 +97,11 @@ public class MainActivity extends Activity {
 		@Override  
 		public void onClick(View v) {  
 			for(int i=0;i<list.size();i++){  
-				if(MyAdapter.isSelected.get(i)==false){  
-					MyAdapter.isSelected.put(i, true);
+				if(isSelected.get(i)==false){  
+					isSelected.put(i, true);
 				}  
 				else{  
-					MyAdapter.isSelected.put(i, false);
+					isSelected.put(i, false);
 				}  
 			}  
 			adapter.notifyDataSetChanged();
@@ -128,8 +114,8 @@ public class MainActivity extends Activity {
 		@Override  
 		public void onClick(View v) {  
 			for(int i=0;i<list.size();i++){  
-				if(MyAdapter.isSelected.get(i)==true){  
-					MyAdapter.isSelected.put(i, false);
+				if(isSelected.get(i)==true){  
+					isSelected.put(i, false);
 				} 
 			}  
 			adapter.notifyDataSetChanged();
