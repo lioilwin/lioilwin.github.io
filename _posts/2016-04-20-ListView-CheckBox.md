@@ -55,6 +55,7 @@ public class MyAdapter extends BaseAdapter {
 
 public class MainActivity extends Activity {
 	······
+	// 记录checkbox状态
 	private HashMap<Integer, Boolean> isSelected
 	······
 	// 初始化所有checkbox为未选择  
@@ -71,7 +72,7 @@ public class MainActivity extends Activity {
 				int position, long arg3) {			
 			// 获取checkbox控件
 			ViewHolder holder = (ViewHolder) view.getTag();		
-			// 点击item切换checkbox状态
+			// 点击item切换checkbox状态，并记录其状态
 			holder.cb.toggle();		
 			isSelected.put(position, holder.cb.isChecked());
 			// 通知适配器checkbox状态改变
