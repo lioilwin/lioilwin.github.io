@@ -3,81 +3,80 @@ layout: post
 title: listveiw加checkbox
 tags: Android
 ---
-/*
-适配器在getview()中重复使用【被移除屏幕的item】<br/>
-会造成被选中的checkbox重新出现，显示异常<br/>
+
+适配器在getview()中重复使用【被移除屏幕的item】
+
+会造成被选中的checkbox重新出现，显示异常
+
 故需要记录checkbox的状态
-*/
 
 ```xml
-
 	
 	<!--使checkbox没有获取焦点，不能点击，失去作用;
 	让ListView的item覆盖checkbox的事件，来改变checkbox状态-->   
     <CheckBox
-				·······
+		······
         android:focusable="false"      
         android:focusableInTouchMode="false"      
         android:clickable="false" 
-				·······/>
-	
+		·······/>
+		
 ```
 
 ```java
 
 public class MyAdapter extends BaseAdapter {
-				······
-        @Override  
-        public int getCount() {  
-            return list.size();  
-        }  
-        @Override  
-        public Object getItem(int arg0) {  
-            return list.get(arg0);  
-        }  
-        @Override  
-        public long getItemId(int arg0) {  
-            return 0;  
-        }		
+	······
+	@Override  
+	public int getCount() {  
+		return list.size();  
+	}  
+	@Override  
+	public Object getItem(int arg0) {  
+		return list.get(arg0);  
+	}  
+	@Override  
+	public long getItemId(int arg0) {  
+		return 0;  
+	}	
+	······
+	
+	// 记录每个item的checkbox状态
+	public static HashMap<Integer, Boolean> isSelected;  
+	
+	// 初始化所有checkbox为未选择  
+	public void init() {  
+		isSelected = new HashMap<Integer, Boolean>();  
+		for (int i = 0; i < list.size(); i++) {  
+			isSelected.put(i, false);  
+		}  
+	}
+
+	@Override  
+	public View getView(int position, View convertView, ViewGroup arg2) {              
+		if (convertView == null) {  
+			ViewHolder holder = new ViewHolder();  
+			convertView = inflater.inflate(R.layout.listview, null);
+			holder.cb = (CheckBox) convertView.findViewById(R.id.item_cb);  
+			convertView.setTag(holder);  
+		} else {  
+			holder = (ViewHolder) convertView.getTag();  
+		}
 		
-					······
-					
-		// 记录每个item的checkbox状态
-		public static HashMap<Integer, Boolean> isSelected;  
-        
-        // 初始化所有checkbox为未选择  
-        public void init() {  
-            isSelected = new HashMap<Integer, Boolean>();  
-            for (int i = 0; i < list.size(); i++) {  
-                isSelected.put(i, false);  
-            }  
-        }
-  
-        @Override  
-        public View getView(int position, View convertView, ViewGroup arg2) {              
-            if (convertView == null) {  
-                ViewHolder holder = new ViewHolder();  
-                convertView = inflater.inflate(R.layout.listview, null);
-                holder.cb = (CheckBox) convertView.findViewById(R.id.item_cb);  
-                convertView.setTag(holder);  
-            } else {  
-                holder = (ViewHolder) convertView.getTag();  
-            }
-			
-			// 显示checkbox的状态
-            holder.cb.setChecked(isSelected.get(position));
-            return view;  
-        }  
-  
-    }  
+		// 显示checkbox的状态
+		holder.cb.setChecked(isSelected.get(position));
+		return view;  
+	}  
+
+}  
 	
 ```
 
 ```java
 
 public class MainActivity extends Activity {
-				······
-	 // 设置带checkbox的listview    
+	······
+	// 设置带checkbox的listview    
 	xxx.setAdapter(new MyAdapter(·····));
 	xxx.setOnItemClickListener(new OnItemClickListener() { 
 		@Override  
