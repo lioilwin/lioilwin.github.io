@@ -165,8 +165,7 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
         <!--无标题-->
         <item name="android:windowNoTitle">true</item>        
         <!--背景透明-->
-        <item name="android:windowBackground">@android:color/transparent</item>        
-        <!--半透明--> 
+        <item name="android:windowBackground">@android:color/transparent</item>     
         <item name="android:windowIsTranslucent">true</item>        
         <!--背景变暗-->
         <item name="android:backgroundDimEnabled">true</item>      

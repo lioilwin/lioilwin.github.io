@@ -72,11 +72,10 @@ public class MainActivity extends Activity {
 				int position, long arg3) {			
 			// 获取checkbox控件
 			ViewHolder holder = (ViewHolder) view.getTag();		
-			// 点击item切换checkbox状态，并记录其状态
-			holder.cb.toggle();		
-			isSelected.put(position, holder.cb.isChecked());
-			// 通知适配器checkbox状态改变
-			adapter.notifyDataSetChanged();			 
+			// 点击item切换checkbox状态
+			holder.cb.toggle();	
+			// 记录checkbox状态
+			isSelected.put(position, holder.cb.isChecked());						 
 		}  
 
 	});
@@ -88,8 +87,8 @@ public class MainActivity extends Activity {
 			for(int i=0;i<list.size();i++){  
 				isSelected.put(i,true);
 			}
-			adapter.notifyDataSetChanged();
-			 
+			// 通知适配器checkbox状态改变
+			adapter.notifyDataSetChanged();			 
 		}  
 	});  
 	  
