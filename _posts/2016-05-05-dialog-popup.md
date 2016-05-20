@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 自定义对话框滑出动画，消除对话框左右间隙
+title: 自定义对话框(二)，滑出动画，消除对话框左右间隙
 tags: Android
 ---
 
