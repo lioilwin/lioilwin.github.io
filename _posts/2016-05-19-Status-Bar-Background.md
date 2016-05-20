@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 自定义系统状态栏背景
+title: 系统状态栏背景
 tags: Android
 ---
 
