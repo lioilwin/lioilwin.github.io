@@ -12,14 +12,20 @@ tags: Android
 
 ```xml
 	
-	<!--使checkbox没有获取焦点，不能点击，失去作用;
-	让ListView的item覆盖checkbox的事件，来改变checkbox状态-->   
-    <CheckBox
-		······
-        android:focusable="false"      
-        android:focusableInTouchMode="false"      
-        android:clickable="false" 
-		·······/>
+	<!--CheckBox抢占Item焦点，导致Item点击无效。
+	方法一：CheckBox设置android:clickable="false" 
+	方法二：Item根布局设置android:descendantFocusability="blocksDescendants"-->
+	<LinearLayout
+			·······
+		android:descendantFocusability="blocksDescendants"
+			·······>
+			
+		<CheckBox
+			·······            
+			android:clickable="false" 
+			·······/>
+			
+	</LinearLayout>
 		
 ```
 
