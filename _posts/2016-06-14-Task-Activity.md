@@ -5,6 +5,7 @@ tags: Android
 ---
 
 ### 1. Task是包含一系列Activity的堆栈, 遵循先进后出原则
+
 ### 2. Task默认行为: 
     (1)前提: Activity A和Activity B在同一个应用中
        操作: Activity A启动开僻Task堆栈(堆栈状态: A), 在Activity A中启动Activity B(堆栈状态: AB), 按下BACK返回键(堆栈状态: A). 
@@ -13,7 +14,7 @@ tags: Android
        操作: 在Launcher中单击"TaskOne应用"图标, Activity A启动开僻Task堆栈, 命名为TaskA(TaskA堆栈状态: A), 
        在Activity A中启动Activity B(TaskA堆栈状态: AB), 长按Home键, 返回Launcher, 启动其它应用(如:电子书), 
        开僻一个新Task堆栈, 命名: TaskB, 长按Home健, 返回Launcher, 单击"TaskOne应用"图标, 此时TaskA堆栈返回前台, 
-        Activity B为栈顶应用, 供用户使用. 
+       Activity B为栈顶应用, 供用户使用. 
    
     (3)前提: Activity A在名称为"TaskOne应用"的应用中, Activity C在名称为"TaskTwo应用"的应用中.
        操作: 在Launcher中单击"TaskOne应用"图标, Activity A启动开僻Task堆栈, 命名为TaskA(TaskA堆栈状态: A), 
