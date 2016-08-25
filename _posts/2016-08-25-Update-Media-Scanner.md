@@ -26,7 +26,7 @@ MediaScannerConnection.scanFile(context, new String[]{filePath}, null, null);
 
 ```
 
-### 方法三、使用MediaScannerConnection类回调接口(此方法可获得更新完成后的uri)
+### 方法三、使用MediaScannerConnectionClient回调接口(此方法可获得更新完成后的uri)
 
 ```java
 
