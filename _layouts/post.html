@@ -7,27 +7,7 @@ layout: default
     {% if page.tags.size > 0 %}
     <span class="post-meta-span tag">{{ page.tags | join: ', ' }}</span>
     {% endif %}
-  </div>
-	<script>
-	var flag=true;
-	function change(){	
-		if(flag){
-			document.getElementById("audio").style.right="-1000px";
-			document.getElementById("button").style.background="#3CB371";
-			document.getElementById("button").innerHTML="显示";
-			flag=false;
-		}else{
-			document.getElementById("audio").style.right="70px";			
-			document.getElementById("button").style.background="#3CEE90";
-			document.getElementById("button").innerHTML="隐藏";
-			flag=true;
-		}
-	}
-	</script>
-	<audio id="audio" controls="controls" style="position:fixed; right:70px">
-		<source src="/assets/hongsushou.mp3" type="audio/mpeg">
-		<embed  src="/assets/hongsushou.mp3"></audio>
-	<button id="button" style="position:fixed; width:38px; right:32px; background:#3CEE90; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
+  </div>	
   <h1 class="post-title">{{ page.title }}</h1>  
   {{ content }}
 </article>
