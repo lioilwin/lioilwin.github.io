@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 退出Android应用程序
+title: Activity所有都结束
 tags: Android
 ---
 1、创建基类，注册广播Receiver，发送广播，注销广播Receiver，退出应用

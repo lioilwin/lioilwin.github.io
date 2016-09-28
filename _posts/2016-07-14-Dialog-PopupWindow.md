@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 自定义对话框或弹窗的3个方法
+title: 对话框自定义的3个方法
 tags: Android
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 拍照或拍视频的文件，扫描到媒体库(ContentProvider)
+title: 扫描更新媒体库
 tags: Android
 ---
 
-拍照或拍视频视频后，把文件扫描到Android媒体库，以便我们使用ContentResolver查询文件。
+拍照或拍视频视频后，扫描把文件添加到系统媒体库，以便我们使用ContentResolver查询文件。
 
 ### 方法一、发送广播
 

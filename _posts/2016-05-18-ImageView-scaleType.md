@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 图片控件scaleType属性
+title: scaleType属性
 tags: Android
 ---
 
