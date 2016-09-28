@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 广播BroadcastReceive优先级
+title: BroadcastReceive优先级
 tags: 
 ---
 
