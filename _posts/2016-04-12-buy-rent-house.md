@@ -4,26 +4,6 @@ title: (转)卖房！租房？
 tags: 人生百态
 ---
 
-<script>
-	var flag=true;
-	function change(){	
-		if(flag){
-			document.getElementById("audio").style.right="-1000px";
-			document.getElementById("button").innerHTML="显示";
-			flag=false;
-		}else{
-			document.getElementById("audio").style.right="38px";
-			document.getElementById("button").innerHTML="隐藏";
-			flag=true;
-		}
-	}
-</script>
-<audio controls="controls" id="audio" style="position:fixed; right:38px">
-	<source src="/assets/silangtanmu.mp3" type="audio/mpeg">
-	<embed  src="/assets/silangtanmu.mp3">
-</audio>
-<button id="button" style="position:fixed; width:38px; right:0px; background:#666; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
-
 [原文地址](http://qijunjie.baijia.baidu.com/article/403791)(作者：齐俊杰 2016年04月12日 10:29)
 
 去年底，我就把自住的房子卖了（北京东四环 2000年的老楼），本想着在更好的地段（北京建国门 长安街沿线，二环边，2007年的某楼盘，70年产权住宅房）换一套大一点的， 这样调整位置，主要还是为了防范房地产的暴跌风险。一旦楼市出现下跌，唯一抗风险的利器，只有地段。

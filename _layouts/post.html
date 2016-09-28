@@ -2,15 +2,6 @@
 layout: default
 ---
 <article class="post container">
-  <div class="post-meta">
-    <span class="post-meta-span date">{{ page.date | date:"%Y %B %d" }}</span>
-    {% if page.tags.size > 0 %}
-    <span class="post-meta-span tag">{{ page.tags | join: ', ' }}</span>
-    {% endif %}
-  </div>
-
-  <h1 class="post-title">{{ page.title }}</h1>
-	
 	<script>
 	var flag=true;
 	function change(){	
@@ -19,18 +10,24 @@ layout: default
 			document.getElementById("button").innerHTML="显示";
 			flag=false;
 		}else{
-			document.getElementById("audio").style.right="38px";
+			document.getElementById("audio").style.right="70px";
 			document.getElementById("button").innerHTML="隐藏";
 			flag=true;
 		}
 	}
 	</script>
-	<audio controls="controls" id="audio" style="position:fixed; right:70px">
+	<audio id="audio" controls="controls" style="position:fixed; right:70px">
 		<source src="/assets/hongsushou.mp3" type="audio/mpeg">
-		<embed  src="/assets/hongsushou.mp3">
-	</audio>
-	<button id="button" style="position:fixed; width:38px; right:32px; background:#666; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
+		<embed  src="/assets/hongsushou.mp3"></audio>
+	<button id="button" style="position:fixed; width:38px; right:32px; background:#233; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
 	
+  <div class="post-meta">
+    <span class="post-meta-span date">{{ page.date | date:"%Y %B %d" }}</span>
+    {% if page.tags.size > 0 %}
+    <span class="post-meta-span tag">{{ page.tags | join: ', ' }}</span>
+    {% endif %}
+  </div>
+  <h1 class="post-title">{{ page.title }}</h1>
   {{ content }}
 </article>
 

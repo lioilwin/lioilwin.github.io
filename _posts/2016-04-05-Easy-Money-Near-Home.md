@@ -4,26 +4,6 @@ title: (转)钱多轻松离家近？
 tags: 人生百态
 ---
 
-<script>
-	var flag=true;
-	function change(){	
-		if(flag){
-			document.getElementById("audio").style.right="-1000px";
-			document.getElementById("button").innerHTML="显示";
-			flag=false;
-		}else{
-			document.getElementById("audio").style.right="38px";
-			document.getElementById("button").innerHTML="隐藏";
-			flag=true;
-		}
-	}
-</script>
-<audio controls="controls" id="audio" style="position:fixed; right:38px">
-	<source src="/assets/yuanmenzhanzi.mp3" type="audio/mpeg">
-	<embed  src="/assets/yuanmenzhanzi.mp3">
-</audio>
-<button id="button" style="position:fixed; width:38px; right:0px; background:#666; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
-
 原文来自简书(作者:沐丞)[链接](http://www.jianshu.com/p/fb4a53aabc85)
 
 # <center> 01</center>

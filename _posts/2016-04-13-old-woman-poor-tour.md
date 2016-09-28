@@ -4,26 +4,6 @@ title: (转)老人穷游几十年 称"年轻野惯了心收不回"
 tags: 人生百态
 ---
 
-<script>
-	var flag=true;
-	function change(){	
-		if(flag){
-			document.getElementById("audio").style.right="-1000px";
-			document.getElementById("button").innerHTML="显示";
-			flag=false;
-		}else{
-			document.getElementById("audio").style.right="38px";
-			document.getElementById("button").innerHTML="隐藏";
-			flag=true;
-		}
-	}
-</script>
-<audio controls="controls" id="audio" style="position:fixed; right:38px">
-	<source src="/assets/qlyyyxq.mp3" type="audio/mpeg">
-	<embed  src="/assets/qlyyyxq.mp3">
-</audio>
-<button id="button" style="position:fixed; width:38px; right:0px; background:#666; font-weight:900; font-size:20px; color:white;" onclick="change()">隐藏</button>
-
 [原文地址](http://news.qq.com/a/20160413/039065.htm)
 
 ![](http://img1.gtimg.com/news/pics/hv1/129/229/2051/133424799.jpg)
