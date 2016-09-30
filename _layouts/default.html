@@ -6,19 +6,21 @@ layout: compress
   {% include head.html %}
   <body>
 		<script>var isShow=true;
-				function change(){	
+				function change(){
 					if(isShow){
 						document.getElementById("audio-id").style.top="-100px";
-						document.getElementById("audio-btn-id").style.background="#3CB371";
+						document.getElementById("audio-btn-id").style.background
+						= "linear-gradient(90deg,#C2E987,#309E85)";
 						document.getElementById("audio-btn-id").innerHTML="显";
 						isShow=false;
 					}else{
 						document.getElementById("audio-id").style.top="0px";		
-						document.getElementById("audio-btn-id").style.background="#3CEE90";			
+						document.getElementById("audio-btn-id").style.background
+						= "linear-gradient(90deg,#309E85,#C2E987)";			
 						document.getElementById("audio-btn-id").innerHTML="隐";
 						isShow=true;}}</script>
 		<audio id="audio-id" src="/assets/hongsushou.mp3" controls="controls"></audio>
-		<button id="audio-btn-id" onclick="change()">隐</button>
+		<Button id="audio-btn-id" onclick="change()">隐</Button>
 	
     {% include sidebar.html %}
 

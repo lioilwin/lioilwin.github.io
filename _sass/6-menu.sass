@@ -11,7 +11,7 @@
   width: 42px
   height: 42px
   z-index: 30
-  background: #3CEE90
+  background: linear-gradient(90deg,#C2E987,#309E85)
   color: white
   text-align: center
   font-size: 24px
@@ -50,9 +50,11 @@
       @extend %icon-left
       float: left
       width: 50%
+      background: $sidebar-bg
     &:after
       @extend %icon-right
       float: left
       width: 50%
+      background: linear-gradient(90deg,$gradient-end,$gradient-start)
   &.open > &-icons
     transform: translateX(50%)
