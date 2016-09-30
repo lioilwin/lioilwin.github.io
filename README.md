@@ -4,7 +4,7 @@
 
 ### # 使用说明:
 1. _config.yml设置
-  * 社交帐号Twitter, Weibo, Github, Codepen，Dribbble；
+  * 社交帐号Twitter, Weibo, Github, Codepen, Dribbble；
   * Disqus_shortname启用Disqus评论；
   * filter选项选择使用tag或category作为文章分类；
 1. /css/main.sass中，定制界面样式；
