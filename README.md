@@ -1,6 +1,8 @@
 ### # 博客BLOG: [http://lioil.win](http://lioil.win)
-* 基于[Jekyll](https://github.com/jekyll/jekyll)和[3-Jekyll](https://github.com/P233/3-Jekyll)主题修改而成；
-* 部署在[GitHub](http://lifegh.github.io/)和[Coding](http://lifec.coding.me)网站；
+* 本博客基于<a href="https://github.com/jekyll/jekyll">Jekyll</a>和<a href="https://github.com/P233/3-Jekyll">3-Jekyll</a>主题修改而成
+*		Github博客：<a href="http://lioil.win">lioil.win</a>; 源码@<a href="https://github.com/lifegh/lifegh.github.io">GitHub</a>
+		<br/>
+*		Coding博客：<a href="http://c.lioil.win">c.lioil.win</a>; 源码@<a href="https://coding.net/u/lifec/p/lifec/git">Coding</a>
 
 ### # 使用说明:
 1. _config.yml设置
