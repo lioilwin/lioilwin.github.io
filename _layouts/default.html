@@ -5,41 +5,20 @@ layout: compress
 <html>
   {% include head.html %}
   <body>
-		<script>
-				var isShow=true;
+		<script>var isShow=true;
 				function change(){	
 					if(isShow){
-						document.getElementById("audio").style.top="-100px";
-						document.getElementById("btn").style.background="#3CB371";
-						document.getElementById("btn").innerHTML="显";
+						document.getElementById("audio-id").style.top="-100px";
+						document.getElementById("audio-btn-id").style.background="#3CB371";
+						document.getElementById("audio-btn-id").innerHTML="显";
 						isShow=false;
 					}else{
-						document.getElementById("audio").style.top="0px";		
-						document.getElementById("btn").style.background="#3CEE90";			
-						document.getElementById("btn").innerHTML="隐";
-						isShow=true;
-					}
-				}</script>
-		<audio id="audio"
-			   src="/assets/hongsushou.mp3"
-			   controls="controls" 
-			   style="position:fixed;
-					  right:68px;					  
-					  z-index:30;				  
-					  width:90%"></audio>
-		<button id="btn"
-				onclick="change()"
-				style="position:fixed;
-					   right:26px;
-					   width:42px;
-					   height:42px;
-					   z-index:30px;
-					   background:#3CEE90;
-					   color:white;
-					   text-align:center;
-					   font-size:32px;
-					   font-weight:900;">
-					   隐</button>
+						document.getElementById("audio-id").style.top="0px";		
+						document.getElementById("audio-btn-id").style.background="#3CEE90";			
+						document.getElementById("audio-btn-id").innerHTML="隐";
+						isShow=true;}}</script>
+		<audio id="audio-id" src="/assets/hongsushou.mp3" controls="controls"></audio>
+		<button id="audio-btn-id" onclick="change()">隐</button>
 	
     {% include sidebar.html %}
 

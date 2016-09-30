@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在windows10中adb重启失败
+title: Win10-adb重启失败
 tags: Android
 ---
 
