@@ -10,13 +10,13 @@ layout: compress
 				function change(){	
 					if(isShow){
 						document.getElementById("audio").style.top="-100px";
-						document.getElementById("button").style.background="#3CB371";
-						document.getElementById("button").innerHTML="显示";
+						document.getElementById("btn").style.background="#3CB371";
+						document.getElementById("btn").innerHTML="显";
 						isShow=false;
 					}else{
 						document.getElementById("audio").style.top="0px";		
-						document.getElementById("button").style.background="#3CEE90";			
-						document.getElementById("button").innerHTML="隐藏";
+						document.getElementById("btn").style.background="#3CEE90";			
+						document.getElementById("btn").innerHTML="隐";
 						isShow=true;
 					}
 				}</script>
@@ -24,19 +24,20 @@ layout: compress
 			   src="/assets/hongsushou.mp3"
 			   controls="controls" 
 			   style="position:fixed;
-					  right:134px;
-					  top:0px;
-					  width:60%"></audio>
-		<button id="button"
+					  right:60px;					  
+					  z-index:30;
+					  width:70%"></audio>
+		<button id="btn"
 				onclick="change()"
 				style="position:fixed;					   
-					   right:70px;
-					   top:0px;
+					   width:42px;
+					   height:42px;
+					   z-index:30px;
 					   background:#3CEE90;
 					   color:white;
 					   font-size:18px;
 					   font-weight:900;">
-					   隐藏</button>
+					   隐</button>
 	
     {% include sidebar.html %}
 
