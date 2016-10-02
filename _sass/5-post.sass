@@ -56,12 +56,9 @@ h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6
         margin-right: .2em
 
   a
-    word-break: break-all
     text-decoration: none
-    color: $post-link-color
-    outline: none
     &:hover
-      color: $post-link-hover-color
+      text-decoration: underline
 
   p, ul, ol
     margin-top: 0
@@ -135,7 +132,7 @@ h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6
   background: $post-share-bg
   &-icon
     margin: 0 10px
-    text-decoration: none
+    text-decoration: underline
     color: $post-share-color
     transition: color .15s linear
     outline: none
@@ -158,18 +155,10 @@ h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6
 
 // footer
 .footer
-  margin-top: 50px
-  padding-bottom: 30px
-  font-size: $footer-font-size
-  line-height: $footer-line-height
+  line-height: 1.5em
   text-align: center
-  color: $footer-color
-  &-entry
-    margin: 0
-    > a
-      color: darken($footer-color, 15%)
-      text-decoration: none
-      transition: color .15s linear
-      outline: none
-      &:hover
-        color: $footer-link-hover-color
+  margin-bottom: 1em
+  a
+    text-decoration: none
+    &:hover
+      text-decoration: underline

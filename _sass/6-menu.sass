@@ -1,21 +1,22 @@
 
 #audio-id
   position: fixed
-  right: 60px				  
+  right: $menu-size				  
   z-index: 30				  
   max-width: 80%
   
-#audio-btn-id
+#audio-show-id
   position: fixed
-  right: 18px
-  width: 42px
-  height: 42px
+  right: $menu-right
+  width: $menu-size
+  height: $menu-size
   z-index: 30
-  background: linear-gradient(90deg,#C2E987,#309E85)
+  background: $sidebar-rebg
   color: white
   text-align: center
-  font-size: 24px
-  font-weight: 900
+  font-size: $menu-font-size
+  font-weight: bold
+  line-height: $menu-font-size
   border-radius: 50px
   cursor: pointer
 
@@ -25,8 +26,8 @@
   top: $menu-top
   right: $menu-right
   z-index: 30
-  width: 42px
-  height: 42px
+  width: $menu-size
+  height: $menu-size
   padding: 0
   background: transparent
   border: none
@@ -37,11 +38,12 @@
   &-icons
     display: block
     width: 200%
-    height: 42px
+    height: $menu-size
     margin-left: -100%
     @extend %icon
-    font-size: 24px
-    line-height: 42px
+    font-size: $menu-font-size
+    font-weight: bold
+    line-height: $menu-size
     color: #fff
     background: $sidebar-bg
     overflow: hidden
@@ -55,6 +57,6 @@
       @extend %icon-right
       float: left
       width: 50%
-      background: linear-gradient(90deg,$gradient-end,$gradient-start)
+      background: $sidebar-rebg
   &.open > &-icons
     transform: translateX(50%)

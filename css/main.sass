@@ -14,6 +14,7 @@ $font: 'Open Sans', 'Hiragino Sans GB', sans-serif
 $gradient-start: #C2E987
 $gradient-end: #309E85
 $sidebar-bg: linear-gradient(90deg, $gradient-start, $gradient-end)
+$sidebar-rebg: linear-gradient(90deg, $gradient-end, $gradient-start)
 
 // # Sidebar Left
 $sidebar-left-width: 115px
@@ -62,11 +63,9 @@ $toc-bullet-read: $toc-color
 $post-max-width: 4096px
 $post-width-at-3-columns: 85%
 $post-width-at-1-column: 3720px
-$post-meta-color: #BCC1C4
+$post-meta-color: #009ACD
 $post-title-color: #283444
 $post-text-color: #283444
-$post-link-color: lighten($post-text-color, 20%)
-$post-link-hover-color: $gradient-end
 $post-bg: #F8F8F8
 $post-img-border-color: darken($post-bg, 4%)
 $post-img-border-width: 4px
@@ -82,15 +81,11 @@ $post-share-bg: darken($post-bg, 1%)
 $post-share-color: $post-meta-color
 $post-share-hover-color: $gradient-end
 
-// # Footer (copyright)
-$footer-color: $post-meta-color
-$footer-link-hover-color: $gradient-end
-$footer-font-size: 14px
-$footer-line-height: 20px
-
-// # Menu button position
-$menu-top: 42px
-$menu-right: 18px
+// # Menu button
+$menu-size: 36px
+$menu-font-size: 16px
+$menu-top: $menu-size
+$menu-right: 0px
 
 // # Customise webkit scrollbar
 $toc-scrollbar-width: 3px

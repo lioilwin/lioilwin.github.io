@@ -5,34 +5,14 @@ layout: compress
 <html>
   {% include head.html %}
   <body>
-		<script>var isShow=true;
-				function change(){
-					if(isShow){
-						document.getElementById("audio-id").style.top="-100px";
-						document.getElementById("audio-btn-id").style.background
-						= "linear-gradient(90deg,#C2E987,#309E85)";
-						document.getElementById("audio-btn-id").innerHTML="显";
-						isShow=false;
-					}else{
-						document.getElementById("audio-id").style.top="0px";		
-						document.getElementById("audio-btn-id").style.background
-						= "linear-gradient(90deg,#309E85,#C2E987)";			
-						document.getElementById("audio-btn-id").innerHTML="隐";
-						isShow=true;}}</script>
-		<audio id="audio-id" src="/assets/hongsushou.mp3" controls="controls"></audio>
-		<Button id="audio-btn-id" onclick="change()">隐</Button>
-	
+		<audio id="audio-id" src="/assets/music/hongsushou.mp3" controls></audio>
+		<Button id="audio-show-id" onclick="change()">隐</Button>		
     {% include sidebar.html %}
 
     <main id="main">
       {{ content }}
 
-      <div class="footer">
-        <div class="container">
-          <p class="footer-entry">All content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" >CC BY-NC-SA</a></p>
-          <p class="footer-entry">Buit with <a href="https://github.com/jekyll/jekyll" >Jekyll</a> and <a href="https://github.com/P233/3-Jekyll" >3-Jekyll theme</a></p>
-        </div>
-      </div>
+      <div class="footer">本博客基于<a href="https://github.com/jekyll/jekyll">Jekyll</a>和<a href="https://github.com/P233/3-Jekyll">3-Jekyll</a>主题修改而成，All content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" >CC BY-NC-SA</a><br/>分别部署在[Github@<a href="http://lioil.win">http://lioil.win</a>@<a href="https://github.com/lifegh/lifegh.github.io">GitHub</a>]和[Coding@<a href="http://c.lioil.win">http://c.lioil.win</a>@<a href="https://coding.net/u/lifec/p/lifec/git">Coding</a>]<br/>邮箱: wswfeng@foxmail.com; fwswsfe@gmail.com</div>
     </main>
 
     <button id="menu">
