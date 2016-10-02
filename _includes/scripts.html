@@ -35,8 +35,8 @@
 		audio.setAttribute("title","第"+(i+1)+"首曲");
 	};
 	audio.onended = function(){
-		if(i == array.length - 1) audio.setAttribute("src",array[0]);
-		else audio.setAttribute("src",array[++i]);
+		if(i == array.length - 1) i = 0; else i++;
+		audio.setAttribute("src",array[i]);
 		audio.load();
 		audio.play();
 	};
@@ -62,32 +62,21 @@
 		}
 	};
 	up.onclick = function(){
-		if(i != 0){
-			up.setAttribute("title","上一首无");
-			audio.setAttribute("src",array[--i]);
-			audio.load();
-			audio.play();
-		}
+		if(i == 0) i = array.length - 1; else i--;
+		audio.setAttribute("src",array[i]);
+		audio.load();
+		audio.play();
 	};
 	up.onmousemove = function(){
-		if(i == 0){
-			up.setAttribute("title","上一首无");
-		}else{
-			up.setAttribute("title","上一首曲"+i);
-		}
+		if(i == 0) up.setAttribute("title","上一首曲"+array.length); else up.setAttribute("title","上一首曲"+i);
 	};
-	next.onclick = function(){		
-		if(i != array.length - 1){
-			audio.setAttribute("src",array[++i]);
-			audio.load();
-			audio.play();
-		}
+	next.onclick = function(){
+		if(i == array.length - 1) i = 0; else i++;
+		audio.setAttribute("src",array[i]);
+		audio.load();
+		audio.play();
 	};		
 	next.onmousemove = function(){
-		if(i == array.length - 1){
-			next.setAttribute("title","下一首无");
-		}else{
-			next.setAttribute("title","下一首曲"+(i+2));
-		}
+		if(i == array.length - 1) next.setAttribute("title","下一首曲"+1); else next.setAttribute("title","下一首曲"+(i+2));
 	};
 </script>
