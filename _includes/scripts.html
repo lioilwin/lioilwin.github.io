@@ -25,6 +25,7 @@
 	var up = document.getElementById("audio-up-id");
 	var next = document.getElementById("audio-next-id");
 	audio.setAttribute("src",array[i]);
+	audio.load();
 	audio.play();
 	show.innerHTML="隐";	
 	show.setAttribute("title","隐藏音乐条");
@@ -36,6 +37,7 @@
 	audio.onended = function(){
 		if(i == array.length - 1) audio.setAttribute("src",array[0]);
 		else audio.setAttribute("src",array[++i]);
+		audio.load();
 		audio.play();
 	};
 	show.onclick = function(){				
@@ -63,6 +65,7 @@
 		if(i != 0){
 			up.setAttribute("title","上一首无");
 			audio.setAttribute("src",array[--i]);
+			audio.load();
 			audio.play();
 		}
 	};
@@ -76,6 +79,7 @@
 	next.onclick = function(){		
 		if(i != array.length - 1){
 			audio.setAttribute("src",array[++i]);
+			audio.load();
 			audio.play();
 		}
 	};		
