@@ -27,7 +27,7 @@
 	audio.setAttribute("src",array[i]);
 	audio.load();
 	audio.play();
-	show.innerHTML="隐";	
+	show.innerHTML="隐";
 	show.setAttribute("title","隐藏音乐条");
 	up.innerHTML="上";
 	next.innerHTML="下";
@@ -40,22 +40,26 @@
 		audio.load();
 		audio.play();
 	};
-	show.onclick = function(){				
-		if(isShow){	
-			audio.style.transform = "translateX(100%)";
-			audio.style.WebkitTransform = "translateX(100%)";
+	show.onclick = function(){
+		if(isShow){
+			audio.style.transform = "translateX(120%)";
+			audio.style.WebkitTransform = "translateX(120%)";
 			audio.style.transition = "transform 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";
 			audio.style.WebkitTransition = "transform 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";
+			up.style.display = "none";
+			next.style.display = "none";
 			show.style.background = "linear-gradient(90deg,#C2E987,#309E85)";
 			show.innerHTML="显";
 			show.setAttribute("title","显示音乐条");
 			isShow=false;
-		}else{		
+		}else{
 			audio.style.transform = "translateX(0%)";
 			audio.style.WebkitTransform = "translateX(0%)";
-			audio.style.transition = "transform 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";		
-			audio.style.WebkitTransition = "transform 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";		
-			show.style.background = "linear-gradient(90deg,#309E85,#C2E987)";			
+			audio.style.transition = "transform 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";
+			audio.style.WebkitTransition = "transform 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";
+			up.style.display = "block";
+			next.style.display = "block";
+			show.style.background = "linear-gradient(90deg,#309E85,#C2E987)";
 			show.innerHTML="隐";
 			show.setAttribute("title","隐藏音乐条");
 			isShow=true;
@@ -75,7 +79,7 @@
 		audio.setAttribute("src",array[i]);
 		audio.load();
 		audio.play();
-	};		
+	};
 	next.onmousemove = function(){
 		if(i == array.length - 1) next.setAttribute("title","下一首曲"+1); else next.setAttribute("title","下一首曲"+(i+2));
 	};
