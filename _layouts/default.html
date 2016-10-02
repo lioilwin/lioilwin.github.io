@@ -5,14 +5,17 @@ layout: compress
 <html>
   {% include head.html %}
   <body>
-		<audio id="audio-id" src="/assets/music/hongsushou.mp3" controls></audio>
-		<Button id="audio-show-id" onclick="change()">隐</Button>		
+	<audio id="audio-id" controls autoplay></audio>
+	<Button id="audio-show-id" class="audio-btn"></Button>		
+	<Button id="audio-up-id" class="audio-btn"></Button>
+	<Button id="audio-next-id" class="audio-btn"></Button>
+	  
     {% include sidebar.html %}
 
     <main id="main">
       {{ content }}
 
-      <div class="footer">本博客基于<a href="https://github.com/jekyll/jekyll">Jekyll</a>和<a href="https://github.com/P233/3-Jekyll">3-Jekyll</a>主题修改而成，All content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" >CC BY-NC-SA</a><br/>分别部署在[Github@<a href="http://lioil.win">http://lioil.win</a>@<a href="https://github.com/lifegh/lifegh.github.io">GitHub</a>]和[Coding@<a href="http://c.lioil.win">http://c.lioil.win</a>@<a href="https://coding.net/u/lifec/p/lifec/git">Coding</a>]<br/>邮箱: wswfeng@foxmail.com; fwswsfe@gmail.com</div>
+      <div class="footer">本站基于<a href="https://github.com/jekyll/jekyll">Jekyll</a>和<a href="https://github.com/P233/3-Jekyll">3-Jekyll</a>主题修改而成，All content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" >CC BY-NC-SA</a><br/>分别部署在[Github@<a href="http://lioil.win">http://lioil.win</a>@<a href="https://github.com/lifegh/lifegh.github.io">GitHub</a>]和[Coding@<a href="http://c.lioil.win">http://c.lioil.win</a>@<a href="https://coding.net/u/lifec/p/lifec/git">Coding</a>]<br/>邮箱: wswfeng@foxmail.com; fwswsfe@gmail.com</div>
     </main>
 
     <button id="menu">
