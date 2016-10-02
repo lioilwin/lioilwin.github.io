@@ -24,15 +24,17 @@
 			audio.style.transform = "translateX(100%)";
 			audio.style.WebkitTransform = "translateX(100%)";
 			audio.style.transition = "all 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";
+			audio.style.WebkitTransition = "all 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";
 			show.style.background = "linear-gradient(90deg,#C2E987,#309E85)";
 			show.innerHTML="显";
 			isShow=false;
 		}else{	
 			audio.style.transform = "translateX(0%)";
 			audio.style.WebkitTransform = "translateX(0%)";
-			audio.style.transition = "all 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";			
+			audio.style.transition = "all 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";		
+			audio.style.WebkitTransition = "all 1s cubic-bezier(0.770, 0.000, 0.175, 1.000)";		
 			show.style.background = "linear-gradient(90deg,#309E85,#C2E987)";			
-			show.innerHTML="隐";
+			show.innerHTML="d隐";
 			isShow=true;
 		}
 	}
