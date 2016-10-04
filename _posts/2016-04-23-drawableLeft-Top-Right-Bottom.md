@@ -4,9 +4,9 @@ title: drawableLeft等属性
 tags: Android
 ---
 
-### Android控件Button，TextView等可在其四周设置图片
+### TextView、Button等控件可在其四周设置图片
 
-1.XML静态设置属性drawableLeft，drawableTop，drawableRight，drawableBottom
+### 1.XML静态设置属性drawableLeft，drawableTop，drawableRight，drawableBottom
 
 ```xml
 <TextView
@@ -17,7 +17,7 @@ tags: Android
     android:drawableBottom="@drawable/icon"/>
 ```
 
-2.Java动态设置属性drawableLeft，drawableTop，drawableRight，drawableBottom
+### 2.Java动态设置属性drawableLeft，drawableTop，drawableRight，drawableBottom
 
 ```java
 //方法一：drawable宽高是按drawable.setBound()设置的宽高;
