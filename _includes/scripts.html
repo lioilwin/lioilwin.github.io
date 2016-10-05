@@ -24,20 +24,18 @@
 	var show = document.getElementById("audio-show-id");
 	var up = document.getElementById("audio-up-id");
 	var next = document.getElementById("audio-next-id");
-	audio.setAttribute("src",array[i]);
-	audio.load();
+	audio.src = array[i];
 	audio.play();
 	show.innerHTML="隐";
-	show.setAttribute("title","隐藏音乐条");
+	show.title = "隐藏音乐条";
 	up.innerHTML="上";
 	next.innerHTML="下";
 	audio.onmousemove = function(){
-		audio.setAttribute("title","第"+(i+1)+"首曲");
+		audio.title = "第"+(i+1)+"首曲";
 	};
 	audio.onended = function(){
 		if(i == array.length - 1) i = 0; else i++;
-		audio.setAttribute("src",array[i]);
-		audio.load();
+		audio.src = array[i];
 		audio.play();
 	};
 	show.onclick = function(){
@@ -50,7 +48,7 @@
 			next.style.display = "none";
 			show.style.background = "linear-gradient(90deg,#C2E987,#309E85)";
 			show.innerHTML="显";
-			show.setAttribute("title","显示音乐条");
+			show.title = "显示音乐条";
 			isShow=false;
 		}else{
 			audio.style.transform = "translateX(0%)";
@@ -61,26 +59,24 @@
 			next.style.display = "block";
 			show.style.background = "linear-gradient(90deg,#309E85,#C2E987)";
 			show.innerHTML="隐";
-			show.setAttribute("title","隐藏音乐条");
+			show.title = "隐藏音乐条";
 			isShow=true;
 		}
 	};
 	up.onclick = function(){
 		if(i == 0) i = array.length - 1; else i--;
-		audio.setAttribute("src",array[i]);
-		audio.load();
+		audio.src = array[i];
 		audio.play();
 	};
 	up.onmousemove = function(){
-		if(i == 0) up.setAttribute("title","上一首曲"+array.length); else up.setAttribute("title","上一首曲"+i);
+		if(i == 0) up.title = "上一首曲"+array.length; else up.title = "上一首曲"+i;
 	};
 	next.onclick = function(){
 		if(i == array.length - 1) i = 0; else i++;
-		audio.setAttribute("src",array[i]);
-		audio.load();
+		audio.src = array[i];
 		audio.play();
 	};
 	next.onmousemove = function(){
-		if(i == array.length - 1) next.setAttribute("title","下一首曲"+1); else next.setAttribute("title","下一首曲"+(i+2));
+		if(i == array.length - 1) next.title = "下一首曲"+1; else next.title = "下一首曲"+(i+2);
 	};
 </script>
