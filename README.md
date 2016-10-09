@@ -2,7 +2,7 @@
 ### 同时部署在[[lioil.win](http://lioil.win)@[GitHub](https://github.com/lifegh/lifegh.github.io)]和[[c.lioil.win](http://c.lioil.win)@[Coding](https://coding.net/u/lifec/p/lifec/git)]
 1. _config.yml设置
   * 社交帐号Twitter, Weibo, Github, Codepen, Dribbble
-  * Disqus_shortname启用Disqus评论
+  * Disqus_shortname启用Disqus评论(因为墙所以国内访问麻烦，可以采用多说、畅言等第三方社会化评论系统替代)
   * filter选项选择使用tag或category作为文章分类
 1. _posts文件夹存放文章
 1. css/main.sass可简单设置界面样式
