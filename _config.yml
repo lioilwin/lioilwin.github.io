@@ -3,7 +3,7 @@ title: lioil和win
 email: wswfeng@foxmail.com
 description: > # this means to ignore newlines until "baseurl:"
  "lioil和win"
-baseurl: ""
+baseurl: "http://lioil.win"
 url: "http://lioil.win"
 
 # Sidebar filter

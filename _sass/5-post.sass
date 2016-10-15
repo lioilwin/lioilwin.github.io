@@ -129,7 +129,7 @@ h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6
   font-size: 28px
   text-align: center
   &-icon
-    margin-right: 16px
+    
     text-decoration: none
     outline: none
     &:hover      
@@ -137,16 +137,18 @@ h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6
     &:before
       @extend %icon
     &.twitter:before
+      margin-right: 10%
       @extend %icon-twitter-share
     &.evernote:before
+      margin-right: 10%
       @extend %icon-evernote
-    &.weibo:before
+    &.weibo:before      
       @extend %icon-weibo
 
 
 // comment
 #disqus_thread > a
-  color: $gradient-end
+  color: #000
 
 
 // footer
