@@ -9,6 +9,8 @@ tags: Android
  * 强制字符占满一行才换行，避免TextView中英混合过早换行，并且在最后添加点击文字
  */
 
+```java
+
 public class TextViewLineFeed extends TextView {
     private float textX;
     private float textY;
@@ -114,3 +116,5 @@ public class TextViewLineFeed extends TextView {
         super(context, attrs, defStyle);
     }
 }
+
+```

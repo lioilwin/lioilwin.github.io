@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parcelable和Serializable接口
+title: (转)Parcelable和Serializable接口
 tags: Android
 ---
 1. Parcelable接口
@@ -112,7 +112,6 @@ public class MyParcelable implements Parcelable
 
 1）创建Person类，实现Serializable
 
-复制代码
 public class Person implements Serializable
 {
     private static final long serialVersionUID = -7060210544600464481L;
@@ -139,11 +138,8 @@ public class Person implements Serializable
         this.age = age;
     }
 }
-复制代码
+
 2）创建Book类，实现Parcelable
-
-按 Ctrl+C 复制代码
-
 public class Book implements Parcelable
 {
     private String bookName;
@@ -221,4 +217,3 @@ public class Book implements Parcelable
         publishDate = in.readInt();
     }
 }
-按 Ctrl+C 复制代码
