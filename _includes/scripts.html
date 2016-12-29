@@ -16,9 +16,11 @@
 {% endif %}
 
 <script>
-	var array = ["/assets/audio/hongsushou.mp3",
-				 "/assets/audio/gaoya.mp3",
-				 "/assets/audio/yushuijiangnan.mp3"];
+	var array = [
+	"/assets/audio/yushuijiangnan.mp3",
+	"/assets/audio/hongsushou.mp3",
+	"/assets/audio/gaoya.mp3",
+				 ];
 	var i = 0;
 	var isShow = true;
 	var audio = document.getElementById("audio-id");	
@@ -32,7 +34,7 @@
 	up.innerHTML="上";
 	next.innerHTML="下";
 	audio.onmousemove = function(){
-		audio.title = "第"+(i+1)+"首曲";
+		audio.title = "第"+(i+1)+"曲";
 	};
 	audio.onended = function(){
 		if(i == array.length - 1) i = 0; else i++;
@@ -70,7 +72,7 @@
 		audio.play();
 	};
 	up.onmousemove = function(){
-		if(i == 0) up.title = "上一首曲"+array.length; else up.title = "上一首曲"+i;
+		if(i == 0) up.title = "上一曲"+array.length; else up.title = "上一曲"+i;
 	};
 	next.onclick = function(){
 		if(i == array.length - 1) i = 0; else i++;
@@ -78,6 +80,6 @@
 		audio.play();
 	};
 	next.onmousemove = function(){
-		if(i == array.length - 1) next.title = "下一首曲"+1; else next.title = "下一首曲"+(i+2);
+		if(i == array.length - 1) next.title = "下一曲"+1; else next.title = "下一曲"+(i+2);
 	};
 </script>
