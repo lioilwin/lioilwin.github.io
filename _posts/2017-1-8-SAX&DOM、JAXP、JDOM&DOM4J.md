@@ -16,6 +16,7 @@ tags: J2EE&Web
 ②JDK解析XML核心类库是SAX(org.xml.sax)/DOM(org.w3c.dom)，自JDK1.5开始JDK实现为   
 com.sun.org.apache.xerces.internal.parsers；  	
 JAXP(javax.xml.parsers)没有提供新功能，只是封装了sax/dom，更加方便开发；  	
+
 ```java
 // JAXP获取SAX解析器
 SAXParser parser=SAXParserFactory.newInstance().newSAXParser(); 
@@ -24,5 +25,6 @@ parser.parse("xml文件", new MyHandler());
 DocumentBuilder builder= DocumentBuilderFactory.newInstance().newDocumentBuilder();  
 Document document= builder.parse("xml文件");  
 ```   
+
 JDOM和DOM4J是第三方开源项目，DOM4J最初是JDOM的一种分支。      
 ③三种解析综合比较，DOM4J更好针对 Java开发者的易用性和直观操作，更完整的解决方案，处理所有Java/XML 问题，Java项目大都使用DOM4J来读写XML。
