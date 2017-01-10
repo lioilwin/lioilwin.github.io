@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (转)静态网站生成器大总结(Static-Site-Generators)
-tags: Html&Xml
+tags: Html_Xml
 ---
 静态网站(博客)生成器到底有多少呢？GitHub用户对静态博客生成程序进行了大规模总结(好多啊，本宝被吓傻了……)<br>
 [原文地址](https://github.com/pinceladasdaweb/Static-Site-Generators)
