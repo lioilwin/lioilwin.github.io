@@ -1,6 +1,6 @@
 ---
 layout: post
-title: XML、DTD、Schema
+title: 总结XML、DTD和Schema
 tags: HTML_XML
 ---
 

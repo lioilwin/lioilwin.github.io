@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 区分SAX/DOM、JAXP、JDOM和DOM4J
+title: 总结SAX/DOM、JAXP、JDOM和DOM4J
 tags: J2EE_WEB
 ---
 
