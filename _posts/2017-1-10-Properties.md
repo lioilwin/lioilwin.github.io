@@ -4,6 +4,8 @@ title: Properties配置文件
 tags: Java
 ---
 
+```java
+
 public class Test{
     ·····
     // 读取Properties文件
@@ -26,3 +28,5 @@ public class Test{
     prop.store(os, null);
     os.close();
 }
+
+```
