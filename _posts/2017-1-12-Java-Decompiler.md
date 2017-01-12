@@ -4,7 +4,7 @@ title: Java反编译工具
 tags: Java
 ---
 
-# 旧Java反编译工具
+# 一、旧Java反编译工具
 	以前流行的反编译工具JAD和JD-GUI(JD-Core)对于Java 5以后的版本新特性支持都不行了。
 
 ## JAD
@@ -13,7 +13,7 @@ tags: Java
 ## JD
 	官网http://jd.benow.ca、JD-Core更新于2014年、JD-GUI更新于2015年，不支持Java 5以后的一些新特性如syntactic sugar、Lambda、Default methods等！
 
-# 新Java反编译工具
+# 二、新Java反编译工具
 	近年来，市场上出现了一些新java反编译工具，较好支持了Java 5到8新特性，如Fernflower、Procyon、CFR等等。
 
 ## Fernflower
