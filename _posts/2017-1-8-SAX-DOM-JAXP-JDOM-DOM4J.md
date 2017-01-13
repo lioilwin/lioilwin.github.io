@@ -15,7 +15,7 @@ JAXP、JDOM和DOM4J都是封装了sax/dom两种接口的Java代码实现API，�
 
 ### ① JAXP
 Java se的解析XML基础类库是SAX(org.xml.sax)/DOM(org.w3c.dom)，    
-JAXP(javax.xml.parsers)只是定义了一套操作XML文件的统一API框架，封装了sax/dom两种解析以便开发，并不提供新解析功能。
+JAXP(javax.xml.parsers)只是定义了一套操作XML文件的统一API框架，封装了sax/dom两种解析以便开发，并不提供新解析功能。  
 ```java
 // JAXP-SAX解析器，获取sax解析器, 注册事件处理器
 SAXParserFactory.newInstance().newSAXParser().parse("xml文件", new MyContentHandler());
@@ -35,7 +35,7 @@ Document document= builder.parse("xml文件");
 ```
 
 ### ② Dom4j和JDOM
-Dom4j是由早期开发JDOM的人分离出来而后独立开发、比JDOM性能更好、易用。
+Dom4j是由早期开发JDOM的人分离出来而后独立开发、比JDOM性能更好、易用。  
 ```java
 // Dom4j对Xml文档增删改查
 	// 元素增删改查
