@@ -3,6 +3,7 @@ layout: post
 title: 总结SAX/DOM、JAXP、JDOM和DOM4J
 tags: J2eeWeb
 ---
+
 ## 1、DOM和SAX     
 ①DOM和SAX是对XML解析的两种标准方法(没有具体代码实现)！    
 ②DOM是W3C官方标准；而SAX是"民间"的社区标准。    
@@ -15,8 +16,10 @@ JAXP、JDOM和DOM4J都是封装了sax/dom两种接口的Java代码实现API，�
 
 ### ① JAXP
 Java se的解析XML基础类库是SAX(org.xml.sax)/DOM(org.w3c.dom)，    
-JAXP(javax.xml.parsers)只是定义了一套操作XML文件的统一API框架，封装了sax/dom两种解析以便开发，并不提供新解析功能。  
-```java  
+JAXP(javax.xml.parsers)只是定义了一套操作XML文件的统一API框架，封装了sax/dom两种解析以便开发，并不提供新解析功能。
+  
+```java
+
 // JAXP-SAX解析器，获取sax解析器, 注册事件处理器
 SAXParserFactory.newInstance().newSAXParser().parse("xml文件", new MyContentHandler());
 // 事件处理器
@@ -31,12 +34,15 @@ class MyContentHandler extends DefaultHandler{
 
 // JAXP-DOM解析，获取Dom解析器
 DocumentBuilder builder= DocumentBuilderFactory.newInstance().newDocumentBuilder();  
-Document document= builder.parse("xml文件");  
+Document document= builder.parse("xml文件");
+  
 ```
 
 ### ② Dom4j和JDOM
-Dom4j是由早期开发JDOM的人分离出来而后独立开发、比JDOM性能更好、易用。  
-```java  
+Dom4j是由早期开发JDOM的人分离出来而后独立开发、比JDOM性能更好、易用。
+
+```java
+ 
 // Dom4j对Xml文档增删改查
 	// 元素增删改查
 	public void element() throws Exception{
@@ -84,6 +90,7 @@ Dom4j是由早期开发JDOM的人分离出来而后独立开发、比JDOM性能�
 		writer.write(document);
 		writer.close();
 	}
+	
 ```
 
 三种Java解析综合比较，DOM4J更好针对 Java开发者的易用性和直观操作，更完整的解决方案，处理所有Java/XML 问题，很多软件都采用Dom4j，例如Hibernate，sun公司的JAXM也用了Dom4j
