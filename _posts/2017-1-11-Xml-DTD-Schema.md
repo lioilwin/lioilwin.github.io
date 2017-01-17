@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 总结XML、DTD和Schema
-tags: HtmXml
+tags: HtmlXml
 ---
 
 定义：XML是一种数据传输和存储格式，用标签保存数据内容，利用标签嵌套关系保存数据之间关系    

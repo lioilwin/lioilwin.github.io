@@ -1,7 +1,7 @@
 ---
 layout: post
 title: java、javax、org和com.sun包的区别
-tags: HtmlXml
+tags: Java
 ---
 
 来源：http://blog.csdn.net/ooppookid/article/details/51704792
