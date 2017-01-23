@@ -1,0 +1,108 @@
+---
+layout: post
+title: JSP基础-自定义标签
+tags: J2eeWeb
+---
+	作用:
+	虽然JSTL标准标签库提供了很多通用标签,
+	但实际开发需求复杂多变,
+	这些通用标签是不能完全在JSP页面替代java代码,
+	因此需要我们自定义标签来替代java代码!
+
+
+# 1.传统标签
+
+## 1).原理
+	Tag接口		
+	    |---IterationTag接口
+			|---TagSupport类--
+			|---BodyTag接口  |
+			        BodyTagSupprot类
+
+	Tag生命周期:
+	第一次使用时创建实例,从此驻留内存重复利用,每次都会依次执行:
+	setPageContext(PageContext pc) 传入jsp对象
+	setParent(Tag t) 传入父标签
+	doStartTag() 通过返回值来控制标签体是否执行
+	doEndTag() 通过返回值控制标签后jsp页面是否执行
+	release() 服务器停止前调用销毁对象
+	
+## 2).自定义步骤:
+	1).编写一个类实现Tag接口
+	2).编写一个tld文件描述Tag类
+	3).在jsp页面中引入tld文件
+						
+	传统标签自定义相当繁琐,需分析开始标签和结束标签时,还需分析返回标签体控制程序,
+	一般不推荐使用,简单标签SimpleTag更方便开发！
+	
+# 2.简单标签
+	
+## 1).原理
+	SimpleTag接口
+		|---SimpleTagSupport实现类
+	
+	SimpleTag生命周期:
+	每次访问标签时都创建简单标签对象,用完即销毁。
+	setJspContext(JspContext pc) 传入当前jsp的PageContext对象
+	setParent(JspTag parent) 若标签有父标签,则调用传入
+	setXXX() 若标签有属性,则调用传入
+	setJspBody(JspFragment jspBody) 若标签有标签体,则调用传入
+	doTag() 处理标签替代的java代码
+		
+## 2).自定义步骤
+	1).编写一个类继承SimpleTagSupport,覆盖doTag(),调用getJspContext/getJspBody获取JSP内容;
+	public class MyTag extends SimpleTagSupport {	
+		@Override
+		public void doTag(){			
+			// 标签体重复输出
+			for(int i=0;i<attr;i++)
+				getJspBody().invoke(null);
+			
+		/*	// 默认会执行标签后续JSP页面
+			// 抛出SkipPageException异常,不执行后续JSP页面
+			throw new SkipPageException();
+			
+			// 获取标签体
+			StringWriter writer = new StringWriter();
+			getJspBody().invoke(writer);
+			String str = writer.toString();	
+			// 修改后输出
+			getJspContext().getOut().write(str.toUpperCase()); */
+		}
+		
+		// 自定义标签属性attr
+		private int attr;	
+		public void setAttr(int attr) {
+			this.attr = attr;
+		}
+	}
+	
+	2).在WEB-INF目录下编写一个tld文件,描述自定义SimpleTag类;
+	<?xml version="1.0" encoding="UTF-8"?>
+	<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+		<tlib-version>1.0</tlib-version>
+		<short-name>MyTag</short-name>
+		<uri>http://www.xxx.com/MyTag</uri>
+		<tag>
+			<name>myTag</name> 标签名
+			<tag-class>com.xx.MyTag</tag-class> 标签处理类			
+			<body-content>scriptless/empty</body-content>
+						scriptless不能含Java脚本代码
+						empty代表只能为空			
+						tagdependent不会输出到浏览器
+						JSP代表任意内容,不能在简单标签使用,只能在传统标签使用
+						
+			<attribute> 声明属性
+				<name>attr</name> 属性名
+				<required>true</required> 是否为必须存在
+				<rtexprvalue>true</rtexprvalue> 是否支持EL表达式
+				<type>int</type> 属性java类型
+			</attribute>
+		</tag>
+	</taglib>		
+		
+	3).在jsp页面中引入tld文件,使用自定义标签
+		<%@ taglib uri="http://www.xxx.com/MyTag" prefix="MyTag"%>
+		<MyTag:myTag attr="10">循环输出文本</MyTag:myTag>
