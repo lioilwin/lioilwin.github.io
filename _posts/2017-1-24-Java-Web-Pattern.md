@@ -74,19 +74,17 @@ tags: J2eeWeb
     Struts负责表示层、Spring负责逻辑层业务、Hibernate持久层中数据库的操作
 
 # 9.Java Web经典三层架构
-	三层框架是由Java Web提出的，这是JavaWeb独有的！ 
 	WEB层+业务逻辑层(Service)+数据访问层(Data Access)
+	是由Java Web提出, 即JavaWeb独有的！
 	
-	·WEB层：包含JSP和Servlet等与WEB相关的内容； 
-	·业务层：业务层中不包含JavaWeb API，它只关心业务逻辑； 
-	·数据层：封装了对数据库的访问细节；
+	WEB层: 包含JSP和Servlet等, 与WEB相关的内容;
+	Service层: 不含JavaWeb API, 只关注业务逻辑;
+	DAO层: 对数据库的访问细节;
 	
-	注意:
-		在Service层中不能出现JavaWeb API，例如request、response等。
-		即Service层代码是可重用的(独立的)，可应用到非Web环境！
-		
-		Web层依赖Service层, 但Service层不依赖Web层;
-		Service层依赖DAO层, 但DAO层不依赖Service层!
-	
+	意义:		
+		设定WEB层/Service层/DAO层从上到下排序,	
+		①下层完全独立于上层(即下层不能出现上层源码),可离开上层,可在其它项目重复使用！
+		②上层是依赖于下层, 无法离开下层,但可以用配置文件设置上下层依赖关系,
+		使在下层源码变化时不影响上层源码,实现上层相对独立于下层,上下层解耦！	
 	
 ![](http://img.blog.csdn.net/20160316002015045)
