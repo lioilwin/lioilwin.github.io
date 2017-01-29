@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JDBC基础-事务管理
-tags: Database
+tags: J2eeWeb
 ---
 # 1.事务概念
 	事务:一组操作要么同时完成、要么同时不完成。
