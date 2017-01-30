@@ -6,8 +6,8 @@ tags: J2eeWeb
 # 一.过滤器Filter
 	对指定的web资源进行拦截,实现一些特殊功能,如实现URL权限访问、过滤敏感词等等
 
-## 1.注册过滤器
-	1)方式一
+## 1).注册过滤器
+	方式一
 		在WEB-INF/web.xml注册
 		<filter>
 			<filter-name>filter</filter-name>
@@ -24,11 +24,11 @@ tags: J2eeWeb
 			<dispatcher>REQUEST</dispatcher> 指定要拦截资源的访问方式是REQUEST/FORWARD/INCLUDE/ERROR,默认REQUEST
 		</filter-mapping>
 	
-	2)方式二
+	方式二
 		在com.xxx.xxFilter类添加注解
 		@WebFilter(filterName="filter",urlPatterns={"/*"},servletNames={"Demo1Servlet"})
 	
-## 2.实现接口	
+## 2).实现接口	
 	创建: web应用加载时,创建所有过滤器对象,调用init()初始化,一直驻留内存;
 	销毁: web应用移除时,销毁所有过滤器对象,销毁前调用destroy()善后	
 	public class xxFilter implements Filter {
