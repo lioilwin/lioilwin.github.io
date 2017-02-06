@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HttpServletRequest总结
-tags: J2eeWeb
+tags: JavaEE
 ---
 代表Http请求对象，可获取Http请求内容(请求行、请求头、请求体)
 	

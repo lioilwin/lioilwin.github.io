@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JDBC工具-DBUtils
-tags: J2eeWeb
+tags: JavaEE
 ---
 	commons-dbutils是Apache对JDBC简单封装的开源类库,减少JDBC对数据库增删改查的编码量。
 	核心类:

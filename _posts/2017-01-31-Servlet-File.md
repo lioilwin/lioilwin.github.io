@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Servlet-文件上传和下载
-tags: J2eeWeb
+tags: JavaEE
 ---
 # 一、文件上传
 

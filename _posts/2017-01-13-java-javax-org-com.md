@@ -1,7 +1,7 @@
 ---
 layout: post
 title: java、javax、org和com.sun包的区别
-tags: Java
+tags: JavaSE
 ---
 
 来源：http://blog.csdn.net/ooppookid/article/details/51704792

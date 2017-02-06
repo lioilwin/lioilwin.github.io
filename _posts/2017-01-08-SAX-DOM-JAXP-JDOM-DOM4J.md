@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SAX/DOM、JAXP、JDOM和DOM4J
-tags: J2eeWeb
+tags: JavaEE
 ---
 
 ## 1、DOM和SAX     

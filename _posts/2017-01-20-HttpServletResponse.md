@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HttpServletResponse总结
-tags: J2eeWeb
+tags: JavaEE
 ---
 HttpServletResponse代表Http响应,写入Response缓冲区,  
 被servlet引擎获取,组合HTTP响应发给浏览器。

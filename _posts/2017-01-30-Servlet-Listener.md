@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Servlet-Filter和Listener
-tags: J2eeWeb
+tags: JavaEE
 ---
 # 一.过滤器Filter
 	对指定的web资源进行拦截,实现一些特殊功能,如实现URL权限访问、过滤敏感词等等

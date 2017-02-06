@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JDBC基础-连接池(数据源)
-tags: J2eeWeb
+tags: JavaEE
 ---	
 	数据库连接池(数据源): 批量创建和数据库之间的连接,缓存到连接池中,提高连接性能。
 	

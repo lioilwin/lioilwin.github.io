@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JDBC基础-元数据
-tags: J2eeWeb
+tags: JavaEE
 ---
 	元数据: 数据库、表和字段的结构信息
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JSP基础-EL表达式和JSTL标签库
-tags: J2eeWeb
+tags: JavaEE
 ---
 	作用: 在JSP页面代替java代码,便于编写
 

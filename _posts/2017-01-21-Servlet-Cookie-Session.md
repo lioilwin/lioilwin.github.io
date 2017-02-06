@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Servlet会话Cookie和Session
-tags: J2eeWeb
+tags: JavaEE
 ---
 浏览器开始访问网站到结束期间产生的多次请求响应组合是一次会话,
 可通过Cookie或Session技术保存会话产生的数据。

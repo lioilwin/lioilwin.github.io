@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (转)为Java说句公道话
-tags: Java
+tags: JavaSE
 ---
 ##### 作者原文链接已失效，本文从博客园搬过来！
 

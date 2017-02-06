@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Java Web开发模式的变迁
-tags: J2eeWeb
+tags: JavaEE
 ---
 参考:  
 	http://www.cnblogs.com/hellokitty1/p/4954376.html
