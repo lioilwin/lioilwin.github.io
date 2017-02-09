@@ -32,7 +32,7 @@ tags: JavaSE
 	@Retention(RetentionPolicy.RUNTIME)
 	@Target({ ElementType.TYPE, ElementType.METHOD, ElementType.FIELD })	
 	public @interface MyAnno{
-		// 支持类型:基本类型/枚举/Class/其它注解类型/以上类型的一维数组
+		// 支持类型:String/基本类型/枚举/Class/其它注解类型/以上类型的一维数组
 		String id() default "..";
 		
 		String value() default "..";
