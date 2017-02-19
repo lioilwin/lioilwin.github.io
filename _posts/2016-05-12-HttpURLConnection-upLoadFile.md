@@ -5,42 +5,38 @@ tags: Android
 ---
 
 ```java
-String PREFIX = "--";
-String BOUNDARY = UUID.randomUUID().toString(); // 文件边界
-String LINE_END = "\r\n";
-String CONTENT_TYPE = "multipart/form-data"; // 类型
-int TIME_OUT = 10 * 1000; // 超时
-String CHARSET = "utf-8"; // 编码
-////////////////////建立Http连接///////////////////////////////////////////////////
-HttpURLConnection httpConn = (HttpURLConnection) new URL(url).openConnection();
-httpConn.setReadTimeout(TIME_OUT);
-httpConn.setConnectTimeout(TIME_OUT);
-httpConn.setDoInput(true); // 允许输入流
-httpConn.setDoOutput(true); // 允许输出流
-httpConn.setUseCaches(false); // 不允许使用缓存
-httpConn.setRequestMethod("POST"); // 请求方式
-httpConn.setRequestProperty("Charset", CHARSET); // 编码
-httpConn.setRequestProperty("connection", "keep-alive");
-httpConn.setRequestProperty("Content-Type", CONTENT_TYPE + ";boundary=" + BOUNDARY);
-////////////////////Http上传文件////////////////////////////////////////////////////////
-DataOutputStream httpOut = new DataOutputStream(conn.getOutputStream());
-httpOut.write((PREFIX+BOUNDARY+LINE_END+"Content-Disposition: form-data; name=\"upfile\"; filename=\"" + file.getName() + "\"" + LINE_END).getBytes()); // 服务器所需文件参数name="", filename=""
-httpOut.write(("Content-Type: application/octet-stream; charset=" + CHARSET + LINE_END + LINE_END).getBytes());
-InputStream fileIn = new FileInputStream(file);
-byte[] bytes = new byte[1024];
-int len = 0;
-while ((len = fileIn.read(bytes)) != -1)
-	httpOut.write(bytes, 0, len);// 写入文件原始数据
-fileIn.flush();
-fileIn.close();
-httpOut.write((LINE_END+PREFIX + BOUNDARY + PREFIX + LINE_END).getBytes());
-httpOut.flush();
-httpOut.close();
-////////////////////获取Http结果//////////////////////////////////////////////////////
-BufferedReader httpIn = new BufferedReader(new InputStreamReader(conn.getInputStream(), CHARSET));// utf-8以防乱码
-StringBuffer result = new StringBuffer();
+
+String BD = UUID.randomUUID().toString(); // 文件边界
+
+// 1.开启Http连接
+HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+conn.setConnectTimeout(10*1000);
+conn.setDoOutput(true); // 允许输出
+
+// 2.Http请求头
+conn.setRequestMethod("POST");
+conn.setRequestProperty("Charset", "utf-8");
+conn.setRequestProperty("Content-Type", "multipart/form-data" + ";boundary="+BD);
+
+// 3.Http请求体
+DataOutputStream out = new DataOutputStream(conn.getOutputStream());
+out.writeUTF("--"+BD+"\r\n"
+			+"Content-Disposition: form-data; name=\"file\"; filename=\"filename\"\r\n"
+			+"Content-Type: application/octet-stream; charset=utf-8"+"\r\n");
+InputStream in = new FileInputStream(file);
+byte[] b = new byte[1024];
+int l = 0;
+while((l = in.read(b)) != -1) out.write(b,0,l); // 写入文件
+out.writeUTF("\r\n--"+BD+"--\r\n");
+out.flush();
+out.close();
+in.close();
+
+// 4.Http响应
+BufferedReader bf = new BufferedReader(new InputStreamReader(conn.getInputStream(),"utf-8"));
 String line = null;
-while ((line = httpIn.readLine()) != null) {
-	result.append(line);
+while ((line=bf.readLine())!=null) {
+	System.out.println(line);
 }
+
 ```
