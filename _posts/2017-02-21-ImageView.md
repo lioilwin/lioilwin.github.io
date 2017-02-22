@@ -14,6 +14,9 @@ tags: Android
 			.putExtra("crop", "true")
 			.putExtra("output", Uri.fromFile(new File("/sdcard/!temp.jpg")))
 			,1);
+			
+		// 系统选择图片还可用new Intent(Intent.ACTION_GET_CONTENT).setType(image/*)
+		// 系统相机可用new Intent(MediaStore.ACTION_IMAGE_CAPTURE).putExtra("output", xx);
     }
 	
 	@Override
