@@ -1,16 +1,48 @@
 ---
 layout: post
-title: 对话框自定义的4种方法
+title: 对话框自定义的5种方法
 tags: Android
 ---
 
-## 1.使用AlertDialog实现
+## 1.使用DialogFragment(谷歌官方推荐)
+	public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (true) {
+            // 若重写了onCreateDialog(),则优先使用onCreateDialog布局
+            // 若没有,则使用onCreateView布局
+            new MyDialogFragment().show(getSupportFragmentManager(), "dialog");
+        } else {
+            // 当作fragment使用, 必须重写onCreateView()布局
+            getSupportFragmentManager().beginTransaction()
+                    .add(android.R.id.content, new MyDialogFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
+	}
+
+	class MyDialogFragment extends DialogFragment {
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+			return new AlertDialog.Builder(getActivity()).setView(R.layout.dialog).create();
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+			// getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
+			return inflater.inflate(R.layout.dialog, container, false);
+		}
+	}
+
+
+## 2.使用AlertDialog实现
 	new AlertDialog.Builder(this)
+	// 自定义布局
                 .setView(R.layout.dialog)
-                .show();
-	// 不要使用setMessage,setPositive等等方法，最好用自定义布局控件
+                .show();	
 				
-## 2.使用Dialog实现
+## 3.使用Dialog实现
 	在values/styles.xml
 	<style name="MyDialogStyleBottom">
 		<!--出入动画-->
@@ -29,19 +61,19 @@ tags: Android
 	dialog.setContentView(布局);		
 	dialog.show();
 		
-## 3.使用PopupWindow实现
+## 4.使用PopupWindow实现
 	View v = View.inflate(布局);
 	PopupWindow p = new PopupWindow(v);
 	p.setBackground···	
 	p.setLoaction···
 	或p.setDropdown···(设置显示位置)；
 				
-## 4.使用Activity实现
+## 5.使用Activity实现
 	在AndroidManifest.xml中
 	修改Actity主题android:theme="@style/MyDialogStyleBottom"
 	
 	
-## 5.滑出滑入动画
+## 滑出滑入动画
 	在values/styles.xml
 		<style name="AnimBottom">
 			<item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
@@ -64,4 +96,4 @@ tags: Android
 			android:duration="200"  
 			android:fromYDelta="0"  
 			android:toYDelta="50%p" />  
-	</set>  
+	</set>
