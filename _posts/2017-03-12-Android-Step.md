@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android计步功能
+title: Android传感器-计步
 tags: Android
 ---
 参考文章：http://www.jianshu.com/p/5d57f7fd84fa
@@ -10,9 +10,11 @@ tags: Android
 Android4.4以上版本，有些手机有计步传感器可以直接使用，
 而有些手机没有，但有加速度传感器，也可以实现计步功能(需要计算加速度波峰波谷来判断人走一步)！
 
-# 一.使用
+# 一.调用
+
 ```java
-public class MainActivity extends AppCompatActivity implements StepCallBack{
+
+public class MainActivity extends AppCompatActivity implements StepSensorBase.StepCallBack{
 	.........
     @Override
     public void Step(int stepNum) {
@@ -39,25 +41,26 @@ public class MainActivity extends AppCompatActivity implements StepCallBack{
     .......
  }
  
-```
-
-# 二.计步传感器抽象类
-
-```java
-
-/**
- * 计步传感器抽象类, 子类分为加速度传感器、或计步传感器
+ /**
+ * 计步传感器抽象类，子类分为加速度传感器、或计步传感器
  */
 public abstract class StepSensorBase implements SensorEventListener {
     private Context context;
-    public StepCallBack stepCallBack;
-    public SensorManager sensorManager;
-    public static int CURRENT_SETP = 0;
-    public boolean isAvailable = false;
+    protected StepCallBack stepCallBack;
+    protected SensorManager sensorManager;
+    protected static int CURRENT_SETP = 0;
+    protected boolean isAvailable = false;
 
     public StepSensorBase(Context context, StepCallBack stepCallBack) {
         this.context = context;
         this.stepCallBack = stepCallBack;
+    }
+
+    public interface StepCallBack {
+        /**
+         * 计步回调
+         */
+        void Step(int stepNum);
     }
 
     /**
@@ -68,7 +71,7 @@ public abstract class StepSensorBase implements SensorEventListener {
             sensorManager.unregisterListener(this);
             sensorManager = null;
         }
-        sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+        sensorManager = SensorUtil.getInstance().getSensorManager(context);
         registerStepListener();
         return isAvailable;
     }
@@ -83,11 +86,13 @@ public abstract class StepSensorBase implements SensorEventListener {
      */
     public abstract void unregisterStep();
 }
-
+ 
 ```
 
-# 三.直接使用计步传感器
+# 二.直接使用计步传感器实现计步
+
 ```java
+
 /**
  * 计步传感器
  */
@@ -106,11 +111,11 @@ public class StepSensorPedometer extends StepSensorBase {
     protected void registerStepListener() {
         Sensor detectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
         Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-        if (sensorManager.registerListener(this, detectorSensor, SensorManager.SENSOR_DELAY_UI)) {
+        if (sensorManager.registerListener(this, detectorSensor, SensorManager.SENSOR_DELAY_GAME)) {
             isAvailable = true;
             sensorMode = 0;
             Log.i(TAG, "计步传感器Detector可用！");
-        } else if (sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI)) {
+        } else if (sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_GAME)) {
             isAvailable = true;
             sensorMode = 1;
             Log.i(TAG, "计步传感器Counter可用！");
@@ -129,8 +134,10 @@ public class StepSensorPedometer extends StepSensorBase {
     public void onSensorChanged(SensorEvent event) {
         liveStep = (int) event.values[0];
         if (sensorMode == 0) {
+            Log.i(TAG, "Detector步数："+liveStep);
             StepSensorBase.CURRENT_SETP += liveStep;
         } else if (sensorMode == 1) {
+            Log.i(TAG, "Counter步数："+liveStep);
             StepSensorBase.CURRENT_SETP = liveStep;
         }
         stepCallBack.Step(StepSensorBase.CURRENT_SETP);
@@ -143,9 +150,13 @@ public class StepSensorPedometer extends StepSensorBase {
 
 ```
 
-# 三.使用加速度传感器实现计步功能
+# 三.使用加速度传感器实现计步
+
 ```java
 
+/**
+ * 加速度传感器
+ */
 public class StepSensorAcceleration extends StepSensorBase {
     private final String TAG = "StepSensorAcceleration";
     //存放三轴数据
@@ -204,9 +215,8 @@ public class StepSensorAcceleration extends StepSensorBase {
     @Override
     protected void registerStepListener() {
         // 注册加速度传感器
-        isAvailable = sensorManager.registerListener(this,
-                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_UI);
+        isAvailable = sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_GAME);
         if (isAvailable) {
             Log.i(TAG, "加速度传感器可用！");
         } else {
@@ -278,9 +288,9 @@ public class StepSensorAcceleration extends StepSensorBase {
 //            TEMP_STEP++;
 //            Log.v(TAG, "计步中 TEMP_STEP:" + TEMP_STEP);
 //        } else if (CountTimeState == 2) {
-        CURRENT_SETP++;
+        StepSensorBase.CURRENT_SETP++;
 //            if (stepCallBack != null) {
-        stepCallBack.Step(CURRENT_SETP);
+        stepCallBack.Step(StepSensorBase.CURRENT_SETP);
 //            }
 //        }
 
@@ -383,21 +393,21 @@ public class StepSensorAcceleration extends StepSensorBase {
         public void onFinish() {
             // 如果计时器正常结束，则开始计步
             time.cancel();
-            CURRENT_SETP += TEMP_STEP;
+            StepSensorBase.CURRENT_SETP += TEMP_STEP;
             lastStep = -1;
             Log.v(TAG, "计时正常结束");
 
             timer = new Timer(true);
             TimerTask task = new TimerTask() {
                 public void run() {
-                    if (lastStep == CURRENT_SETP) {
+                    if (lastStep == StepSensorBase.CURRENT_SETP) {
                         timer.cancel();
                         CountTimeState = 0;
                         lastStep = -1;
                         TEMP_STEP = 0;
-                        Log.v(TAG, "停止计步：" + CURRENT_SETP);
+                        Log.v(TAG, "停止计步：" + StepSensorBase.CURRENT_SETP);
                     } else {
-                        lastStep = CURRENT_SETP;
+                        lastStep = StepSensorBase.CURRENT_SETP;
                     }
                 }
             };
