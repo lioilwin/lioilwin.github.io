@@ -44,9 +44,9 @@ tags: Android
 
 ```
 
-# 二.GuideView类
+# 二.GuideUserView类
 	
-	1.GuideView类继承相对布局  	
+	1.GuideUserView类继承相对布局  	
 	2.添加自定义布局mCustomLayout，通过Margins设置mCustomLayout的位置  
 	3.用canvas在mTargetView周围绘制高亮圆圈  
 	4.用mPaint.setXfermode(xx)去除高亮圆圈和半透明背景的交集  
