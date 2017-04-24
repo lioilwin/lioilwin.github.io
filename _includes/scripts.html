@@ -17,11 +17,95 @@
 
 <script>
 	var array = [
+	"/assets/audio/acitySad.mp3",
+	"/assets/audio/aijiangshg.mp3",
+	"/assets/audio/ancientPath.mp3",
+	"/assets/audio/baiyueg.mp3",
+	"/assets/audio/beiErHu.mp3",
 	"/assets/audio/buzhuang.mp3",
-	"/assets/audio/gaoya.mp3",	
+	"/assets/audio/chengzhang.mp3",
+	"/assets/audio/chizha.mp3",
+	"/assets/audio/chujian.mp3",
+	"/assets/audio/chujianch.mp3",
+	"/assets/audio/chunlm.mp3",
+	"/assets/audio/chushitaiji.mp3",
+	"/assets/audio/chuyu.mp3",
+	"/assets/audio/daminggong.mp3",
+	"/assets/audio/diefeihw.mp3",
+	"/assets/audio/dilaoth.mp3",
+	"/assets/audio/doufa.mp3",
+	"/assets/audio/duqing.mp3",
+	"/assets/audio/duqingxhyfy.mp3",
+	"/assets/audio/erquanyy.mp3",
+	"/assets/audio/fanxindd.mp3",
+	"/assets/audio/fengdian.mp3",
+	"/assets/audio/fengzhongy.mp3",
+	"/assets/audio/fengzhudj.mp3",
+	"/assets/audio/foguangcx.mp3",
+	"/assets/audio/gaoshanlsh.mp3",
+	"/assets/audio/gaoya.mp3",
+	"/assets/audio/gaoyash.mp3",
+	"/assets/audio/gongbancty.mp3",
+	"/assets/audio/guchaqy.mp3",
+	"/assets/audio/gungunhong.mp3",
+	"/assets/audio/guxiangyuan.mp3",
 	"/assets/audio/hongsu.mp3",
+	"/assets/audio/hudie.mp3",
+	"/assets/audio/huimeng.mp3",
+	"/assets/audio/jambiaDance.mp3",
+	"/assets/audio/jiangshiger.mp3",
+	"/assets/audio/jiaozhan.mp3",
+	"/assets/audio/ks64.mp3",
+	"/assets/audio/ks69.mp3",
+	"/assets/audio/ladyLoch.mp3",
+	"/assets/audio/limingbyl.mp3",
+	"/assets/audio/lonelyDynas.mp3",
+	"/assets/audio/matsuri.mp3",
+	"/assets/audio/moonglow.mp3",
+	"/assets/audio/moshi.mp3",
+	"/assets/audio/moshibi.mp3",
+	"/assets/audio/mysterbird.mp3",
+	"/assets/audio/nightingale.mp3",
+	"/assets/audio/nomad.mp3",
+	"/assets/audio/opening.mp3",
+	"/assets/audio/pipayu.mp3",
+	"/assets/audio/ploughboys.mp3",
+	"/assets/audio/qianliyy.mp3",
+	"/assets/audio/qianniandyh.mp3",
+	"/assets/audio/qianshijsh.mp3",
+	"/assets/audio/qingshenygs.mp3",
+	"/assets/audio/qingxinqx.mp3",
+	"/assets/audio/qingzhou.mp3",
+	"/assets/audio/renshenghch.mp3",
+	"/assets/audio/schuanJour.mp3",
+	"/assets/audio/shanglibie.mp3",
+	"/assets/audio/shuimanjsh.mp3",
+	"/assets/audio/shuipolsh.mp3",
+	"/assets/audio/silangtanmu.mp3",
+	"/assets/audio/silkRoad.mp3",
+	"/assets/audio/siqing.mp3",
+	"/assets/audio/suiyuanfpgz.mp3",
+	"/assets/audio/taohuadao.mp3",
+	"/assets/audio/taoLove.mp3",
+	"/assets/audio/templeGate.mp3",
+	"/assets/audio/todaiji.mp3",
+	"/assets/audio/tougong.mp3",
+	"/assets/audio/withOrchid.mp3",
+	"/assets/audio/wuyuanlz.mp3",
+	"/assets/audio/wuzi.mp3",
+	"/assets/audio/xiaoaojhq.mp3",
+	"/assets/audio/xiehou.mp3",
+	"/assets/audio/xihugn.mp3",
+	"/assets/audio/xihugnsh.mp3",
+	"/assets/audio/xueqianxun.mp3",
+	"/assets/audio/yangshitq.mp3",
+	"/assets/audio/yaoyuan.mp3",
+	"/assets/audio/ymnvjiang.mp3",
+	"/assets/audio/yuanmen.mp3",
 	"/assets/audio/yushui.mp3",
-	"/assets/audio/yushuid.mp3",	
+	"/assets/audio/yushuid.mp3",
+	"/assets/audio/zhuanyin.mp3",
+	"/assets/audio/zhuimengren.mp3",
 	];
 	var i = Math.floor(Math.random()*array.length);
 	var isShow = true;
@@ -53,7 +137,7 @@
 			next.style.display = "none";
 			show.style.background = "linear-gradient(90deg,#C2E987,#309E85)";
 			show.innerHTML="显";
-			show.title = "显示音乐条";
+			show.title = "显示音乐";
 			isShow=false;
 		}else{
 			audio.style.transform = "translateX(0%)";
@@ -64,7 +148,7 @@
 			next.style.display = "block";
 			show.style.background = "linear-gradient(90deg,#309E85,#C2E987)";
 			show.innerHTML="隐";
-			show.title = "隐藏音乐条";
+			show.title = "隐藏音乐";
 			isShow=true;
 		}
 	};
@@ -74,7 +158,7 @@
 		audio.play();
 	};
 	up.onmousemove = function(){
-		if(i == 0) up.title = "上一曲"+array.length; else up.title = "上一曲"+i;
+		if(i == 0) up.title = "上曲"+array.length; else up.title = "上曲"+i;
 	};
 	next.onclick = function(){
 		if(i == array.length - 1) i = 0; else i++;
@@ -82,6 +166,6 @@
 		audio.play();
 	};
 	next.onmousemove = function(){
-		if(i == array.length - 1) next.title = "下一曲"+1; else next.title = "下一曲"+(i+2);
+		if(i == array.length - 1) next.title = "下曲"+1; else next.title = "下曲"+(i+2);
 	};
 </script>
