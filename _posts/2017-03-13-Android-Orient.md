@@ -10,6 +10,7 @@ x轴：手机短边方向
 z轴：与手机平面垂直方向
 
 本文源码：https://github.com/lifegh/StepOrient
+![](https://raw.githubusercontent.com/lifegh/StepOrient/master/%E8%AE%A1%E6%AD%A5%E6%88%AA%E5%9B%BE.jpg)
 
 # 一.使用
 ```java

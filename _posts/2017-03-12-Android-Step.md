@@ -9,6 +9,7 @@ tags: Android
 本文源码：https://github.com/lifegh/StepOrient
 Android4.4以上版本，有些手机有计步传感器可以直接使用，
 而有些手机没有，但有加速度传感器，也可以实现计步功能(需要计算加速度波峰波谷来判断人走一步)！
+![](https://raw.githubusercontent.com/lifegh/StepOrient/master/%E8%AE%A1%E6%AD%A5%E6%88%AA%E5%9B%BE.jpg)
 
 # 一.调用
 
