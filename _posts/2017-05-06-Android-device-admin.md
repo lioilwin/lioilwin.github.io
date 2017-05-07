@@ -8,8 +8,8 @@ tags: Android
 
 # 一.介绍
 	Android设备管理API来为方便企业应用控制员工!
-	一个APP激活了设备管理后,APP不可卸载,
-	可锁屏,重置锁屏密码,擦除SD卡数据,恢复出厂等等,权限非常高！
+	一个APP激活了设备管理后,APP不可卸载(必须取消激活才能卸载),
+	可锁屏/自动锁屏/重置锁屏密码/禁用相机/擦除SD卡数据/恢复出厂等等,权限非常高！
 	
 # 二.设备管理策略
 	立即锁屏 Lock device immediately
@@ -94,11 +94,9 @@ tags: Android
 	// 2.锁屏/擦除数据/	
 	if(dpm.isAdminActive(myReceiverName)){	//是否激活APP设备管理
 		// 立刻锁屏
-		dpm.lockNow();	
-		
+		dpm.lockNow();			
 		// 设置自动锁屏,不活动时间
-		dpm.setMaximumTimeToLock(myReceiverName, timeMs);
-		
+		dpm.setMaximumTimeToLock(myReceiverName, timeMs);		
 		// 重置锁屏密码		
 		dpm.resetPassword("123456", 0);
 		
