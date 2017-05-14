@@ -5,18 +5,19 @@ tags: HtmlXml
 ---
 # 一.介绍
 
-	静态网站生成器到底有多少呢？GitHub用户对静态博客生成程序进行了大规模总结，太多了啊，太恐怖，萌新被吓傻了……
-	GitHub地址: https://github.com/pinceladasdaweb/Static-Site-Generators
+静态网站生成器到底有多少呢？GitHub用户对静态博客生成程序进行了大规模总结，太多了啊，太恐怖，萌新被吓傻了……       
+GitHub地址: https://github.com/pinceladasdaweb/Static-Site-Generators
 
-	我选了jekyll博客, 因为两大代码仓库GitHub(国外)和Coding(国内)都提供免费空间自动构建Jekyll网站！	
-	在阿里云买了十年域名, 域名.win太便宜了，没商业价值没人要! 
-	我的博客同时部署在GitHub Pages和Coding Pages
-	GitHub博客: http://lioil.win
-	GitHub博客: http://c.lioil.win
-	
-	近期发现Coding Pages部署网站大小不能超过100M，
-	而还没发现GitHub Pages有大小限制！
-	
+我选了jekyll博客, 因为两大代码仓库GitHub(国外)和Coding(国内)都提供免费空间自动构建Jekyll网站！	  
+我的博客同时部署在GitHub Pages和Coding Pages，感谢Github的各路同行奉献，让我有幸能用到这么方便的高效工具，制作自己喜欢的博客。
+当然还要感谢GitHub和Coding网站，能让我这样一穷二白且毫无商业价值的码畜，免费使用服务器空间！   
+近期发现Coding Pages部署网站大小不能超过100M, 还没发现GitHub Pages有大小限制！
+   
+GitHub和Coding的默认博客地址都太长了，不好记忆，
+所以我在阿里云买了十年域名lioil.win，域名.win太便宜了，没商业价值没人要!       
+GitHub博客: http://lioil.win     
+Coding博客: http://c.lioil.win
+
 # 二.在windows安装jekyll	
 
 	1.下载Ruby

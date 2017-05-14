@@ -3,7 +3,7 @@ layout: post
 title: Android Widget桌面应用小部件
 tags: Android
 ---
-官方文档中国版: https://developer.android.google.cn/guide/index.html?q=widget   
+官方文档中国版: https://developer.android.google.cn/guide/topics/appwidgets/index.html   
 这个网站是谷歌2016年底为中国开发者提供中国版,方便访问！
 
 # 一.介绍
