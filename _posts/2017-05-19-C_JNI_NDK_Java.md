@@ -103,7 +103,7 @@ jstring Java_com_example_JavaDemo_getHello(JNIEnv* env,jobject obj){
 
 ```
 
-## 3.使用NDK编译C/C++
+## 3.使用NDK编译C/C++，生成libhello.so
 	在Android Studio编译C/C++
 	https://developer.android.google.cn/studio/projects/add-native-code.html
 	Google官方文档中国版, 专为中国开发者建的网站！
