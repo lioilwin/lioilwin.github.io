@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Android SDK默认混淆配置文件
+title: Android SDK默认ProGuard混淆配置
 tags: Android
 ---	
 # 一.介绍	
 	通常情况下编译后的字节码包含了大量调试信息(如源类名/行号等)
 	混淆代码就能删除这些调试信息，并用无意义字符替换所有名字，增加反编译难度！
 	
-	ProGuard是一个混淆代码的开源项目，主要作用如下：
+	ProGuard是一个混淆Java代码的开源项目，主要作用如下：
 		混淆Obfuscate 用无意义字符替换类名/字段名/属性名/方法名等
 		压缩Shrink 移除无用类/字段/属性/方法
 		优化Optimize 移除无用字节码指令
@@ -36,7 +36,8 @@ tags: Android
 #基本指令----------------------------------
 -printmapping proguardMapping.txt #输出混淆前后代码映射关系
 -keepattributes Signature #保留泛型
--keepattributes SourceFile, LineNumberTable #抛出异常时保留代码行号
+# -renamesourcefileattribute 重命名源码文件.java #崩溃抛出异常时,源码文件名自定义
+-keepattributes SourceFile, LineNumberTable #崩溃抛出异常时,保留源码文件名和源码行号
  
 #移除log代码
 #确保没有开启--dontoptimize选项
