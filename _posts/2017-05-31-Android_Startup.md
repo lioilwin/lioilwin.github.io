@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android系统启动过程
+title: Android系统-启动过程
 tags: Android
 ---
 参考：http://blog.jobbole.com/67931/

@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Android控件(View)自定义属性_简化写法
+title: Android控件-View自定义属性-简化写法
 tags: Android
 ---
-
 ## 一.声明属性类型(res/values/attrs.xml)
-
 
 ```xml
 

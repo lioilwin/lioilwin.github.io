@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android SDK默认ProGuard混淆配置
+title: Android SDK-ProGuard-默认混淆配置
 tags: Android
 ---	
 # 一.介绍	

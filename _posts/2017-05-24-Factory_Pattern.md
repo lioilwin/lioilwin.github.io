@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 设计模式_三种工厂模式的比较区分
+title: 设计模式-三种工厂模式-比较区分
 tags: JavaSE
 ---
 # 介绍

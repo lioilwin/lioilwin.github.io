@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android_绑定服务的相互调用(通信)
+title: Android-绑定服务-相互调用(通信)
 tags: Android
 ---
 官方文档中国版: https://developer.android.google.cn/guide/components/bound-services.html

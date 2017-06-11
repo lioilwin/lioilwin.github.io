@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript_Html绘图_canvas基础
+title: JavaScript-Html-绘图-canvas基础
 tags: JavaScript
 ---
 使用Html控件canvas，利用JavaScript自定义绘图

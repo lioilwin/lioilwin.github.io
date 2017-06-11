@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android Widget桌面应用小部件
+title: Android Widget-桌面应用小部件
 tags: Android
 ---
 官方文档中国版: https://developer.android.google.cn/guide/topics/appwidgets/index.html   

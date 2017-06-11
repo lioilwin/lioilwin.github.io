@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android-xml根布局参数失效原因
+title: Android-xml根布局-参数失效原因
 tags: Android
 ---
 

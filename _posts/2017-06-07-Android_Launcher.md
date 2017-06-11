@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android应用APP的启动过程
+title: Android应用-启动过程
 tags: Android
 ---
 

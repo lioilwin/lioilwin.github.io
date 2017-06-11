@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript_Html绘制时钟
+title: JavaScript-Html-绘制时钟
 tags: JavaScript
 ---
 使用Html控件canvas，利用JavaScript绘制时钟

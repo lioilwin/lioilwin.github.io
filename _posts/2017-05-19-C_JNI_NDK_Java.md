@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C_JNI_NDK_Java
+title: C-JNI-NDK-Java
 tags: C
 ---
 # 一.介绍	

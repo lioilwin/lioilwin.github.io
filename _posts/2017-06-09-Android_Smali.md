@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android_Smali语法
+title: Android-Smali-入门介绍-基础语法
 tags: Android
 ---
 # 一.介绍
@@ -82,10 +82,10 @@ tags: Android
 
 ## ⑤类方法/函数	
 	smali方法           
-	myMethod(Ljava/lang/String;[II)Ljava/lang/String;
+	myMethod([I)Ljava/lang/String;
 	
 	java方法
-	String myMethod(int[],String,int)
+	String myMethod(int[])
 	
 	//Java代码
 	protected void onCreate(Bundle savedInstanceState) {  
@@ -135,9 +135,8 @@ tags: Android
 
 	注: Long和Double类型是64位,需要2个寄存器存储参数
 		例如:
-			LMyObject——>myMethod(IJ)V;
-			3个参数
-			P0     this
+			myMethod(IJ)V;
+			参数			
 			P1     I(int)
 			P2,P3  J(long)
 
@@ -151,6 +150,11 @@ tags: Android
 	if-ne p1, v0, :c2
 	:c2
 	invoke-direct {p0}, Lcom/paul/test/a;->c()V
+	
+	if-gt 大于
+	if-ge 大于等于
+	if-lt 小于
+	if-le 小于等于
 		
 GitHub博客：http://lioil.win/2017/06/07/Android_Smali.html   
 Coding博客：http://c.lioil.win/2017/06/07/Android_Smali.html

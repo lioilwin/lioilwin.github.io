@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android_ViewPager循环滑动(轮播)
+title: Android-ViewPager-循环滑动(轮播)
 tags: Android
 ---
 # 一.问题
