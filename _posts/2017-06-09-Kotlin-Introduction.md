@@ -34,6 +34,8 @@ tags: Kotlin
 	AS会添加Kotlin依赖,然后把Java代码转成Kotlin代码!
 		
 # 二.Kotlin基础语法
+官方文档: http://kotlinlang.org/docs/reference/basic-syntax.html
+
 ## 1.Kotlin注释
 	Kotlin注释类似于Java和JavaScript，Kotlin支持行尾和块注释。
 	与Java不同的是，Kotlin中的块注释可以嵌套
