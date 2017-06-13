@@ -182,5 +182,5 @@ tags: Kotlin
                     ${'$'}9.99
                     """
 
-GitHub博客：http://lioil.win/2017/06/11/Kotlin-basic-types.html   
-Coding博客：http://c.lioil.win/2017/06/11/Kotlin-basic-types.html
+GitHub博客：http://lioil.win/2017/06/13/Kotlin-basic-types.html   
+Coding博客：http://c.lioil.win/2017/06/13/Kotlin-basic-types.html
