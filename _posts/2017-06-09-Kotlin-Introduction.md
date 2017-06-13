@@ -270,5 +270,5 @@ tags: Kotlin
 		.forEach { println(it) }
 	}
 
-GitHub博客：http://lioil.win/2017/06/07/Kotlin-Introduction.html   
-Coding博客：http://c.lioil.win/2017/06/07/Kotlin-Introduction.html
+GitHub博客：http://lioil.win/2017/06/09/Kotlin-Introduction.html   
+Coding博客：http://c.lioil.win/2017/06/09/Kotlin-Introduction.html

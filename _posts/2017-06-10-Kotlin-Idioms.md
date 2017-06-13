@@ -172,5 +172,5 @@ tags: Kotlin
         println(reader.readText())
     }
 
-GitHub博客：http://lioil.win/2017/06/07/Kotlin-Idioms.html   
-Coding博客：http://c.lioil.win/2017/06/07/Kotlin-Idioms.html
+GitHub博客：http://lioil.win/2017/06/10/Kotlin-Idioms.html   
+Coding博客：http://c.lioil.win/2017/06/10/Kotlin-Idioms.html
