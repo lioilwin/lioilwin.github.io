@@ -3,7 +3,7 @@ layout: post
 title: Kotlin-入门介绍-基础语法
 tags: Kotlin
 ---
-# 一.介绍
+## 一.介绍
 	JetBrains公司根据多年Java平台开发经验,认为Java有一定局限性和问题,
 	由于要向后兼容,这些问题很难得到解决,因此他们开发了Kotlin语言!
 	
@@ -33,24 +33,24 @@ tags: Kotlin
 	下载AS3.0预览版后,打开现有Java文件,在Code菜单中选择Convert Java File to Kotlin File, 
 	AS会添加Kotlin依赖,然后把Java代码转成Kotlin代码!
 		
-# 二.Kotlin基础语法
+## 二.Kotlin基础语法
 官方文档: http://kotlinlang.org/docs/reference/basic-syntax.html
 
-## 1.Kotlin注释
+### 1.Kotlin注释
 	Kotlin注释类似于Java和JavaScript，Kotlin支持行尾和块注释。
 	与Java不同的是，Kotlin中的块注释可以嵌套
 	// This is an end-of-line comment
 	/* This is a block comment
 	on multiple lines. */
 
-## 2.定义包名
+### 2.定义包名
 	包名位于源码文件顶部,与java相同!
 	但源码文件可在任意目录,不需要匹配包名
 	package com.demo
 	import java.util.*
 
-## 3.定义函数
-### ①.函数有两个Int参数,返回Int类型
+### 3.定义函数
+#### ①.函数有两个Int参数,返回Int类型
 	// 变量: 变量类型
 	fun sum(a: Int, b: Int): Int {
 		return a + b
@@ -62,14 +62,14 @@ tags: Kotlin
 		println(sum(3, 5)) 
 	}
 
-### ②.函数表达式推断返回类型
+#### ②.函数表达式推断返回类型
 	fun sum(a: Int, b: Int) = a + b	
 	
 	fun main(args: Array<String>) {
 		println(sum(3, 5))
 	}
 
-### ③.函数返回类型Unit
+#### ③.函数返回类型Unit
 	// Unit类似java的void, $表示取变量值
 	fun printSum(a: Int, b: Int): Unit {
 		println("sum of $a and $b is ${a + b}")
@@ -79,13 +79,13 @@ tags: Kotlin
 		printSum(3, 5)
 	}
 
-### ④.函数可省略返回类型Unit
+#### ④.函数可省略返回类型Unit
 	fun printSum(a: Int, b: Int) {
 		println("sum of $a and $b is ${a + b}")
 	}
 		
-## 4.定义局部变量
-### ①.只读变量val(只能赋值一次,之后不可变)
+### 4.定义局部变量
+#### ①.只读变量val(只能赋值一次,之后不可变)
 	fun main(args: Array<String>) {
 		val a: Int = 1 //立即初始化
 		val b = 2      //Int类型可被推断出来
@@ -94,14 +94,14 @@ tags: Kotlin
 		println("a = $a, b = $b, c = $c")
 	}
 
-### ②.可变变量var
+#### ②.可变变量var
 	fun main(args: Array<String>) {
 		var x = 5 //Int类型可被推断出来
 		x += 1    //x变量可以改变
 		println("x = $x")
 	}
 
-## 5.字符串模板
+### 5.字符串模板
 	fun main(args: Array<String>) {
 		var a = 1		
 		val s1 = "a is $a" // 简单变量模板
@@ -110,8 +110,8 @@ tags: Kotlin
 		println(s2)
 	}
 
-## 6.条件表达式
-### ①.条件if
+### 6.条件表达式
+#### ①.条件if
 	fun maxOf(a: Int, b: Int): Int {
 		if (a > b) {
 			return a
@@ -131,7 +131,7 @@ tags: Kotlin
 		println(maxOf(3, 5))
 	}
 
-### ②.条件when
+#### ②.条件when
 	fun describe(obj: Any): String =
 	when (obj) {
 		1          -> "One"
@@ -149,13 +149,13 @@ tags: Kotlin
 		println(describe("other"))
 	}
 
-## 7.可能空值时,检查null
+### 7.可能空值时,检查null
 	当可能为null值时,引用变量必须添加?标记	
 	fun parseInt(str: String): Int? {
 		return str.toIntOrNull()
 	}
 
-## 8.类型检查和自动转换
+### 8.类型检查和自动转换
 	is运算符可检查一个变量是否为某类型的实例
 	如果一个不可变的局部变量或属性是指定类型，则不需要显式转换：
 	fun getStringLength(obj: Any): Int? {
@@ -172,8 +172,8 @@ tags: Kotlin
 		return obj.length
 	}
 
-## 9.循环
-### ①.循环for
+### 9.循环
+#### ①.循环for
 	fun main(args: Array<String>) {
 		val items = listOf("apple", "banana", "kiwi")
 		for (item in items) {
@@ -191,7 +191,7 @@ tags: Kotlin
 		}
 	}
 
-### ②.循环while
+#### ②.循环while
 	fun main(args: Array<String>) {
 		val items = listOf("apple", "banana", "kiwi")
 		var index = 0
@@ -201,7 +201,7 @@ tags: Kotlin
 		}
 	}
 
-## 10.范围in运算符
+### 10.范围in运算符
 	检查数字是否在指定范围内
 	fun main(args: Array<String>) {
 		val x = 3
@@ -242,7 +242,7 @@ tags: Kotlin
 		3
 		1
 
-## 11.集合
+### 11.集合
 	迭代集合(循环遍历)
 	fun main(args: Array<String>) {
 		val items = listOf("apple", "banana", "kiwi")
