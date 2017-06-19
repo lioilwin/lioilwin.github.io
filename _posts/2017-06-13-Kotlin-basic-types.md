@@ -6,10 +6,7 @@ tags: Kotlin
 官方文档: http://kotlinlang.org/docs/reference/basic-types.html
 
 ## 1.介绍
-    在 Kotlin 中，一切数据类型都是对象，可以在任何变量上调用成员函数和属性。
-    有些类型是内置的，因为他们的实现是优化过的，但是用户看起来他们就像普通类。
-
-    因此，与java不同，Kotlin 基本类型也是对象。
+    与java不同，Kotlin所有数据类型都是对象，因此可在任何变量上调用成员函数和属性(字段)！
 
 ## 2.数字
     Kotlin 处理数字在某种程度上接近 Java，但是并不完全相同。
