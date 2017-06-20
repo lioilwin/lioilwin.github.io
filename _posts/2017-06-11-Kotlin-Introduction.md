@@ -37,11 +37,10 @@ tags: Kotlin
 官方文档: http://kotlinlang.org/docs/reference/basic-syntax.html
 
 ### 1.Kotlin注释
-	Kotlin注释类似于Java和JavaScript，Kotlin支持行尾和块注释。
-	与Java不同的是，Kotlin中的块注释可以嵌套
-	// This is an end-of-line comment
-	/* This is a block comment
-	on multiple lines. */
+	和Java一样，Kotlin支持行注释和块注释,
+	与Java不同的是，Kotlin块注释可嵌套
+		// 这是行注释
+		/* 这是块注释 */
 
 ### 2.定义包名
 	包名位于源码文件顶部,与java相同!

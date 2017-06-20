@@ -1,19 +1,19 @@
 ---
 layout: post
-title: Kotlin-类的属性和字段
+title: Kotlin-类属性和字段
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/properties.html
  
-## 1.声明类的属性
-    类的属性可用关键字var声明为可变的, val声明为只读:
+## 1.声明类属性
+    类属性可用关键字var声明为可变的, val声明为只读:
         class Address {
             var name: String = ...
             var street: String = ...
             var city: String =  ...         
         }
 
-    使用类的属性,和使用Java类的字段(成员变量)差不多:
+    使用类属性,和使用Java类字段(成员变量)差不多:
         fun copyAddress(address: Address): Address {
             val result = Address() // Kotlin没有new关键字
             result.name = address.name
@@ -21,7 +21,7 @@ tags: Kotlin
             return result
         }
 
-## 2.属性的Getters和Setters访问器
+## 2.属性访问器Getters和Setters
     声明属性的完整语法:
         var <propertyName>[: <PropertyType>] [= <initializer>]
             [<getter>]
