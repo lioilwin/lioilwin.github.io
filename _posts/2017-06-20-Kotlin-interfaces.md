@@ -1,79 +1,71 @@
 ---
 layout: post
-title: Kotlin-可见性修饰符
+title: Kotlin-接口
 tags: Kotlin
 ---
-官方文档: http://kotlinlang.org/docs/reference/visibility-modifiers.html
+官方文档: http://kotlinlang.org/docs/reference/interfaces.html
  
-## 1.可见性修饰符
-    在Kotlin中有四种可见性修饰符: private, protected, internal, public
-    如果没有指定,则默认是public
-    类/对象/接口/构造函数/方法/属性和setter都有可见性修饰符(getter与属性可见性相同) 
-  
-## 2.在包中
-    函数/属性/类/对象/接口都可在顶层声明(即直接在包内):
-        默认public: 随处可见
-        private: 只在声明的文件内可见
-        internal: 在相同模块内随处可见
-        protected: 不适用于顶层声明
-
-        // 文件名：example.kt
-        package foo
-
-        private fun foo() {}    // 只在example.kt内可见
-
-        public var bar: Int = 5 // 随处可见
-            private set         // set只在example.kt内可见
-
-        internal val baz = 6    // 在相同模块内可见
-
-    
-
-## 3.在类/接口中
-    类/接口的成员:
-        private: 只在本类中可见
-        protected: 在本类中和其子类中可见
-        internal: 本模块内都可见
-        public: 随处可见
-        注意: Kotlin外部类不能访问内部类的private成员
-
-        open class Outer {
-            private val a = 1
-            protected open val b = 2
-            internal val c = 3
-            val d = 4  // 默认 public
-            
-            protected class Nested {
-                public val e: Int = 5
+## 1.定义接口
+    Kotlin接口非常类似于Java 8，既可包含方法声明,也包含方法实现！
+    可以有属性,但只能声明为抽象或提供访问器实现!
+    与Java一样,使用关键字interface定义接口:
+        interface MyInterface {
+            fun bar() // 方法声明，抽象方法
+            fun foo() {
+                // 方法实现，非抽象方法
             }
         }
 
-        class Subclass : Outer() {
-            // a 不可见
-            // b、c、d 可见
-            // Nested 和 e 可见
-
-            override val b = 5   // 继承为protected
+## 2.实现接口
+    类或者对象可以实现一个或多个接口:
+        class Child : MyInterface {
+            override fun bar() {
+                // 方法体
+            }
         }
 
-        class Unrelated(o: Outer) {
-            // o.a o.b 不可见
-            // o.c o.d 可见
-            // Outer.Nested Nested::e 不可见
+## 3.接口属性
+    在接口中的属性既可以是抽象的,也可以有访问器的实现,
+    但不能有幕后字段(backing field),因此访问器不能引用它们。
+        interface MyInterface {
+            val prop: Int // 抽象abstract,不能初始化
+
+            val property: String
+                get() = "foo" // 有访问器的实现，非抽象
+
+            fun foo() {
+                print(prop)
+            }
         }
 
-## 4.构造函数
-    默认情况下,所有构造函数都是public,就等于类可见,它就可见!
-    指定类主构造函数的可见性(需要添加constructor):
-        class C private constructor(a: Int) {          
+        class Child : MyInterface {
+            override val prop: Int = 29
         }
 
-## 5.模块
-    可见性修饰符internal: 只在相同模块内可见
-    一个模块是一起编译的一套Kotlin文件:
-        一个IntelliJ IDEA模块
-        一个Maven或者Gradle项目
-        通过一次调用Ant任务编译的一套Kotlin文件
-      
-GitHub博客：http://lioil.win/2017/06/20/Kotlin-visibility.html   
-Coding博客：http://c.lioil.win/2017/06/20/Kotlin-visibility.html
+## 4.多接口覆盖冲突
+    实现多个接口时,可能会遇到[覆盖多个接口中同名方法]的问题:
+        interface A {
+            fun foo() { print("A") }
+            fun bar()
+        }
+
+        interface B {
+            fun foo() { print("B") }
+            fun bar() { print("bar") }
+        }        
+
+        class C : A, B {
+            override fun foo() {
+                // 多覆盖
+                super<A>.foo()
+                super<B>.foo()
+            }
+
+            override fun bar() {
+                // 单覆盖
+                super<B>.bar()
+            }
+        }
+        
+GitHub博客：http://lioil.win/2017/06/20/Kotlin-interfaces.html   
+Coding博客：http://c.lioil.win/2017/06/20/Kotlin-interfaces.html
