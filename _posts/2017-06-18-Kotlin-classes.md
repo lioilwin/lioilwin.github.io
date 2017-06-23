@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-类和继承
+title: Kotlin-类和继承(class/Inheritance)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/classes.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-基本类型/数据类型
+title: Kotlin-基本类型/数据类型(Basic Types)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/basic-types.html

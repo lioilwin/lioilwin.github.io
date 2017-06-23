@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-返回和跳转
+title: Kotlin-返回和跳转(return/break/continue)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/returns.html
@@ -14,7 +14,7 @@ tags: Kotlin
     和Java不同的是，这些表达式都可作为更大表达式的一部分:
             val s = person.name ?: return
 
-## 2.break 和 continue 标签@
+## 2.break和continue @标签
     和Java不同的是，在 Kotlin 中任何表达式都可以用 标签@ 来标记:
         loop@ for (i in 1..100) {
             for (j in 1..100) {
@@ -23,7 +23,7 @@ tags: Kotlin
             }
         }
 
-## 3.return 标签@
+## 3.return @标签
     Kotlin 有局部函数，因此Kotlin函数可被嵌套
 
     1.从外层函数返回：

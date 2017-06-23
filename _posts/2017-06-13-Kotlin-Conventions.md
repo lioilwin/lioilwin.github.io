@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-编码规范/编码风格
+title: Kotlin-编码规范/代码风格(Coding Conventions)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/coding-conventions.html

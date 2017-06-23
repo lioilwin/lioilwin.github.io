@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-入门介绍-基础语法
+title: Kotlin-入门介绍/基础语法(Basic Syntax)
 tags: Kotlin
 ---
 ## 一.介绍

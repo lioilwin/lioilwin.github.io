@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-接口
+title: Kotlin-接口(interface)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/interfaces.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android-Smali-入门介绍-基础语法
+title: Android-Smali-入门介绍/基础语法
 tags: Android
 ---
 # 一.介绍

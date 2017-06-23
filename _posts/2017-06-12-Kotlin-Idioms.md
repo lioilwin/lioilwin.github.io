@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-习惯用法/惯用语法/语法习惯
+title: Kotlin-惯用语法/语法习惯(Idioms)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/idioms.html

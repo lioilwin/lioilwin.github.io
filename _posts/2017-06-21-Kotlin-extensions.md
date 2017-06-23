@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Kotlin-类-扩展函数和属性
+title: Kotlin-扩展函数和属性(extensions)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/extensions.html
  
-## 1.扩展Extensions
+## 1.扩展(extensions)
     在不修改原类的情况下,
     Kotlin能给一个类扩展新功能,无需继承该类,也不用任何设计模式(如装饰模式等),
     Kotlin支持扩展函数和扩展属性!

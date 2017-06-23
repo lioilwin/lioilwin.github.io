@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-可见性修饰符
+title: Kotlin-可见性修饰符(Visibility Modifiers)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/visibility-modifiers.html

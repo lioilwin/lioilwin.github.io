@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-类属性和字段
+title: Kotlin-类属性和字段(Properties/Fields)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/properties.html

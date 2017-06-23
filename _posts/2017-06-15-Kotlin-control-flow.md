@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-控制流程-control-flow
+title: Kotlin-控制流程(control flow)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/control-flow.html
