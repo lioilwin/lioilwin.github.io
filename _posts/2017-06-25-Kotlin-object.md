@@ -50,14 +50,14 @@ tags: Kotlin
                     val x: String = "x"
                 }
 
-                // 公有函数,返回类型是Any
-                fun publicFoo() = object {
+                // 默认公有函数,返回类型是Any
+                fun pFoo() = object {
                     val x: String = "x"
                 }
 
                 fun bar() {
-                    val x1 = foo().x        // 正确: 类型是object{..},可以访问x
-                    val x2 = publicFoo().x  // 错误: 类型是Any,无法访问x
+                    val x1 = foo().x   // 正确: 类型是object{..},可以访问x
+                    val x2 = pFoo().x  // 错误: 类型是Any,无法访问x
                 }
             }
 
