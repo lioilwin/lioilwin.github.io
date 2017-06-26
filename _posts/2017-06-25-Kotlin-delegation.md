@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-代理/委托(Delegation)
+title: Kotlin-代理/委托类(Delegation)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/delegation.html
@@ -22,7 +22,7 @@ tags: Kotlin
             }
         }
 
-        //by base表示 Deg会存储base,并接收base所有方法/函数
+        //by base表示 Deg会存储base,代理Base所有方法/函数
         class Deg(base: Base) : Base by base{
             override fun p2() {
                 println("p2_Deg")
