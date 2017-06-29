@@ -6,12 +6,12 @@ tags: Kotlin
 官方文档: http://kotlinlang.org/docs/reference/lambdas.html
     
 ## 1.高阶函数(Higher-Order Functions)
-    高阶函数就是参数类型是一个函数 或 返回类型是一个函数,
+    高阶函数说白了就是它的参数类型是一个函数 或 返回类型是一个函数,
     它的作用和java回调很类似!
 
     1.实例一
         fun <T> lock(lock: Lock, body: () -> T): T {
-            // body参数类型是一个函数,其无参数,函数体是T
+            // body参数类型是一个函数,该函数的无参数,返回类型是T
             lock.lock()
             try {
                 return body()
@@ -33,7 +33,7 @@ tags: Kotlin
 
     2.实例二
         fun <T, R> List<T>.map(transform: (T) -> R): List<R> {
-            //transform参数类型是一个函数,其参数是T,函数体是R
+            //transform参数类型是一个函数,该函数的参数类型是T,返回类型是R
             val result = arrayListOf<R>()
             for (item in this)
                 result.add(transform(item))
@@ -50,9 +50,9 @@ tags: Kotlin
         map.forEach { _, value -> println("$value!") }
 
 ## 2.Lambda表达式/匿名函数/带接收者的函数
-    Lambda表达式的作用,简化函数写法:
+    Lambda表达式的作用,说白了就是为了简化函数写法:
         fun <T> max(collection: Collection<T>, less: (T, T) -> Boolean): T? {
-            //参数less的类型是(T, T) -> Boolean,一个函数有两个参数类型是T并返回类型是Boolean
+            //less参数类型是一个函数,该函数有两个参数类型是T,返回类型是Boolean
             var max: T? = null
             for (it in collection)
                 if (max == null || less(max, it))
