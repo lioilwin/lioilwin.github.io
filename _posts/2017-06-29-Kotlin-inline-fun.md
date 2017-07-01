@@ -48,6 +48,7 @@ tags: Kotlin
         }
 
 ## 2.非局部返回(Non-local returns)
+    在内联的lambda表达式中退出包含它的函数称为非局部返回(Non-local returns)!
     在Kotlin中,正常return(没有限定符@)表示退出一个命名或匿名函数
     所以要退出lambda表达式,return需要加限定符@标签,
     在非内联的lambda表达式中禁用正常return(没有限定符@):
@@ -79,8 +80,6 @@ tags: Kotlin
             }
         }
 
-    在内联的lambda表达式中退出包含它的函数称为非局部返回(Non-local returns)!
-
     此外,一些内联函数参数不是直接来自函数体,而是来自另一个上下文的lambda表达式参数,
     例如来自局部对象或嵌套函数,lambda表达式也不允许非局部返回!
     为了标识这种情况,该lambda表达式参数需要用crossinline修饰符:
@@ -106,8 +105,10 @@ tags: Kotlin
         //该函数调用很烦,很难看,很不优雅
         treeNode.findParentOfType(MyTreeNode::class.java)
 
-    为简化函数调用,内联函数支持类型参数具体化:
+    1.为简化函数调用,内联函数支持类型参数具体化:
         inline fun <reified T> TreeNode.findParentOfType(): T? {
+            //用reified修饰符类型参数T,可在函数内访问T,像访问普通类,
+            //由于函数是内联的,无需反射,正常操作符如!is和as都能用,
             var p = parent
             while (p != null && p !is T) {
                 p = p.parent
@@ -117,17 +118,15 @@ tags: Kotlin
         //该函数调用简洁优雅
         treeNode.findParentOfType<MyTreeNode>()
 
-        //用reified修饰符类型参数T,可在函数内访问T,像访问普通类,
-        //由于函数是内联的,无需反射,正常操作符如!is和as都能用,
-
-    虽然多数情况不需要反射,但仍然可对具体化的类型参数使用:
+    2.虽然多数情况不需要反射,但仍然可对具体化的类型参数使用:
         inline fun <reified T> membersOf() = T::class.members
         fun main(s: Array<String>) {
             println(membersOf<StringBuilder>().joinToString("\n"))
         }
 
-    普通函数(未标记为内联函数)不能具体化参数!
-    在运行时无法表示的类型(类似Nothing虚构类型)不能作为具体化参数的实参!
+    3.泛型的具体化条件
+        普通函数(未标记为内联函数)不能具体化参数!
+        在运行时无法表示的类型(类似Nothing虚构类型)不能作为具体化参数的实参!
 
 ## 4.内联属性(Inline properties)
     自kotlin 1.1起, inline可修饰[没有幕后字段]属性访问器get/set函数(方法)

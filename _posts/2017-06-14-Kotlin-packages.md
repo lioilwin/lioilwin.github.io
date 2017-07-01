@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-包(package)
+title: Kotlin-包和导入(package & import)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/packages.html
