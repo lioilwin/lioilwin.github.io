@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-协程(Coroutines)
+title: Kotlin-协程和线程(Coroutine & Thread)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/coroutines.html

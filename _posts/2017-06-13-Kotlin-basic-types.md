@@ -42,19 +42,20 @@ tags: Kotlin
         val bytes = 0b11010010_01101001_10010100_10010010
 
 ## 4.数字自动装箱-表示方式
-   Kotlin 数字在虚拟机中是物理存储为 JVM 的原生类型，除非我们需要一个可null引用（有?标记）或泛型。 后者情况下会把数字自动装箱（类似java包装类,如 int 自动转为 Integer）。
+    Kotlin数字在虚拟机中是物理存储为JVM原生类型,但如果是可null引用(有问号?)或者泛型对象,
+    那么kotlin数字就会自动装箱(类似java包装类,如int自动装箱转为Integer)
 
-    数字自动装箱：
-        val a: Int = 10000
-        print(a === a) // 输出“true”
-        val boxedA: Int? = a // 有? 自动装箱
-        val anotherBoxedA: Int? = a // 有? 自动装箱
-        print(boxedA === anotherBoxedA) // 输出“false”
-        // ===比较的是对象地址，自动装箱会生成新对象，所以对象不同，输出“false”
-        //当===比较的对象数值在 -128 和 127 之间时，自动装箱会重用同一个对象，这是java缓存机制
+    kotlin数字自动装箱的实例:
+        val a: Int = 10000       
+        val boxA: Int? = a //有问号? 会自动装箱
+        val boxB: Int? = a //有问号? 会自动装箱
 
-        print(boxedA == anotherBoxedA) // 输出“true”
-        // ==比较的是数值相同，输出“true”
+    kotlin三个等号===比较的是对象地址(引用),自动装箱会生成新对象,两个对象不同,输出false
+    但是数值在-128和127之间时,自动装箱会重用同一个对象(java缓存机制),输出true
+        print(boxA === boxB) //输出false,如果数值在-128和127之间,输出true
+        
+    kotlin两个等号==比较的是对象数值,两个对象数值相同,输出true
+        print(boxA == boxB) //输出true
 
 ## 5.显式转换
     范围较小数字类型不能隐式转换为范围较大类型。
