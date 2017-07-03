@@ -25,8 +25,8 @@ tags: Kotlin
     class A { //隐式标签 @A
         inner class B { //隐式标签 @B        
             fun p(){
-                666.foo()
                 println(this)//输出A$B@279f2327,this代指[B类对象]
+                666.foo()
             }
             
             fun Int.foo() { //隐式标签 @foo

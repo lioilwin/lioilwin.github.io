@@ -49,13 +49,15 @@ tags: Kotlin
 
 ## 4.两个等号==和三个等号===
     Kotlin有两种相等性(equality):
-        Referential/引用相等(两个引用指向同一对象): ===(否定形式!==)
+        1.Referential/引用相等(两个引用指向同一对象): ===(否定形式!==)
         三个等号===比较,是对象引用(地址),即判断是否同一个对象!
 
-        Structural/结构相等(用equals()检查): ==(否定形式!=)
+        2.Structural/结构相等(用equals()检查): ==(否定形式!=)
         两个等号==比较,是通过equals()函数进行比较!
 
     数据类已自动生成equals(),所以两个等号==比较的是对象数据,实例如下:
+        data class User(val name: String, val age: Int)
+        
         fun main(args: Array<String>) {
             val u1 = User("lioil", 1)
             val u2 = User("lioil", 1)
