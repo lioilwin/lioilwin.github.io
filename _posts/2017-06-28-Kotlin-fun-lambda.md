@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-高阶函数/lambda表达式/匿名函数
+title: Kotlin-高阶函数和lambda表达式/匿名函数
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/lambdas.html
@@ -73,7 +73,7 @@ tags: Kotlin
             println(max(list, ::compareFun)) //输出2
         }
 
-    1.Lambda表达式语法(Lambda Expression Syntax)
+### 1.Lambda表达式语法(Lambda Expression Syntax)
         Lambda表达式的完整语法如下:       
             val sum: (Int, Int) -> Int = { x, y -> x + y }
             //简化:
@@ -102,7 +102,7 @@ tags: Kotlin
                 shouldFilter
             }
 
-    2.匿名函数(Anonymous Functions)
+### 2.匿名函数(Anonymous Functions)
         lambda表达式无法指定返回类型,返回类型可以自动推断出,大多数情况是不必要!
         如果确实需要显式指定返回类型,可用匿名函数代替:
             fun(x: Int, y: Int): Int = x + y
@@ -115,22 +115,25 @@ tags: Kotlin
 
         除省略名称(匿名)外,匿名函数和正常函数没什么不同!
 
-    3.闭包(Closures)
-        Lambda表达式或者匿名函数(局部函数和对象表达式)可访问其闭包(即在外部作用域中声明的变量)
-        与Java不同,可修改闭包捕获的变量:
+### 3.闭包(Closures)
+        Lambda表达式或者匿名函数(局部函数local function和对象表达式object expression),
+        可访问其闭包closure(即在外部作用域中声明的变量)
+        与Java不同,在闭包(closure)中被捕获(captured)的变量可以被修改:
             var sum = 0
             ints.filter { it > 0 }.forEach {
                 sum += it
             }
             print(sum)
 
-    4.带接收者的函数(Function Literals with Receiver)
-        Kotlin提供带接收者的函数,可调用接收者对象的成员,而无需任何额外限定符!
+### 4.带接收者的字面函数(Function Literals with Receiver)
+        Kotlin提供了带接收者的字面函数(function literal),可使用接收者的成员,而无需任何额外限定符!
         相当于给接收者添加一个临时扩展函数,可在函数体内访问接收者对象的成员!
             实例一:
                 fun main(args: Array<String>) {
-                    //sum函数的接收者是Int类的对象
+                    //声明[sum函数]的[接收者]是[Int类对象]
                     val sum = fun Int.(other: Int): Int = this + other
+
+                    //把[接收者Int类对象2]传给[sum函数],调用[sum函数]
                     println(2.sum(1)) //输出3
                 }
             
@@ -140,13 +143,16 @@ tags: Kotlin
                     }             
                 }
 
+                //HTML.() -> Unit 声明[init函数]的[接收者]是[HTML类对象]
                 fun html(init: HTML.() -> Unit): HTML {
-                    val html = HTML()  //创建接收者对象
-                    html.init()        //接收者对象调用函数init
+                    val html = HTML() //创建接收者对象
+
+                    //把[接收者对象html]传给[init函数/lambda表达式],并调用init函数
+                    html.init() 
                     return html
                 }
 
-                html { body() } //带接收者的lambda表达式/函数
+                html { body() } //body() 带接收者的函数/lambda表达式
     
 GitHub博客：http://lioil.win/2017/06/28/Kotlin-fun-lambda.html   
 Coding博客：http://c.lioil.win/2017/06/28/Kotlin-fun-lambda.html
