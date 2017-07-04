@@ -117,5 +117,5 @@ tags: Kotlin
             val y = retrieveData()
         } while (y != null) // y 在此处可见
 
-GitHub博客：http://lioil.win/2017/06/14/Kotlin-control-flow.html   
-Coding博客：http://c.lioil.win/2017/06/14/Kotlin-control-flow.html
+GitHub博客：http://lioil.win/2017/06/15/Kotlin-control-flow.html   
+Coding博客：http://c.lioil.win/2017/06/15/Kotlin-control-flow.html
