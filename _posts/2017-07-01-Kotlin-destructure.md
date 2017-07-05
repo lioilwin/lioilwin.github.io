@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-解构声明(Destructuring Declaration)
+title: Kotlin-25.解构声明(Destructuring Declaration)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/multi-declarations.html
@@ -108,5 +108,6 @@ tags: Kotlin
             map.mapValues { (_, value): Map.Entry<Int, String> -> "$value!" }
             map.mapValues { (_, value: String) -> "$value!" }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74078507   
 GitHub博客：http://lioil.win/2017/07/01/Kotlin-destructure.html   
 Coding博客：http://c.lioil.win/2017/07/01/Kotlin-destructure.html

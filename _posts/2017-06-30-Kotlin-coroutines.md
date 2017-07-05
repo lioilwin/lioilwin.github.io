@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-协程和线程(Coroutine & Thread)
+title: Kotlin-24.协程和线程(Coroutine & Thread)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/coroutines.html
@@ -185,5 +185,6 @@ tags: Kotlin
         关于kotlinx.coroutines库的更多说明查看:
         https://github.com/Kotlin/kotlinx.coroutines/blob/master/coroutines-guide.md
        
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74018755   
 GitHub博客：http://lioil.win/2017/06/30/Kotlin-coroutines.html   
 Coding博客：http://c.lioil.win/2017/06/30/Kotlin-coroutines.html

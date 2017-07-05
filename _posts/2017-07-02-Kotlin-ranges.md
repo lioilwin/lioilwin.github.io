@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-区间/范围(Ranges)
+title: Kotlin-27.区间/范围(Ranges)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/ranges.html
@@ -116,5 +116,6 @@ tags: Kotlin
         (1..12 step 3).last == 10  //数列为[1, 4, 7, 10]
         (1..12 step 4).last == 9   //数列为[1, 5, 9]
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74160747   
 GitHub博客：http://lioil.win/2017/07/02/Kotlin-ranges.html   
 Coding博客：http://c.lioil.win/2017/07/02/Kotlin-ranges.html

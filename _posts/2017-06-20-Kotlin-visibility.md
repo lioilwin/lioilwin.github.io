@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-可见性修饰符(Visibility Modifiers)
+title: Kotlin-11.可见性修饰符(Visibility Modifiers)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/visibility-modifiers.html
@@ -74,6 +74,7 @@ tags: Kotlin
         一个IntelliJ IDEA模块
         一个Maven或者Gradle项目
         通过一次调用Ant任务编译的一套Kotlin文件
-      
+
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73522463   
 GitHub博客：http://lioil.win/2017/06/20/Kotlin-visibility.html   
 Coding博客：http://c.lioil.win/2017/06/20/Kotlin-visibility.html

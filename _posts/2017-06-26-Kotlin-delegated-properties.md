@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-代理/委托属性(delegated properties)
+title: Kotlin-20.代理/委托属性(delegated properties)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/delegated-properties.html
@@ -115,5 +115,6 @@ tags: Kotlin
             var age: Int     by map
         }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73751666   
 GitHub博客：http://lioil.win/2017/06/26/Kotlin-delegated-properties.html   
 Coding博客：http://c.lioil.win/2017/06/26/Kotlin-delegated-properties.html

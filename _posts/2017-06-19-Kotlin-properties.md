@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-类属性和字段(Properties/Fields)
+title: Kotlin-09.类属性和字段(Properties/Fields)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/properties.html
@@ -104,6 +104,7 @@ tags: Kotlin
     lateinit只能用在类体中的var属性,
     该属性不能自定义getter和setter方法,
     该属性必须是非空类型,不能是原生类型
-        
+
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73478111   
 GitHub博客：http://lioil.win/2017/06/19/Kotlin-properties.html   
 Coding博客：http://c.lioil.win/2017/06/19/Kotlin-properties.html

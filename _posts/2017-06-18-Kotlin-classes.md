@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-类和继承(class/Inheritance)
+title: Kotlin-08.类和继承(class/Inheritance)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/classes.html
@@ -143,6 +143,7 @@ tags: Kotlin
                 super<B>.f() // 调用 B.f()
             }
         }
-        
+
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73442373   
 GitHub博客：http://lioil.win/2017/06/18/Kotlin-classes.html   
 Coding博客：http://c.lioil.win/2017/06/18/Kotlin-classes.html

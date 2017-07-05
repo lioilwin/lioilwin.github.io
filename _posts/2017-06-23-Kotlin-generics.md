@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-泛型(generics)
+title: Kotlin-15.泛型(generics)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/generics.html
@@ -170,5 +170,6 @@ tags: Kotlin
             return list.filter { it > threshold }.map { it.clone() }
         }   
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73656998   
 GitHub博客：http://lioil.win/2017/06/23/Kotlin-generics.html   
 Coding博客：http://c.lioil.win/2017/06/23/Kotlin-generics.html

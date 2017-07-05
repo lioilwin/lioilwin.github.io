@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-相等性(Equality)
+title: Kotlin-30.相等性(Equality)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/equality.html
@@ -59,5 +59,6 @@ tags: Kotlin
             println(u1 == u2)  //输出false           
         }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74276269   
 GitHub博客：http://lioil.win/2017/07/03/Kotlin-equality.html   
 Coding博客：http://c.lioil.win/2017/07/03/Kotlin-equality.html

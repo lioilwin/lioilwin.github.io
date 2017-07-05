@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-包和导入(package & import)
+title: Kotlin-05.包和导入(package & import)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/packages.html
@@ -55,5 +55,6 @@ tags: Kotlin
 ## 4.顶层声明的可见性
     如果顶层声明是 private，它是该文件的私有成员！
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73257943   
 GitHub博客：http://lioil.win/2017/06/14/Kotlin-packages.html   
 Coding博客：http://c.lioil.win/2017/06/14/Kotlin-packages.html

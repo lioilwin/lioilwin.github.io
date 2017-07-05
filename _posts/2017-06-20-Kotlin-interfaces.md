@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-接口(interface)
+title: Kotlin-10.接口(interface)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/interfaces.html
@@ -66,6 +66,7 @@ tags: Kotlin
                 super<B>.bar()
             }
         }
-        
+
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73522216    
 GitHub博客：http://lioil.win/2017/06/20/Kotlin-interfaces.html   
 Coding博客：http://c.lioil.win/2017/06/20/Kotlin-interfaces.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-惯用语法/语法习惯(Idioms)
+title: Kotlin-02.惯用语法/语法习惯(Idioms)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/idioms.html
@@ -172,5 +172,6 @@ tags: Kotlin
         println(reader.readText())
     }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73149552   
 GitHub博客：http://lioil.win/2017/06/12/Kotlin-Idioms.html   
 Coding博客：http://c.lioil.win/2017/06/12/Kotlin-Idioms.html

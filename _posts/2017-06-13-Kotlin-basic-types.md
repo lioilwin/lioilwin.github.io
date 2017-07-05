@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-基本类型/数据类型(Basic Types)
+title: Kotlin-04.基本类型/数据类型(Basic Types)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/basic-types.html
@@ -179,6 +179,6 @@ tags: Kotlin
         val price = """
                     ${'$'}9.99
                     """
-
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73196341   
 GitHub博客：http://lioil.win/2017/06/13/Kotlin-basic-types.html   
 Coding博客：http://c.lioil.win/2017/06/13/Kotlin-basic-types.html

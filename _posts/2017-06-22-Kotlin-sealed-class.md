@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-密封类(sealed class)
+title: Kotlin-14.密封类(sealed class)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/sealed-classes.html
@@ -34,5 +34,6 @@ tags: Kotlin
             //无需再添加else子句,因为密封类是有限的,可以覆盖所有情况!
         }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73612144   
 GitHub博客：http://lioil.win/2017/06/22/Kotlin-sealed-class.html   
 Coding博客：http://c.lioil.win/2017/06/22/Kotlin-sealed-class.html

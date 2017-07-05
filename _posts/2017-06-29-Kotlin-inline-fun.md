@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-内联函数(Inline Functions)
+title: Kotlin-23.内联函数(Inline Functions)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/inline-functions.html
@@ -144,5 +144,6 @@ tags: Kotlin
             get() = ……
             set(v) { …… }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/d  etails/73929039   
 GitHub博客：http://lioil.win/2017/06/29/Kotlin-inline-fun.html   
 Coding博客：http://c.lioil.win/2017/06/29/Kotlin-inline-fun.html

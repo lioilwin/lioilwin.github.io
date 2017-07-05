@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-对象(object expressions/declarations)
+title: Kotlin-18.对象(object expressions/declarations)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/object-declarations.html
@@ -137,5 +137,6 @@ tags: Kotlin
         }
     在JVM平台,使用@JvmStatic注解,使伴生对象成员成为真正的静态方法和字段！        
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73717858   
 GitHub博客：http://lioil.win/2017/06/25/Kotlin-object.html   
 Coding博客：http://c.lioil.win/2017/06/25/Kotlin-object.html

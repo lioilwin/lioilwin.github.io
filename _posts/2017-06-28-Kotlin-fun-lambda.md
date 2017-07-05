@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-高阶函数和lambda表达式/匿名函数
+title: Kotlin-22.高阶函数和lambda表达式/匿名函数
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/lambdas.html
@@ -153,6 +153,7 @@ tags: Kotlin
                 }
 
                 html { body() } //body() 带接收者的函数/lambda表达式
-    
+
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73865425   
 GitHub博客：http://lioil.win/2017/06/28/Kotlin-fun-lambda.html   
 Coding博客：http://c.lioil.win/2017/06/28/Kotlin-fun-lambda.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-类型检查和转换(Type Cast)
+title: Kotlin-28.类型检查和转换(Type Cast)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/typecasts.html
@@ -71,6 +71,7 @@ tags: Kotlin
 
     尽管as?右边是一个非空类型String,但是as?转换失败时返回可空(null)
     说白了就是,as?函数参数String不能为null,但是as?函数的返回值可以是null
-        
+
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74164739     
 GitHub博客：http://lioil.win/2017/07/02/Kotlin-typecasts.html   
 Coding博客：http://c.lioil.win/2017/07/02/Kotlin-typecasts.html

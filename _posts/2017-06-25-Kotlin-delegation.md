@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-代理/委托类(Delegation)
+title: Kotlin-19.代理/委托类(Delegation)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/delegation.html
@@ -35,5 +35,6 @@ tags: Kotlin
             deg.p2() //输出p2_Deg
         }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73718749   
 GitHub博客：http://lioil.win/2017/06/25/Kotlin-delegation.html   
 Coding博客：http://c.lioil.win/2017/06/25/Kotlin-delegation.html

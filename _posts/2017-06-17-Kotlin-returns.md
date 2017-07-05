@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-返回和跳转(return/break/continue)
+title: Kotlin-07.返回和跳转(return/break/continue)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/returns.html
@@ -60,6 +60,7 @@ tags: Kotlin
 
     当return返回值时:
         return@a 1 // 从@a标记的函数返回1，不是返回标记的表达式(@a 1)”。
-        
+
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73381825  
 GitHub博客：http://lioil.win/2017/06/17/Kotlin-returns.html   
 Coding博客：http://c.lioil.win/2017/06/17/Kotlin-returns.html

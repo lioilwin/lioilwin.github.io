@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-数据类(data class)
+title: Kotlin-13.数据类(data class)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/data-classes.html
@@ -71,5 +71,6 @@ tags: Kotlin
             println(u1 === u3) //输出false, 对象引用(地址)不同
         }
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73611829   
 GitHub博客：http://lioil.win/2017/06/22/Kotlin-data-class.html   
 Coding博客：http://c.lioil.win/2017/06/22/Kotlin-data-class.html

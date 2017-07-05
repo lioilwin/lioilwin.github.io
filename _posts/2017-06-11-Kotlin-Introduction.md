@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-入门介绍/基础语法(Basic Syntax)
+title: Kotlin-01.入门介绍和基础语法(Basic Syntax)
 tags: Kotlin
 ---
 ## 一.介绍
@@ -269,5 +269,6 @@ tags: Kotlin
 		.forEach { println(it) }
 	}
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73062916   
 GitHub博客：http://lioil.win/2017/06/11/Kotlin-Introduction.html   
 Coding博客：http://c.lioil.win/2017/06/11/Kotlin-Introduction.html

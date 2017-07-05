@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-枚举类(enum class)
+title: Kotlin-17.枚举类(enum class)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/enum-classes.html
@@ -58,5 +58,6 @@ tags: Kotlin
 
     枚举常量也实现了Comparable接口, 其中自然顺序(natural order)是在枚举类中的定义顺序!
 
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73692421   
 GitHub博客：http://lioil.win/2017/06/24/Kotlin-enum-classes.html   
 Coding博客：http://c.lioil.win/2017/06/24/Kotlin-enum-classes.html
