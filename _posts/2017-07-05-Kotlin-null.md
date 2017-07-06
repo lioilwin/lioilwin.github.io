@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-32.Null引用安全(Null Safety)
+title: Kotlin-32.空指针安全/null安全(Null Safety)
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/null-safety.html
