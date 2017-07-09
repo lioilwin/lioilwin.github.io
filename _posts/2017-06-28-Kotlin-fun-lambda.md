@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kotlin-22.高阶函数和lambda表达式/匿名函数
+title: Kotlin-22.Lambda表达式和函数
 tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/lambdas.html

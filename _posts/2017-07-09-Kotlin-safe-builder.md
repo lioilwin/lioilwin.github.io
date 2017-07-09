@@ -5,7 +5,15 @@ tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/type-safe-builders.html
 
-## 1.安全的Html构建器(生成器)示例
+## 1.类型安全的构建器(Type-Safe Builders)
+    构建器(builder)的概念在Groovy社区中非常热门,
+    构建器允许以半声明(semi-declarative)方式定义数据
+    构建器很适合用来生成XML, UI布局, 描述3D场景...
+
+    多数情况下,Kotlin允许检查类型(type-check)构建器,比Groovy自身的动态类型实现更具吸引力;
+    其它情况下,Kotlin支持动态类型构建器
+
+## 2.Html构建器(生成器)示例
 本例使用kotlin构建/生成一个HTML树(文档),   
 代码中大量使用了前几章节kotlin的扩展函数和带接收者的lambda表达式,   
 并没有新kotlin语法知识!
