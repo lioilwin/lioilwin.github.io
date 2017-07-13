@@ -41,7 +41,7 @@ tags: Kotlin
         如果Java类某字段只有一个setter,在Kotlin中不会作为kotlin属性!
         因为Kotlin目前不支持只写(set-only)属性!
 
-## 3.返回void的方法
+## 3.返回void的方法(Methods returning void)
     如果一个Java方法返回void,那么从Kotlin调用时中返回Unit,
     如果使用该方法的返回值,它将被Kotlin编译器在调用处赋值,因为该值本身是预先知道(即Unit)
         //kotlin代码
@@ -57,14 +57,12 @@ tags: Kotlin
             }
         }
         
-
-## 4.Kotlin关键字的Java标识符进行转义
+## 4.对Java标识符(Kotlin关键字)进行转义(Escaping for Java identifiers)
     一些Kotlin关键字在Java中是有效标识符(如in,object,is等),
     如果Java类库使用了Kotlin关键字作为方法名,可用反引号(`)转义java方法名,然后在kotlin调用该方法
     示例:
         //is()是java方法名/函数名,但is是kotlin关键字,所以在kotlin中需要添加反引号`转义
         foo.`is`(bar)
-
 
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75000034   
 GitHub博客：http://lioil.win/2017/07/11/Kotlin-javaInKotlin.html   
