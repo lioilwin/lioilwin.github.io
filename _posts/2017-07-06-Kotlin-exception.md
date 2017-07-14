@@ -97,7 +97,16 @@ tags: Kotlin
             println(s)
         }
 
-## 4.kotlin与Java互操作性(Java Interoperability)相关的异常信息,参见其它章节!
+## 4.kotlin与Java互操作的异常处理(Java Interoperability)
+    在Kotlin中,所有异常都是非受检的,意味着编译器不会强迫捕获任何异常(try catch)! 
+    因此,在Kotlin中调用一个受检异常的Java方法,不会强迫你去捕获异常:   
+        //kotlin代码,调用java方法
+        fun render(list: List<*>, to: Appendable) {
+            for (item in list) {
+                //在kotlin中不要求捕获异常,但在Java中会强迫捕获异常IOException
+                to.append(item.toString()) 
+            }
+        }
 
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74617358   
 GitHub博客：http://lioil.win/2017/07/06/Kotlin-exception.html   
