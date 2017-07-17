@@ -50,14 +50,17 @@ tags: Kotlin
         }
     
 ## 2.没有受检异常(Checked Exceptions)
-    java两种异常类型: 受检异常(checked exception)和非受检异常(unchecked exception),
+    java两种异常类型: 受检异常(checked exception)和非受检异常(unchecked exception)
+        1.Error和RuntimeException及其子类都是受检异常(checked exception), 
+        2.其余的异常Exception都是非受检异常(unchecked exception);
     这两种异常在作用上没有差别,唯一差别在于在编译时编译器会检查受检异常,
-    所以受检异常需要try{}catch{}捕获来避免编译错误,而非受检异常不需要!
+    所以受检异常需要try catch捕获来避免编译错误,而非受检异常不需要!
+
     可见受检异常(Checked Exceptions)使用比较麻烦,争议非常大,可能会导致java API变得很复杂,
     程序跟异常检查代码混杂在一起,这仅仅是为了通过编译器的编译,
     许多人批评Java的受检异常,认为受检异常(Checked Exception)是软件工程中一次失败的试验!
 
-    kotlin没有受检的异常(Checked Exceptions),以下是kotlin不使用受检异常的原因描述:
+    kotlin没有受检异常(Checked Exceptions),以下是kotlin不使用受检异常的原因描述:
         JDK的StringBuilder类实现的一个示例接口:
             Appendable append(CharSequence csq) throws IOException;
         这个append函数签名throws IOException,每次追加一个字符串(StringBuilder/某种日志log/控制台console),
@@ -91,16 +94,16 @@ tags: Kotlin
             }
             
             //当调用该函数fail()时,编译器会知道执行不会超出该调用(说白了就是程序不会继续执行)
-            //程序中断输出:java.lang.IllegalArgumentException: Name required
+            //程序中断,输出 "java.lang.IllegalArgumentException: Name参数错误,不能为null"
             val name = null  
-            val s: String = name ?: fail("Name required")
+            val s: String = name ?: fail("Name参数错误,不能为null")
             println(s)
         }
 
 ## 4.kotlin与Java互操作的异常处理(Java Interoperability)
     在Kotlin中,所有异常都是非受检的,意味着编译器不会强迫捕获任何异常(try catch)! 
     因此,在Kotlin中调用一个受检异常的Java方法,不会强迫你去捕获异常:   
-        //kotlin代码,调用java方法
+        //kotlin代码,调用java方法,append(CharSequence csq) throws IOException;     
         fun render(list: List<*>, to: Appendable) {
             for (item in list) {
                 //在kotlin中不要求捕获异常,但在Java中会强迫捕获异常IOException
