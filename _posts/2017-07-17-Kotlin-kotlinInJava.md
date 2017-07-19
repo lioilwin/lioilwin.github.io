@@ -18,7 +18,7 @@ tags: Kotlin
         // kotlin代码          
         var firstName: String // Kotlin属性
 
-        // Java代码        
+        // kotlin编译生成的Java代码        
         private String firstName; // java私有字段        
         public String getFirstName() { // getter方法
             return firstName;
@@ -31,7 +31,7 @@ tags: Kotlin
         // kotlin代码         
         var isOpen: Boolean // Kotlin属性
 
-        // Java代码          
+        // kotlin编译生成的Java代码          
         private Boolean isOpen; // java私有字段        
         public Boolean isOpen() { // getter方法
             return firstName;
@@ -96,7 +96,7 @@ tags: Kotlin
             @JvmField val ID = id
         }
 
-        // Java
+        // Java调用kotlin
         class JavaClient {
             public String getID(C c) {
                 return c.ID;
