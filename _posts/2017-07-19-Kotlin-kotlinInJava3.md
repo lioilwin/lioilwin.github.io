@@ -5,7 +5,7 @@ tags: Kotlin
 ---
 官方文档: http://kotlinlang.org/docs/reference/java-to-kotlin-interop.html
 
-## 8.@JvmName解决java方法签名冲突(Handling signature clashes)    
+## 8.@JvmName解决java方法签名相同(Handling signature clashes)    
     最突出的例子是由于类型擦除(type erasure)引发:
         // 类型擦除: 无法区分List<String>和List<Int>
         fun List<String>.filterValid(): List<String>
@@ -107,7 +107,7 @@ tags: Kotlin
     注意：当参数类型是final时,通配符? extends没有意义,
             例如在Box<String>中的String类是final,没有子类(不能被继承extends)
 
-    如果在默认没有通配符的地方要求java泛型通配符, 可以使用@JvmWildcard注解:
+    如果在默认没有通配符处要求java泛型通配符, 可以使用@JvmWildcard注解:
         // kotlin函数
         fun boxDerived(value: Derived): Box<@JvmWildcard Derived> {            
         }
@@ -137,6 +137,6 @@ tags: Kotlin
         List emptyList() {            
         }
 
-CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75452363   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75452680   
 GitHub博客：http://lioil.win/2017/07/19/Kotlin-kotlinInJava3.html   
 Coding博客：http://c.lioil.win/2017/07/19/Kotlin-kotlinInJava3.html
