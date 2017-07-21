@@ -10,13 +10,13 @@ HttpServletResponse代表Http响应,写入Response缓冲区,
 	1)字节流输出
 	// 通知浏览器解码
 	response.setContentTye("text/html;charset=utf-8");
-	// 通知服务器编码
+	// 通知Tomcat服务器编码
 	response.getOutputStream().write("中文".getBytes("utf-8"));	
 	
 	2)字符流输出
 	// 通知浏览器解码
 	response.setContentType("text/html;charset=utf-8");
-	// 通知服务器编码(在setContentType()内部已调用)
+	// 通知Tomcat服务器编码(在setContentType()内部已调用)
 	response.setCharcterEncoding("utf-8");		
 	response.getWriter().write(“中文”);
 	
