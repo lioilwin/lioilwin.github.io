@@ -11,12 +11,12 @@ tags: Kotlin
     但如果想用Kotlin类型系统全部功能,需要在JavaScript库创建Kotlin头文件!
 
 ## 2.内联JavaScript(Inline JavaScript)
-    可用js("...")函数将JavaScript代码嵌入到Kotlin代码中:
+    可用js("JavaScript代码")函数将JavaScript代码嵌入到Kotlin代码中:
         fun jsTypeOf(o: Any): String {
             return js("typeof o")
         }
 
-    js()参数必须是字符串常量,因此以下代码错误:
+    js("...")函数参数必须是字符串常量,因此以下代码错误:
         fun jsTypeOf(o: Any): String {
             return js(getTypeof() + " o") // 此处报错
         }
@@ -126,5 +126,5 @@ tags: Kotlin
         4.它们不能用在类的字面值(literal)表达式(例如 I::class)中;
 
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75675844   
-GitHub博客:http://lioil.win/2017/07/21/Kotlin-jsInKotlin.html   
-Coding博客:http://c.lioil.win/2017/07/21/Kotlin-jsInKotlin.html
+GitHub博客: http://lioil.win/2017/07/21/Kotlin-jsInKotlin.html   
+Coding博客: http://c.lioil.win/2017/07/21/Kotlin-jsInKotlin.html
