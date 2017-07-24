@@ -14,41 +14,40 @@ tags: Kotlin
           当在运行时AMD和CommonJS都不可用时,作为plain使用!
 
 ## 2.选择目标模块系统(Choosing the Target Module System)
-    目标模块系统取决于构建环境(即项目依赖,编译环境)
+    目标模块系统取决于构建环境(即项目依赖,编译环境):
+    1.在IntelliJ IDEA中设置JS模块系统
+        设置单个模块:
+            打开"File -> Project Structure…",在"Modules"中找到模块,并选择"Kotlin",
+            在"Module kind"字段中选择合适的模块系统!
 
-### 1.在IntelliJ IDEA中设置JS模块系统
-    设置单个模块:
-        打开"File -> Project Structure…",在"Modules"中找到模块,并选择"Kotlin",
-        在"Module kind"字段中选择合适的模块系统!
+        设置整个项目:
+            打开"File -> Settings",选择"Build, Execution, Deployment" -> "Compiler" -> "Kotlin compiler",
+            在"Module kind"字段中选择合适的模块系统!
 
-    设置整个项目:
-        打开"File -> Settings",选择"Build, Execution, Deployment" -> "Compiler" -> "Kotlin compiler",
-        在"Module kind"字段中选择合适的模块系统!
+    2.在Maven中设置JS模块系统
+        在pom.xml设置moduleKind属性,选择模块系统
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>js</goal>
+                        </goals>
+                    </execution>
+                </executions>
 
-### 2.在Maven中设置JS模块系统
-    在pom.xml设置moduleKind属性,选择模块系统
-        <plugin>
-            <artifactId>kotlin-maven-plugin</artifactId>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <version>${kotlin.version}</version>
-            <executions>
-                <execution>
-                    <id>compile</id>
-                    <goals>
-                        <goal>js</goal>
-                    </goals>
-                </execution>
-            </executions>
+                <!-- moduleKind可用值: plain, amd, commonjs, umd -->
+                <configuration>
+                    <moduleKind>commonjs</moduleKind>
+                </configuration>          
+            </plugin>
 
-            <!-- moduleKind可用值: plain, amd, commonjs, umd -->
-            <configuration>
-                <moduleKind>commonjs</moduleKind>
-            </configuration>          
-        </plugin>
-
-### 3.在Gradle中设置JS模块系统
-   // 设置moduleKind属性, moduleKind可用值: plain, amd, commonjs, umd
-    compileKotlin2Js.kotlinOptions.moduleKind = "commonjs"
+    3.在Gradle中设置JS模块系统
+        // 设置moduleKind属性, moduleKind可用值: plain, amd, commonjs, umd
+        compileKotlin2Js.kotlinOptions.moduleKind = "commonjs"
 
 ## 3.@JsModule注解(@JsModule annotation)
     1.使用@JsModule注解,通知Kotlin一个external类/包/函数/属性是一个JavaScript模块!    
@@ -137,9 +136,9 @@ tags: Kotlin
         @JsName("topLevelSayHello")
         external fun sayHello(name: String)
 
-提示:
-    Kotlin 以kotlin.js标准库作为单个文件分发, 该文件本身被编译成UMD模块,因此可以使用上述任何模块系统;
-    也可以在NPM上使用kotlin package
+## 提示:
+    Kotlin把[kotlin.js标准库]作为单个文件分发,该文件本身被编译成UMD模块,
+    因此可以使用上述任何模块系统,也可以在NPM上使用kotlin package
             
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75948979   
 GitHub博客: http://lioil.win/2017/07/23/Kotlin-js-module.html   
