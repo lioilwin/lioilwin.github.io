@@ -55,15 +55,17 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 				try {
 					// 1.锁定Canvas
 					canvas = holder.lockCanvas();
-					// 2.通过canvas绘制图形
+					// 2.通过Canvas绘制图形
 					canvas.drawXX(...);
-					
-				} catch (Exception e) {									
+
+				} catch (Exception e) {
+					// 3.捕获异常,防止异常导致Canvas没有解锁					
 					e.printStackTrace();
+
 				} finally {
-					// 3.解锁Canvas,把图形更新到屏幕
+					// 4.解锁Canvas,把图形更新到屏幕
 					if (canvas != null)
-						holder.unlockCanvasAndPost(canvas);					
+						holder.unlockCanvasAndPost(canvas);
 				}
 				
 				long endTime = System.currentTimeMillis();
