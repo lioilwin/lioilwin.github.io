@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (转)为何要写博客，要工作？
+title: (转)工作是一种本能？
 tags: 人生百态
 ---
 

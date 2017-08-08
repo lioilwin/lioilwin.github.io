@@ -500,3 +500,9 @@ GitHub地址: https://github.com/pinceladasdaweb/Static-Site-Generators
 ## Tcl
 
 * [Tclssg](https://github.com/dbohdan/tclssg)	
+
+
+简书：http://www.jianshu.com/p/42dcb7784f42   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/51038561   
+GitHub博客: http://lioil.win/2016/04/01/Static-Site-Generators.html   
+Coding博客: http://c.lioil.win/2016/04/01/Static-Site-Generators.html
