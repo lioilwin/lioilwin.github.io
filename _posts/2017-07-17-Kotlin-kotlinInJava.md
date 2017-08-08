@@ -103,8 +103,10 @@ tags: Kotlin
             }
         }
 
-    延迟初始化的属性(lateinit修饰),其对应的Java字段的可见性与Kotlin属性访问器setter相同!   
+    延迟初始化的属性(lateinit修饰),其对应的Java字段的可见性与Kotlin属性访问器setter相同! 
 
+    
+简书：http://www.jianshu.com/p/1cf85aa9fcfc
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75268938   
 GitHub博客：http://lioil.win/2017/07/17/Kotlin-kotlinInJava.html   
 Coding博客：http://c.lioil.win/2017/07/17/Kotlin-kotlinInJava.html

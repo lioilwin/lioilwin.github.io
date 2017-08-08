@@ -86,6 +86,7 @@ tags: Kotlin
     
     org.w3c.xhr                JavaScript平台的XMLHttpRequest API的kotlin包装器(wrappers)
 
+简书：http://www.jianshu.com/p/6b092f3ed256
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74936890   
 GitHub博客：http://lioil.win/2017/07/10/Kotlin-stdlib.html   
 Coding博客：http://c.lioil.win/2017/07/10/Kotlin-stdlib.html

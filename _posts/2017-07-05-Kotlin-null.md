@@ -90,6 +90,7 @@ tags: Kotlin
         val nullableList: List<Int?> = listOf(1, 2, null, 4)
         val intList: List<Int> = nullableList.filterNotNull()
 
+简书：http://www.jianshu.com/p/f2da6e3eb53e
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74509791   
 GitHub博客：http://lioil.win/2017/07/05/Kotlin-null.html   
 Coding博客：http://c.lioil.win/2017/07/05/Kotlin-null.html

@@ -124,6 +124,7 @@ tags: Kotlin
         a >= b	    a.compareTo(b) >= 0
         a <= b	    a.compareTo(b) <= 0
 
+简书：http://www.jianshu.com/p/d0f5036fa076
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74364679   
 GitHub博客：http://lioil.win/2017/07/04/Kotlin-operator.html   
 Coding博客：http://c.lioil.win/2017/07/04/Kotlin-operator.html

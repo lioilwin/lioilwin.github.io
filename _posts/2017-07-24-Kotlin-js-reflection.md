@@ -29,6 +29,7 @@ tags: Kotlin
         println(B::class.js.name)     // 输出"B"
         foo<C>()                      // 输出"C"
 
+简书：http://www.jianshu.com/p/733ed159bb6c
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/76038731   
 GitHub博客: http://lioil.win/2017/07/24/Kotlin-js-reflection.html   
 Coding博客: http://c.lioil.win/2017/07/24/Kotlin-js-reflection.html

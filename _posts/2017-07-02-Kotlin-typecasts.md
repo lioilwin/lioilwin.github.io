@@ -72,6 +72,7 @@ tags: Kotlin
     尽管as?右边是一个非空类型String,但是as?转换失败时返回可空(null)
     说白了就是,as?函数参数String不能为null,但是as?函数的返回值可以是null
 
+简书：http://www.jianshu.com/p/7e4933dea417
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74164739     
 GitHub博客：http://lioil.win/2017/07/02/Kotlin-typecasts.html   
 Coding博客：http://c.lioil.win/2017/07/02/Kotlin-typecasts.html

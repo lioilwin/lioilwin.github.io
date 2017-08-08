@@ -144,6 +144,7 @@ tags: Kotlin
             }
         }
 
+简书: http://www.jianshu.com/p/2f9554932f74
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73442373   
 GitHub博客：http://lioil.win/2017/06/18/Kotlin-classes.html   
 Coding博客：http://c.lioil.win/2017/06/18/Kotlin-classes.html

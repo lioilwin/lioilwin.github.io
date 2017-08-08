@@ -96,6 +96,7 @@ tags: Kotlin
     所以必须通过调用Class<T>.kotlin扩展属性来手动转换:
         kotlin.jvm.JvmClassMappingKt.getKotlinClass(MainView.class)
 
+简书：http://www.jianshu.com/p/042ea2c9062c
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75332128   
 GitHub博客：http://lioil.win/2017/07/18/Kotlin-kotlinInJava2.html   
 Coding博客：http://c.lioil.win/2017/07/18/Kotlin-kotlinInJava2.html

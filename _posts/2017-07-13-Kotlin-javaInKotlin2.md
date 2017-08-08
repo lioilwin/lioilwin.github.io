@@ -117,6 +117,7 @@ tags: Kotlin
         if (a is List<Int>) // 错误: 无法检查a是否为Int列表       
         if (a is List<*>) // OK: 不保证列表内容
 
+简书：http://www.jianshu.com/p/bc65be16a489
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75093931   
 GitHub博客：http://lioil.win/2017/07/13/Kotlin-javaInKotlin2.html   
 Coding博客：http://c.lioil.win/2017/07/13/Kotlin-javaInKotlin2.html

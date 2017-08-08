@@ -179,6 +179,8 @@ tags: Kotlin
         val price = """
                     ${'$'}9.99
                     """
+
+简书: http://www.jianshu.com/p/084dec2793dc
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73196341   
-GitHub博客：http://lioil.win/2017/06/13/Kotlin-basic-types.html   
-Coding博客：http://c.lioil.win/2017/06/13/Kotlin-basic-types.html
+GitHub博客: http://lioil.win/2017/06/13/Kotlin-basic-types.html   
+Coding博客: http://c.lioil.win/2017/06/13/Kotlin-basic-types.html

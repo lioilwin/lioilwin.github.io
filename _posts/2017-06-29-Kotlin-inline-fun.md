@@ -144,6 +144,7 @@ tags: Kotlin
             get() = ……
             set(v) { …… }
 
+简书：http://www.jianshu.com/p/79396a5056d7
 CSDN博客: http://blog.csdn.net/qq_32115439/article/d  etails/73929039   
 GitHub博客：http://lioil.win/2017/06/29/Kotlin-inline-fun.html   
 Coding博客：http://c.lioil.win/2017/06/29/Kotlin-inline-fun.html

@@ -140,6 +140,7 @@ tags: Kotlin
     Kotlin把[kotlin.js标准库]作为单个文件分发,该文件本身被编译成UMD模块,
     因此可以使用上述任何模块系统,也可以在NPM上使用kotlin package
             
+简书：http://www.jianshu.com/p/6dddb7d4508c
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75948979   
 GitHub博客: http://lioil.win/2017/07/23/Kotlin-js-module.html   
 Coding博客: http://c.lioil.win/2017/07/23/Kotlin-js-module.html

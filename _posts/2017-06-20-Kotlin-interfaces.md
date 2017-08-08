@@ -67,6 +67,7 @@ tags: Kotlin
             }
         }
 
+简书: http://www.jianshu.com/p/88e9df011af9
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73522216    
 GitHub博客：http://lioil.win/2017/06/20/Kotlin-interfaces.html   
 Coding博客：http://c.lioil.win/2017/06/20/Kotlin-interfaces.html

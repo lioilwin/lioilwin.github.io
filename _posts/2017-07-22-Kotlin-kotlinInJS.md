@@ -79,6 +79,7 @@ tags: Kotlin
     11.Kotlin 在JavaScript中保留了惰性对象初始化
     12.Kotlin 在JavaScript中没有实现顶层属性的惰性初始化
 
+简书：http://www.jianshu.com/p/a377d6284f1c
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75808450   
 GitHub博客: http://lioil.win/2017/07/22/Kotlin-kotlinInJS.html   
 Coding博客: http://c.lioil.win/2017/07/22/Kotlin-kotlinInJS.html

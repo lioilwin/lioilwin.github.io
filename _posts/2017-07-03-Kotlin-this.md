@@ -58,6 +58,7 @@ tags: Kotlin
         }
     }
 
+简书：http://www.jianshu.com/p/8112eea496cf
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74276017   
 GitHub博客：http://lioil.win/2017/07/03/Kotlin-this.html   
 Coding博客：http://c.lioil.win/2017/07/03/Kotlin-this.html

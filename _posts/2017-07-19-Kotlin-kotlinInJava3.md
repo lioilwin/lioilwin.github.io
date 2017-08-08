@@ -137,6 +137,7 @@ tags: Kotlin
         List emptyList() {            
         }
 
+简书：http://www.jianshu.com/p/acdd8ba0830b
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75452680   
 GitHub博客：http://lioil.win/2017/07/19/Kotlin-kotlinInJava3.html   
 Coding博客：http://c.lioil.win/2017/07/19/Kotlin-kotlinInJava3.html

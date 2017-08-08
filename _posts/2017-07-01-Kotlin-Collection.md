@@ -110,6 +110,7 @@ tags: Kotlin
             println("$l, $s, $m")//输出:[a, b, b, b], [a, b], {1=a, 2=b}
         }
 
+简书：http://www.jianshu.com/p/e1d099c3724f
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74086374   
 GitHub博客：http://lioil.win/2017/07/01/Kotlin-Collection.html   
 Coding博客：http://c.lioil.win/2017/07/01/Kotlin-Collection.html

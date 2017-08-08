@@ -171,6 +171,7 @@ tags: Kotlin
         val prop = "abc"::length
         println(prop.get())   // 输出“3”
 
+简书：http://www.jianshu.com/p/52ab689ce1ec
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74852344   
 GitHub博客：http://lioil.win/2017/07/08/Kotlin-reflection.html   
 Coding博客：http://c.lioil.win/2017/07/08/Kotlin-reflection.html

@@ -64,6 +64,7 @@ tags: Kotlin
         //is()是java方法名/函数名,但is是kotlin关键字,所以在kotlin中需要添加反引号`转义
         foo.`is`(bar)
 
+简书：http://www.jianshu.com/p/d75c0141d61e
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75000034   
 GitHub博客：http://lioil.win/2017/07/11/Kotlin-javaInKotlin.html   
 Coding博客：http://c.lioil.win/2017/07/11/Kotlin-javaInKotlin.html

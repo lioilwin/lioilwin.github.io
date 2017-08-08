@@ -125,6 +125,7 @@ tags: Kotlin
         3.它们不能作为具体化类型参数(reified type)传递;
         4.它们不能用在类的字面值(literal)表达式(例如 I::class)中;
 
+简书：http://www.jianshu.com/p/d7259e03bd72
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75675844   
 GitHub博客: http://lioil.win/2017/07/21/Kotlin-jsInKotlin.html   
 Coding博客: http://c.lioil.win/2017/07/21/Kotlin-jsInKotlin.html

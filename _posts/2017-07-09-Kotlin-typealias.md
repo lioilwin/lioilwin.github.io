@@ -43,6 +43,7 @@ tags: Kotlin
             println(listOf(1, -2).filter(p)) // 输出 "[1]"
         }
 
+简书：http://www.jianshu.com/p/4968ed493d2d
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74906383   
 GitHub博客：http://lioil.win/2017/07/09/Kotlin-typealias.html   
 Coding博客：http://c.lioil.win/2017/07/09/Kotlin-typealias.html

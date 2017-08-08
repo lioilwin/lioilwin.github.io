@@ -115,6 +115,7 @@ tags: Kotlin
             var age: Int     by map
         }
 
+简书：http://www.jianshu.com/p/2464a5106f12
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73751666   
 GitHub博客：http://lioil.win/2017/06/26/Kotlin-delegated-properties.html   
 Coding博客：http://c.lioil.win/2017/06/26/Kotlin-delegated-properties.html

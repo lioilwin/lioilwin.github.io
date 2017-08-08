@@ -108,6 +108,7 @@ tags: Kotlin
             map.mapValues { (_, value): Map.Entry<Int, String> -> "$value!" }
             map.mapValues { (_, value: String) -> "$value!" }
 
+简书：http://www.jianshu.com/p/8f7cb57f4009
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/74078507   
 GitHub博客：http://lioil.win/2017/07/01/Kotlin-destructure.html   
 Coding博客：http://c.lioil.win/2017/07/01/Kotlin-destructure.html

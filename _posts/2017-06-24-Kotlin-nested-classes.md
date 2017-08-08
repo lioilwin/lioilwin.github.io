@@ -53,6 +53,7 @@ tags: Kotlin
             println("clicked") //lambda表达式-简化的匿名内部类
         }
 
+简书：http://www.jianshu.com/p/7f8c7c535cc0
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73692072   
 GitHub博客：http://lioil.win/2017/06/24/Kotlin-nested-classes.html   
 Coding博客：http://c.lioil.win/2017/06/24/Kotlin-nested-classes.html

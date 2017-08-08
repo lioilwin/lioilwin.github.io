@@ -61,6 +61,7 @@ tags: Kotlin
     当return返回值时:
         return@a 1 // 从@a标记的函数返回1，不是返回标记的表达式(@a 1)”。
 
+简书: http://www.jianshu.com/p/e866093868b4
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73381825  
-GitHub博客：http://lioil.win/2017/06/17/Kotlin-returns.html   
-Coding博客：http://c.lioil.win/2017/06/17/Kotlin-returns.html
+GitHub博客: http://lioil.win/2017/06/17/Kotlin-returns.html   
+Coding博客: http://c.lioil.win/2017/06/17/Kotlin-returns.html

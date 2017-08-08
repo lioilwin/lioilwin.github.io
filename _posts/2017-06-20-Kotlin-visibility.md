@@ -75,6 +75,7 @@ tags: Kotlin
         一个Maven或者Gradle项目
         通过一次调用Ant任务编译的一套Kotlin文件
 
+简书: http://www.jianshu.com/p/0f285925e32c
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73522463   
 GitHub博客：http://lioil.win/2017/06/20/Kotlin-visibility.html   
 Coding博客：http://c.lioil.win/2017/06/20/Kotlin-visibility.html

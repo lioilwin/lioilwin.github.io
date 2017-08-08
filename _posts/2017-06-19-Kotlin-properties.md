@@ -105,6 +105,7 @@ tags: Kotlin
     该属性不能自定义getter和setter方法,
     该属性必须是非空类型,不能是原生类型
 
+简书: http://www.jianshu.com/p/3a0ed4118fc9
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73478111   
-GitHub博客：http://lioil.win/2017/06/19/Kotlin-properties.html   
-Coding博客：http://c.lioil.win/2017/06/19/Kotlin-properties.html
+GitHub博客: http://lioil.win/2017/06/19/Kotlin-properties.html   
+Coding博客: http://c.lioil.win/2017/06/19/Kotlin-properties.html

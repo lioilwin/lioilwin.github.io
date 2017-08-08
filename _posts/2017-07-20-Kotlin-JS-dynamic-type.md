@@ -44,6 +44,7 @@ tags: Kotlin
 
     注意: in, !in以及..操作符,对于dynamic类型是被禁用(在JavaScript平台被禁用)!
 
+简书：http://www.jianshu.com/p/5f07f026edcf
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75579094   
 GitHub博客：http://lioil.win/2017/07/20/Kotlin-JS-dynamic-type.html   
 Coding博客：http://c.lioil.win/2017/07/20/Kotlin-JS-dynamic-type.html

@@ -67,6 +67,7 @@ tags: Kotlin
         计算廉价（或缓存第一次运行）
         不同调用返回相同结果
 
+简书: http://www.jianshu.com/p/38e0a096826a
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73195373   
-GitHub博客：http://lioil.win/2017/06/13/Kotlin-Conventions.html   
-Coding博客：http://c.lioil.win/2017/06/13/Kotlin-Conventions.html
+GitHub博客: http://lioil.win/2017/06/13/Kotlin-Conventions.html   
+Coding博客: http://c.lioil.win/2017/06/13/Kotlin-Conventions.html

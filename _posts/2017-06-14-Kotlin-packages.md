@@ -55,6 +55,7 @@ tags: Kotlin
 ## 4.顶层声明的可见性
     如果顶层声明是 private，它是该文件的私有成员！
 
+简书: http://www.jianshu.com/p/da6a69e9a399
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73257943   
-GitHub博客：http://lioil.win/2017/06/14/Kotlin-packages.html   
-Coding博客：http://c.lioil.win/2017/06/14/Kotlin-packages.html
+GitHub博客: http://lioil.win/2017/06/14/Kotlin-packages.html   
+Coding博客: http://c.lioil.win/2017/06/14/Kotlin-packages.html

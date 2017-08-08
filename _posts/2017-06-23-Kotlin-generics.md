@@ -170,6 +170,7 @@ tags: Kotlin
             return list.filter { it > threshold }.map { it.clone() }
         }   
 
+简书：http://www.jianshu.com/p/e9e743baa77a
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73656998   
 GitHub博客：http://lioil.win/2017/06/23/Kotlin-generics.html   
 Coding博客：http://c.lioil.win/2017/06/23/Kotlin-generics.html

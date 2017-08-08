@@ -71,6 +71,7 @@ tags: Kotlin
             println(u1 === u3) //输出false, 对象引用(地址)不同
         }
 
+简书：http://www.jianshu.com/p/cb807bf83e44
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73611829   
 GitHub博客：http://lioil.win/2017/06/22/Kotlin-data-class.html   
 Coding博客：http://c.lioil.win/2017/06/22/Kotlin-data-class.html

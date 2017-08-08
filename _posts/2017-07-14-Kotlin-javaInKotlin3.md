@@ -63,6 +63,7 @@ tags: Kotlin
 
     提示: 目前无法传递null给参数个数可变的方法!
 
+简书：http://www.jianshu.com/p/bc19337f0ff1
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/75138487   
 GitHub博客：http://lioil.win/2017/07/14/Kotlin-javaInKotlin3.html   
 Coding博客：http://c.lioil.win/2017/07/14/Kotlin-javaInKotlin3.html

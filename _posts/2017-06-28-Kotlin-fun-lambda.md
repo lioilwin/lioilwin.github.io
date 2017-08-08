@@ -154,6 +154,7 @@ tags: Kotlin
 
                 html { body() } //body() 带接收者的函数/lambda表达式
 
+简书：http://www.jianshu.com/p/8a83d962305f
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73865425   
 GitHub博客：http://lioil.win/2017/06/28/Kotlin-fun-lambda.html   
 Coding博客：http://c.lioil.win/2017/06/28/Kotlin-fun-lambda.html

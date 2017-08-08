@@ -182,6 +182,7 @@ tags: Kotlin
         C().call(D1())  // 输出 "D.foo in C", 扩展接收者静态解析(非多态)
         C1().call(D())  // 输出 "D.foo in C1",分发接收者虚拟解析(多态)
 
+简书：http://www.jianshu.com/p/b848b62e35ef
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/73556622   
 GitHub博客：http://lioil.win/2017/06/21/Kotlin-extensions.html   
 Coding博客：http://c.lioil.win/2017/06/21/Kotlin-extensions.html
