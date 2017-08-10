@@ -1,20 +1,18 @@
 ---
 layout: post
-title: 扫描更新媒体库
+title: Android-扫描更新媒体库(图库相册)
 tags: Android
 ---
-
-拍照或拍视频视频后，扫描把文件添加到系统媒体库，以便我们使用ContentResolver查询文件。
+拍照或拍视频视频后，扫描把文件添加到系统媒体库，也就是更新系统图库/相册，以便使用ContentResolver查询文件。
 
 ### 方法一、发送广播
 
 ```java
 
 sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,Uri.parse("file://"+filePath)));
-// 加权限：
+// 如果没有第二个权限,在4.2的手机上可以浏览但不会更新,在4.4完全扫描不到图片
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-// 没第二个权限在4.2的手机上可以浏览但不会更新，在4.4完全扫描不到图片。
 
 ```
 
@@ -22,6 +20,7 @@ sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,Uri.parse("file:/
 
 ```java
 
+// 指定更新某个文件, 添加到媒体库(相册)
 MediaScannerConnection.scanFile(context, new String[]{filePath}, null, null); 
 
 ```
@@ -46,3 +45,7 @@ msc.connect();
 
 ```
 
+简书: http://www.jianshu.com/p/6e59c2cfe94c   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/53711236   
+GitHub博客：http://lioil.win/2016/08/25/Update-Media-Scanner.html   
+Coding博客：http://c.lioil.win/2016/08/25/Update-Media-Scanner.html

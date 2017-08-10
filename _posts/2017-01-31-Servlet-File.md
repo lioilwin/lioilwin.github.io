@@ -6,35 +6,38 @@ tags: JavaEE
 # 一、文件上传
 
 ## 1.文件上传表单(Html)
-		<form action="${pageContext.request.contextPath}/UploadServlet" 
-			method="POST" enctype="multipart/form-data">
-			描述信息<input type="text" name="desc"/>
-				<input type="file" name="file1" />
-				<input type="file" name="file2" />
+	Html表单文件上传:
+		<form 
+			action="${pageContext.request.contextPath}/UploadServlet" 
+			method="POST"
+			enctype="multipart/form-data">
+				<input type="text" name="desc"/>
+				<input type="file" name="testFile1" />
+				<input type="file" name="testFile2" />
 				<input type="submit" value="上传"/>
 		</form>
 
-	Http请求:
-		POST /xxurl HTTP/1.1
-		Host: xxx.xx
-		Content-Length: 9631091
-		Content-Type: multipart/form-data; boundary=------PartBoundary
+	Http请求post格式:
+		POST /xxx HTTP/1.1
+		Host: x.x.x
+		Content-Length: xxxxxx
+		Content-Type: multipart/form-data; boundary=BoundarybXA7KWbsgAx0OB7z
 
-		------PartBoundary
+		--BoundarybXA7KWbsgAx0OB7z
 		Content-Disposition: form-data; name="desc"
 
-		两个壁纸压缩包
-		------PartBoundary
-		Content-Disposition: form-data; name="file1"; filename="壁纸1.zip"
+		...文本内容...
+		--BoundarybXA7KWbsgAx0OB7z
+		Content-Disposition: form-data; name="testFile1"; filename="文件1.zip"
 		Content-Type: application/octet-stream
 
-		......
-		------PartBoundary
-		Content-Disposition: form-data; name="file2"; filename="壁纸2.zip"
+		...文件内容...
+		--BoundarybXA7KWbsgAx0OB7z
+		Content-Disposition: form-data; name="testFile2"; filename="文件2.zip"
 		Content-Type: application/octet-stream
 
-		......
-		------PartBoundary--
+		...文件内容...
+		--BoundarybXA7KWbsgAx0OB7z--
 
 ## 2.Servlet文件上传
 
@@ -125,3 +128,6 @@ tags: JavaEE
 	response.setHeader("Content-Disposition", "attachment;filename="+URLEncoder.encode(filename,"utf-8"));
 	// MIME类型
 	response.setContentType(getServletContext().getMimeType(filename));
+
+GitHub博客：http://lioil.win/2017/01/31/Servlet-File.html
+Coding博客：http://c.lioil.win/2017/01/31/Servlet-File.html

@@ -1,133 +1,78 @@
 ---
 layout: post
-title: listveiw加checkbox
+title: Android-Listveiw的checkbox,Button焦点问题
 tags: Android
 ---
 
-适配器在getview()中重复使用【被移除屏幕的item】
-
-会造成被选中的checkbox重新出现，显示异常
-
-故需要记录checkbox的状态
-
 ```xml
 	
-	<!--CheckBox抢占Item焦点，导致Item点击无效。
-	方法一：CheckBox设置android:clickable="false" 
-	方法二：Item根布局设置android:descendantFocusability="blocksDescendants"-->
-	<LinearLayout
-			·······
-		android:descendantFocusability="blocksDescendants"
-			·······>
-			
-		<CheckBox
-			·······            
-			android:clickable="false" 
-			·······/>
-			
-	</LinearLayout>
+CheckBox抢占Item焦点，导致Item点击无效!
+方法一：CheckBox设置android:clickable="false" 
+方法二：在Item根布局或ListView布局设置android:descendantFocusability="blocksDescendants"
+
+在ListView的Item中的Button,CheckBox等子控件会抢占焦点,使得点击item本身没有响应！
+常用android:descendantFocusability=”blocksDescendants”覆盖子类控件焦点
+	descendantFocusability属性定义viewGroup和其子控件之间关系：
+	beforeDescendants：viewgroup会优先其子类控件而获取到焦点
+	afterDescendants：viewgroup只有当其子类控件不需要获取焦点时才获取焦点
+	blocksDescendants：viewgroup会覆盖子类控件而直接获得焦点
+
+<LinearLayout
+	android:descendantFocusability="blocksDescendants">
+		
+	<CheckBox
+		android:clickable="false"/>	
+</LinearLayout>
+
+<ListView
+	android:descendantFocusability="blocksDescendants"/>
 		
 ```
 
+适配器在getview()中重复使用[被移除屏幕的item,即不可见的项]    
+会造成被选中的checkbox重新出现，显示异常，故需要记录checkbox的状态！
+
 ```java
 
-public class MyAdapter extends BaseAdapter {
-	
-	public MyAdapter(···,HashMap<Integer, Boolean> isSelected){
-		······
+public class MyAdapter extends BaseAdapter implements OnItemClickListener {	
+	private HashMap<Integer, Boolean> isSelected; // 记录checkbox状态
+
+	public MyAdapter() {		
+		// 初始化所有checkbox为未选择  
+		isSelected = new HashMap<Integer, Boolean>();  
+		for (int i = 0; i < list.size(); i++)
+			isSelected.put(i, false);
 	}
 	
 	@Override  
 	public View getView(int position, View convertView, ViewGroup arg2) {              
-		if (convertView == null) {  
-			ViewHolder holder = new ViewHolder();  
-			convertView = inflater.inflate(R.layout.listview, null);
-			holder.cb = (CheckBox) convertView.findViewById(R.id.item_cb);  
-			convertView.setTag(holder);  
-		} else {  
-			holder = (ViewHolder) convertView.getTag();  
-		}
-		
-		// 显示checkbox的状态
-		holder.cb.setChecked(isSelected.get(position));
-		return view;  
+		ViewHolder holder;
+		...
+		holder.cb.setChecked(isSelected.get(position)); // 更新checkbox状态
+		return view;
+	}  
+
+	@Override  
+	public void onItemClick(AdapterView<?> arg0, View view,  
+			int position, long arg3) {
+		// 切换checkbox状态
+		isSelected.put(position, !isSelected.get(position));
+		notifyDataSetChanged();
 	}  
 
 }  
-	
-```
-
-```java
 
 public class MainActivity extends Activity {
-	······
-	// 记录checkbox状态
-	private HashMap<Integer, Boolean> isSelected
-	······
-	// 初始化所有checkbox为未选择  
-	isSelected = new HashMap<Integer, Boolean>();  
-	for (int i = 0; i < list.size(); i++) {  
-		isSelected.put(i, false);  
-	}
-	······	
-	// 设置带checkbox的listview    
-	listview.setAdapter(new MyAdapter(·····, isSelected));
-	listview.setOnItemClickListener(new OnItemClickListener() { 
-		@Override  
-		public void onItemClick(AdapterView<?> arg0, View view,  
-				int position, long arg3) {			
-			// 获取checkbox控件
-			ViewHolder holder = (ViewHolder) view.getTag();		
-			// 点击item切换checkbox状态
-			holder.cb.toggle();	
-			// 记录checkbox状态
-			isSelected.put(position, holder.cb.isChecked());						 
-		}  
-
-	});
-	
-    //全选  
-	xxx.setOnClickListener(new OnClickListener(){  
-		@Override  
-		public void onClick(View arg0) {
-			for(int i=0;i<list.size();i++){  
-				isSelected.put(i,true);
-			}
-			// 通知适配器checkbox状态改变
-			adapter.notifyDataSetChanged();			 
-		}  
-	});  
-	  
-	//反选  
-	xxx.setOnClickListener(new OnClickListener(){  
-		@Override  
-		public void onClick(View v) {  
-			for(int i=0;i<list.size();i++){  
-				if(isSelected.get(i)==false){  
-					isSelected.put(i, true);
-				}  
-				else{  
-					isSelected.put(i, false);
-				}  
-			}  
-			adapter.notifyDataSetChanged();
-		}  
-		  
-	});  
-          
-	//取消已选  
-	xxx.setOnClickListener(new OnClickListener(){  
-		@Override  
-		public void onClick(View v) {  
-			for(int i=0;i<list.size();i++){  
-				if(isSelected.get(i)==true){  
-					isSelected.put(i, false);
-				} 
-			}  
-			adapter.notifyDataSetChanged();
-		}  
-		  
-	});
+	...
+	MyAdapter adp = new MyAdapter();
+	listview.setAdapter(adp);
+	listview.setOnItemClickListener(adp);
+	...
 }
 
 ```
+
+简书：http://www.jianshu.com/p/b2aa0485f7b8   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/53710915   
+GitHub博客: http://lioil.win/2016/04/20/ListView-CheckBox.html   
+Coding博客: http://c.lioil.win/2016/04/20/ListView-CheckBox.html

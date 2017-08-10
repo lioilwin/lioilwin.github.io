@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 发送广播结束所有Activity
+title: Android-发送广播结束所有Activity
 tags: Android
 ---
 1、创建基类，注册广播Receiver，发送广播，注销广播Receiver，退出应用
@@ -65,3 +65,8 @@ Public class MyActivity extends BaseActivity {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/216e26f5c619   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/51020814    
+GitHub博客: http://lioil.win/2016/03/31/Exit-Android-App.html   
+Coding博客: http://c.lioil.win/2016/03/31/Exit-Android-App.html

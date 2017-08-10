@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 对话框自定义的5种方法
+title: Android-对话框自定义的5种方法
 tags: Android
 ---
 
@@ -71,8 +71,7 @@ tags: Android
 ## 5.使用Activity实现
 	在AndroidManifest.xml中
 	修改Actity主题android:theme="@style/MyDialogStyleBottom"
-	
-	
+		
 ## 滑出滑入动画
 	在values/styles.xml
 		<style name="AnimBottom">
@@ -97,3 +96,8 @@ tags: Android
 			android:fromYDelta="0"  
 			android:toYDelta="50%p" />  
 	</set>
+
+简书: http://www.jianshu.com/p/0d61d356ec52   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/53710981   
+GitHub博客: http://lioil.win/2016/05/05/Dialog-Style.html   
+Coding博客: http://c.lioil.win/2016/05/05/Dialog-Style.html
