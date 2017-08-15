@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bitmap压缩总结
+title: Android-Bitmap压缩总结
 tags: Android
 ---
 
@@ -54,3 +54,8 @@ matrix.setScale(0.5f, 0.5f);
 bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
 
 ```
+
+简书: http://www.jianshu.com/p/72e2161a3714   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/77201735   
+GitHub博客：http://lioil.win/2016/09/28/Bitmap-Compress.html   
+Coding博客：http://c.lioil.win/2016/09/28/Bitmap-Compress.html

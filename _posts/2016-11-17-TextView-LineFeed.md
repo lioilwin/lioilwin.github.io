@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TextView自定义换行
+title: Android-TextView自定义换行
 tags: Android
 ---
 
@@ -118,3 +118,8 @@ public class TextViewLineFeed extends TextView {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/5d8c8448af1b   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/53711576   
+GitHub博客：http://lioil.win/2016/11/17/TextView-LineFeed.html   
+Coding博客：http://c.lioil.win/2016/11/17/TextView-LineFeed.html
