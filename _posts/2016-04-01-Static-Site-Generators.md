@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 静态网站生成器大总结(Static-Site-Generators)
-tags: HtmlXml
+tags: Html_Xml
 ---
 # 一.介绍
 

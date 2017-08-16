@@ -1,7 +1,7 @@
 ---
 layout: post
-title: C-JNI-NDK-Java
-tags: C
+title: C_Cpp-C-JNI-NDK-Java
+tags: C_Cpp
 ---
 # 一.介绍	
 	JNI(Java Native Interface)是Java提供的编程接口，

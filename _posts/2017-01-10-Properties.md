@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Properties配置文件
+title: JavaSE-Properties配置文件
 tags: JavaSE
 ---
 
@@ -43,3 +43,8 @@ pro.store(os, "xxx");
 os.close();
 	
 ```
+
+简书: http://www.jianshu.com/p/4d7184397565   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54299889   
+GitHub博客：http://lioil.win/2017/01/10/Properties.html  
+Coding博客：http://c.lioil.win/2017/01/10/Properties.html

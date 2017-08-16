@@ -1,7 +1,7 @@
 ---
 layout: post
-title: VSCode编译调试C/C++
-tags: C
+title: C_Cpp-VSCode编译调试C/C++
+tags: C_Cpp
 ---
 	记录在Windows中使用VSCode编译调试C/C++
 

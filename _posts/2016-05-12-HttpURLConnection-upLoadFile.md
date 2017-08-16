@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java-HttpURLConnection上传文件
+title: JavaSE-HttpURLConnection上传文件
 tags: JavaSE
 ---
 ## 一.Http文件上传格式

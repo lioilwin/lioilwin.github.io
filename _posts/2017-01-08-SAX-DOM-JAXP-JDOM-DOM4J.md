@@ -1,7 +1,7 @@
 ---
 layout: post
-title: SAX/DOM、JAXP、JDOM和DOM4J
-tags: JavaEE
+title: JavaSE-SAX/DOM、JAXP、JDOM和DOM4J
+tags: JavaSE
 ---
 
 ## 1、DOM和SAX     
@@ -94,3 +94,8 @@ Dom4j是由早期开发JDOM的人分离出来而后独立开发、比JDOM性能�
 ```
 
 三种Java解析综合比较，DOM4J更好针对 Java开发者的易用性和直观操作，更完整的解决方案，处理所有Java/XML 问题，很多软件都采用Dom4j，例如Hibernate，sun公司的JAXM也用了Dom4j
+
+简书: http://www.jianshu.com/p/dfe369dce44d   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54236641  
+GitHub博客：http://lioil.win/2017/01/08/SAX-DOM-JAXP-JDOM-DOM4J.html  
+Coding博客：http://c.lioil.win/2017/01/08/SAX-DOM-JAXP-JDOM-DOM4J.html

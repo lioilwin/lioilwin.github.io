@@ -1,7 +1,7 @@
 ---
 layout: post
-title: XML、DTD和Schema
-tags: HtmlXml
+title: Xml-DTD和Schema
+tags: Html_Xml
 ---
 
 定义：XML是一种数据传输和存储格式，用标签保存数据内容，利用标签嵌套关系保存数据之间关系    
@@ -182,3 +182,8 @@ xmlns="www.xxx.com"可以忽略my 没有前缀默认使用这个空间
 </书架>
 
 ```
+
+简书: http://www.jianshu.com/p/a0aaef0900f9   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54355152   
+GitHub博客：http://lioil.win/2017/01/11/Xml-DTD-Schema.html 
+Coding博客：http://c.lioil.win/2017/01/11/Xml-DTD-Schema.html
