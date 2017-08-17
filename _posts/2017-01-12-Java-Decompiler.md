@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java反编译工具
+title: JavaSE-Java反编译工具
 tags: JavaSE
 ---
 
@@ -11,7 +11,8 @@ tags: JavaSE
 	官网不在了，不再更新，不支持java 5及以后版本！
 
 ## JD
-	官网http://jd.benow.ca、JD-Core更新于2014年、JD-GUI更新于2015年，不支持Java 5以后的一些新特性如syntactic sugar、Lambda、Default methods等！
+	官网http://jd.benow.ca、JD-Core更新于2014年、JD-GUI更新于2015年，
+	不支持Java 5以后的一些新特性如syntactic sugar、Lambda、Default methods等！
 
 # 二、新Java反编译工具
 	近年来，市场上出现了一些新java反编译工具，较好支持了Java 5到8新特性，如Fernflower、Procyon、CFR等等。
@@ -35,3 +36,8 @@ tags: JavaSE
 	免费，但没有开源, http://www.benf.org/other/cfr  
 	Author: Lee Benfield  
 	正在更新，能反编译Java新特性(如Java 8 lambdas、Java 7 switch字符串)。
+
+简书: http://www.jianshu.com/p/00ac305d808d   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54378548   
+GitHub博客：http://lioil.win/2017/01/12/Java-Decompiler.html   
+Coding博客：http://c.lioil.win/2017/01/12/Java-Decompiler.html

@@ -1,11 +1,13 @@
 ---
 layout: post
-title: java、javax、org和com.sun包的区别
+title: JavaSE-java, javax, org和com.sun包的区别
 tags: JavaSE
 ---
 
-来源：http://blog.csdn.net/ooppookid/article/details/51704792
-Java、javax、org、sun包都是jdk提供的类包，且都是在rt.jar中。rt.jar是JAVA基础类库（java核心框架中很重要的包），包含lang在内的大部分功能，而且rt.jar默认就在根classloader的加载路径里面，所以放在classpath是多此一举 。他们之间的区别具体如下：
+原文：http://blog.csdn.net/ooppookid/article/details/51704792
+java, javax, org和com.sun包都是jdk提供的类包，且都是在rt.jar中。rt.jar是JAVA基础类库（java核心框架中很重要的包），
+包含lang在内的大部分功能，而且rt.jar默认就在根classloader的加载路径里面，
+所以放在classpath是多此一举 。他们之间的区别具体如下：
 
 ## 1. java.* 
 Java SE的标准库，是java标准的一部分，是对外承诺的java开发接口，通常要保持向后兼容，一般不会轻易修改。包括其他厂家(IBMJDK/HPJDK/OpenJDK)在内，所有jdk的实现，在java.*上都是一样的。

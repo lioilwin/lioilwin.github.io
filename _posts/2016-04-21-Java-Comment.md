@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (转)为Java说句公道话
-tags: JavaSE
+tags: 人生百态
 ---
 ### 原文链接：http://www.yinwang.org/blog-cn/2016/01/18/java/?from=timeline&isappinstalled=1
 ### 原文链接已失效，本文从博客园搬过来！
