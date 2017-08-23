@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HttpServletRequest总结
+title: JavaEE-HttpServletRequest总结
 tags: JavaEE
 ---
 代表Http请求对象，可获取Http请求内容(请求行、请求头、请求体)
@@ -73,3 +73,8 @@ tags: JavaEE
 	可将多个Servlet输出合并一个输出，
 	被包含的Servlet不能改变Http响应的状态码和响应头(存在这样的语句将被忽略)
 	request.getRequestDispatcher("url").include(request,response);
+
+简书: http://www.jianshu.com/p/7cedab4b09ef    
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54628764   
+GitHub博客：http://lioil.win/2017/01/20/HttpServletRequest.html   
+Coding博客：http://c.lioil.win/2017/01/20/HttpServletRequest.html

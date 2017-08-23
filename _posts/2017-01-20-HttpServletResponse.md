@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HttpServletResponse总结
+title: JavaEE-HttpServletResponse总结
 tags: JavaEE
 ---
 HttpServletResponse代表Http响应,写入Response缓冲区,  
@@ -68,3 +68,8 @@ HttpServletResponse代表Http响应,写入Response缓冲区,
 	response.setHeader("Location", "url");
 	或
 	response.sendRedirect("url");
+
+简书: http://www.jianshu.com/p/c77022355847   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54628760   
+GitHub博客：http://lioil.win/2017/01/20/HttpServletResponse.html  
+Coding博客：http://c.lioil.win/2017/01/20/HttpServletResponse.html   
