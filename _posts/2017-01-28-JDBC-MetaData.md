@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JDBC基础-元数据
+title: JavaEE-JDBC基础-元数据
 tags: JavaEE
 ---
 	元数据: 数据库、表和字段的结构信息
@@ -51,3 +51,8 @@ tags: JavaEE
 	String cn = metaData.getColumnName(2);
 	// 获取结果集指定列类型
 	String ct = metaData.getColumnTypeName(3);
+
+简书: http://www.jianshu.com/p/c2a90c72405b   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54772868   
+GitHub博客：http://lioil.win/2017/01/28/JDBC-MetaData.html   
+Coding博客：http://c.lioil.win/2017/01/28/JDBC-MetaData.html

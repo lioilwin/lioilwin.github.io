@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JSP基础-EL表达式和JSTL标签库
+title: JavaEE-JSP基础-EL表达式和JSTL标签库
 tags: JavaEE
 ---
 	作用: 在JSP页面代替java代码,便于编写
@@ -228,3 +228,8 @@ tags: JavaEE
 		
 	<c:redirect>请求重定向
 		<c:redirect url="/index.jsp" context="${pageContext.request.contextPath}"></c:redirect>
+
+简书: http://www.jianshu.com/p/bbe7d7a2207e   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54685786   
+GitHub博客：http://lioil.win/2017/01/23/JSP-Taglibs.html   
+Coding博客：http://c.lioil.win/2017/01/23/JSP-Taglibs.html

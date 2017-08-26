@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Servlet-文件上传和下载
+title: JavaEE-Servlet-文件上传和下载
 tags: JavaEE
 ---
 # 一、文件上传
@@ -129,5 +129,7 @@ tags: JavaEE
 	// MIME类型
 	response.setContentType(getServletContext().getMimeType(filename));
 
-GitHub博客：http://lioil.win/2017/01/31/Servlet-File.html
+简书: http://www.jianshu.com/p/fc3198a7ea99  
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54800610  
+GitHub博客：http://lioil.win/2017/01/31/Servlet-File.html  
 Coding博客：http://c.lioil.win/2017/01/31/Servlet-File.html

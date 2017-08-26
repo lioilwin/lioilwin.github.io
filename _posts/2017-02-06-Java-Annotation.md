@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java注解(Annotation)
+title: JavaSE-Java注解(Annotation)
 tags: JavaSE
 ---
 	注解(Annotation): 
@@ -83,3 +83,8 @@ tags: JavaSE
 			System.out.println(myAnno3.id()+myAnno3.value());
 		}
 	}
+
+简书: http://www.jianshu.com/p/ef2c43a2e8ed  
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54892680   
+GitHub博客：http://lioil.win/2017/02/06/Java-Annotation.html   
+Coding博客：http://c.lioil.win/2017/02/06/Java-Annotation.html

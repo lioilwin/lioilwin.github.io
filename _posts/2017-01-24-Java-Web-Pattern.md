@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Web开发模式的变迁
+title: JavaEE-Java Web开发模式的变迁
 tags: JavaEE
 ---
 参考:  
@@ -88,3 +88,8 @@ tags: JavaEE
 		使在下层源码变化时不影响上层源码,实现上层相对独立于下层,上下层解耦！	
 	
 ![](http://img.blog.csdn.net/20160316002015045)
+
+简书: http://www.jianshu.com/p/45b487c295b9   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54706478   
+GitHub博客：http://lioil.win/2017/01/24/Java-Web-Pattern.html   
+Coding博客：http://c.lioil.win/2017/01/24/Java-Web-Pattern.html

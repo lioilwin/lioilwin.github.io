@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JDBC工具-DBUtils
+title: JavaEE-JDBC工具-DBUtils
 tags: JavaEE
 ---
 	commons-dbutils是Apache对JDBC简单封装的开源类库,减少JDBC对数据库增删改查的编码量。
@@ -37,3 +37,8 @@ tags: JavaEE
 	ScalarHandler(columnIndex) 获取结果集第一行数据指定列值,用于单值查询
 	
 	ColumnListHandler(columnIndex) 将结果集指定列存到List
+
+简书: http://www.jianshu.com/p/2c309defa9ce   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54772872   
+GitHub博客：http://lioil.win/2017/01/29/JDBC-DBUtils.html   
+Coding博客：http://c.lioil.win/2017/01/29/JDBC-DBUtils.html

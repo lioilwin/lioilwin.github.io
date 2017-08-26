@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JDBC基础-连接池(数据源)
+title: JavaEE-JDBC基础-连接池(数据源)
 tags: JavaEE
 ---	
 	数据库连接池(数据源): 批量创建和数据库之间的连接,缓存到连接池中,提高连接性能。
@@ -148,3 +148,8 @@ public class connDataSource implements DataSource {
 		JNDI(Java Naming and Directory Interface),对应于J2SE的javax.naming包		
 		把Java对象放在JNDI容器,为java对象取名,通过名称可检索出对象,
 		Context代表JNDI容器,context.lookup方法可检索容器中的对象。
+
+简书: http://www.jianshu.com/p/a0fa35f1899f   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54767154   
+GitHub博客：http://lioil.win/2017/01/27/JDBC-DataSource.html   
+Coding博客：http://c.lioil.win/2017/01/27/JDBC-DataSource.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JDBC基础-事务管理
+title: JavaEE-JDBC基础-事务管理
 tags: JavaEE
 ---
 # 1.事务概念
@@ -94,3 +94,8 @@ tags: JavaEE
 	
 	乐观锁使用场景:查询多,修改少。如果修改多,更新失败次数多,需多次重复更新。
 	悲观锁使用场景:查询少,修改多。如果查询多,更新少,悲观锁导致效率低。
+
+简书: http://www.jianshu.com/p/d6696fc8065f   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54767149   
+GitHub博客：http://lioil.win/2017/01/27/JDBC-Transaction.html   
+Coding博客：http://c.lioil.win/2017/01/27/JDBC-Transaction.html

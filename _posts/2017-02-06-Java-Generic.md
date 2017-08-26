@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java泛型(Generic)
+title: JavaSE-Java泛型(Generic)
 tags: JavaSE
 ---
 	泛型本质是参数化类型,即数据类型是一个参数。
@@ -66,3 +66,8 @@ tags: JavaSE
 	泛型边界
 	T extends A 指定泛型上边界类(泛型T必须是A类或其子类)		
 	T super B 指定泛型下边界类(泛型T必须是B类或其超类)
+
+简书: http://www.jianshu.com/p/f214a26f4277  
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54897872   
+GitHub博客：http://lioil.win/2017/02/06/Java-Generic.html   
+Coding博客：http://c.lioil.win/2017/02/06/Java-Generic.html

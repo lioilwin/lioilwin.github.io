@@ -49,3 +49,8 @@ tags: C_Cpp
 		}]
 	}
 	2).在当前源码文件中,添加断点,按F5,即可调试当前源码
+
+简书: http://www.jianshu.com/p/54ce3633ca34  
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54951361   
+GitHub博客：http://lioil.win/2017/02/09/VSCode-CppTool.html   
+Coding博客：http://c.lioil.win/2017/02/09/VSCode-CppTool.html

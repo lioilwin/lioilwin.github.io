@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 邮件协议SMTP/POP3/IMAP
+title: Internet-邮件协议SMTP/POP3/IMAP
 tags: Internet
 ---
 	SMTP(Simple Mail Transfer Protocol): 用于发送邮件,控制信件中转,找到下一目的地(默认端口25)
@@ -75,3 +75,8 @@ tags: Internet
 	
 	// 5.关闭连接
 	transport.close();
+
+简书: http://www.jianshu.com/p/de157adf987e  
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54859305   
+GitHub博客：http://lioil.win/2017/02/04/Email-SMTP-POP3.html   
+Coding博客：http://c.lioil.win/2017/02/04/Email-SMTP-POP3.html

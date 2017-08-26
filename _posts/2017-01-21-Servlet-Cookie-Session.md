@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Servlet会话Cookie和Session
+title: JavaEE-Servlet会话Cookie和Session
 tags: JavaEE
 ---
 浏览器开始访问网站到结束期间产生的多次请求响应组合是一次会话,
@@ -65,3 +65,8 @@ tags: JavaEE
 	request.getSession() 在URL重写前一定要先创建出Session
 	response.encodeURL() 一般地址重写
 	response.encodeRedirectURL() 重定向地址重写
+	
+简书: http://www.jianshu.com/p/be23dbf46392   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54644654   
+GitHub博客：http://lioil.win/2017/01/21/Servlet-Cookie-Session.html  
+Coding博客：http://c.lioil.win/2017/01/21/Servlet-Cookie-Session.html

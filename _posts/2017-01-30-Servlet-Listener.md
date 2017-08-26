@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Servlet-Filter和Listener
+title: JavaEE-Servlet-Filter和Listener
 tags: JavaEE
 ---
 # 一.过滤器Filter
@@ -151,3 +151,9 @@ tags: JavaEE
 		public void sessionWillPassivate(HttpSessionEvent se) {
 		}
 	}
+
+
+简书: http://www.jianshu.com/p/46e5b3bf42d7  
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/54791009   
+GitHub博客：http://lioil.win/2017/01/30/Servlet-Listener.html   
+Coding博客：http://c.lioil.win/2017/01/30/Servlet-Listener.html 
