@@ -155,6 +155,8 @@ tags: Android
 	if-ge 大于等于
 	if-lt 小于
 	if-le 小于等于
-		
+
+简书: http://www.jianshu.com/p/e601b4433d89   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72973025   	
 GitHub博客：http://lioil.win/2017/06/09/Android_Smali.html   
 Coding博客：http://c.lioil.win/2017/06/09/Android_Smali.html

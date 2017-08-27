@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android传感器-实现记录人行走的轨迹
+title: Android-传感器-实现记录人行走的轨迹
 tags: Android
 ---
 本文源码：https://github.com/lifegh/StepOrient
@@ -149,3 +149,8 @@ public class SensorUtil {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/06343a6aa8df   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/62961016   
+GitHub博客：http://c.lioil.win/2017/03/17/Android-Route.html   
+Coding博客：http://lioil.win/2017/03/17/Android-Route.html

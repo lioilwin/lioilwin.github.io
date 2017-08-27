@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 查看Android隐藏的API源码
+title: Android-查看隐藏的API源码
 tags: Android
 ---
 
@@ -32,3 +32,7 @@ Android.jar并不会打包到APK,所以去除@hide的Android.jar,只是欺骗IDE
 	1.Android隐藏API是因为不能保证这些API还存在新系统版本,所以尽量少用隐藏API！  
 	2.不利于团队合作,如果有人使用正常Android.jar就无法编译如endCall()之类的隐藏API！   
 
+简书: http://www.jianshu.com/p/c5d061d16b30   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/71436885   
+GitHub博客：http://lioil.win/2017/05/08/Android-HiddenAPI.html   
+Coding博客：http://c.lioil.win/2017/05/08/Android-HiddenAPI.html

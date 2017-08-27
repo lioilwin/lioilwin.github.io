@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android Widget-桌面应用小部件
+title: Android-Widget桌面应用小部件
 tags: Android
 ---
 官方文档中国版: https://developer.android.google.cn/guide/topics/appwidgets/index.html   
@@ -98,3 +98,8 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
 		........
 	  </LinearLayout>
 	</FrameLayout>
+
+简书: http://www.jianshu.com/p/c997b9040401   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/71598901   
+GitHub博客：http://lioil.win/2017/05/10/Android_Widget.html   
+Coding博客：http://c.lioil.win/2017/05/10/Android_Widget.html

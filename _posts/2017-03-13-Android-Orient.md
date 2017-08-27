@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android传感器-方向
+title: Android-传感器-方向
 tags: Android
 ---
 使用方向传感器，定位手机y轴方向(y轴与北方夹角0-360度)
@@ -129,3 +129,8 @@ public class OrientSensor implements SensorEventListener {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/066f667c99c3   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/61620059   
+GitHub博客：http://lioil.win/2017/03/13/Android-Orient.html    
+Coding博客：http://c.lioil.win/2017/03/13/Android-Orient.html

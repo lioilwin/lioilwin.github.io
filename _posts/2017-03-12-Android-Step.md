@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android传感器-计步
+title: Android-传感器-计步
 tags: Android
 ---
 参考文章：http://www.jianshu.com/p/5d57f7fd84fa
@@ -432,3 +432,8 @@ public class StepSensorAcceleration extends StepSensorBase {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/6b05b1b8603e   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/61619644   
+GitHub博客：http://lioil.win/2017/03/12/Android-Step.html    
+Coding博客：http://c.lioil.win/2017/03/12/Android-Step.html

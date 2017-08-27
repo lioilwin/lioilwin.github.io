@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android-Android Studio多个项目添加依赖同一个模块
+title: Android-Studio多个项目添加依赖同一个模块
 tags: Android
 ---
 参考: https://stackoverflow.com/questions/16588064/how-do-i-add-a-library-project-to-android-studio
@@ -60,9 +60,9 @@ eclipse的多个工作空间可以共享/引用/引入/依赖同一个项目(不
         compile project(':..:ProjectA:moduleLib')
     }
     
-
     此方法导入模块,在as中显示目录结构不好看! 建议使用方法一或二
 
+简书: http://www.jianshu.com/p/47156a6be8ce   
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/76039327   
 GitHub博客: http://lioil.win/2017/07/24/Android-AS-moudle.html   
 Coding博客: http://c.lioil.win/2017/07/24/Android-AS-moudle.html

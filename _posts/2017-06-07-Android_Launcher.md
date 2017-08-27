@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android应用-启动过程
+title: Android-应用启动过程
 tags: Android
 ---
 
@@ -169,6 +169,8 @@ PhoneWindow.java{
 }
 
 ```
-		
-GitHub博客：http://lioil.win/2017/06/07/Android_Launcher.html   
+
+简书: http://www.jianshu.com/p/30f61733fdaf   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72905465   
+GitHub博客：http://lioil.win/2017/06/07/Android_Launcher.html    
 Coding博客：http://c.lioil.win/2017/06/07/Android_Launcher.html

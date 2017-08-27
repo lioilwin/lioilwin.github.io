@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 设计模式-观察者模式
+title: JavaSE-设计模式-观察者模式
 tags: JavaSE
 ---
 # 一.介绍
@@ -69,6 +69,7 @@ public class 被观察者 extends Observable {
 
 ```
 
-GitHub博客：http://lioil.win/2017/05/28/Observer_Pattern.html
-
+简书: http://www.jianshu.com/p/1e4bf0b7f744   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72792614   
+GitHub博客：http://lioil.win/2017/05/28/Observer_Pattern.html   
 Coding博客：http://c.lioil.win/2017/02/28/Observer_Pattern.html

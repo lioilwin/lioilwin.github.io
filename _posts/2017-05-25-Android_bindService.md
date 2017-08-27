@@ -318,3 +318,8 @@ public class BindActivity extends Activity {
 	
 	客户端与服务在不同进程时, 建议服务单线程运行,
 	使用Messenger通信, 这也是Android官方推荐的！
+
+简书: http://www.jianshu.com/p/aec29a98bc1e   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72760479   
+GitHub博客：http://lioil.win/2017/05/25/Android_bindService.html   
+Coding博客：http://c.lioil.win/2017/05/25/Android_bindService.html

@@ -79,6 +79,7 @@ public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback
 
 ```
 
+简书: http://www.jianshu.com/p/65313d111a9f   
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/76223216   
 GitHub博客: http://lioil.win/2017/07/27/Android-SurfaceView.html   
 Coding博客: http://c.lioil.win/2017/07/27/Android-SurfaceView.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android系统-启动过程
+title: Android-系统启动过程
 tags: Android
 ---
 参考：http://blog.jobbole.com/67931/
@@ -139,6 +139,8 @@ tags: Android
 # 七.启动完成
 	一旦系统服务在内存中运行了，Android就完成启动过程，
 	这时“ACTION_BOOT_COMPLETED”开机广播就会发出
-		
-GitHub博客：http://lioil.win/2017/05/31/Android_Startup.html  
+
+简书: http://www.jianshu.com/p/74a491ddd13c   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72825018   	
+GitHub博客：http://lioil.win/2017/05/31/Android_Startup.html   
 Coding博客：http://c.lioil.win/2017/05/31/Android_Startup.html

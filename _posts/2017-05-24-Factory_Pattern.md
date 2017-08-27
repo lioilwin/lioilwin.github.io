@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 设计模式-三种工厂模式-比较区分
+title: JavaSE-设计模式-三种工厂模式-比较区分
 tags: JavaSE
 ---
 # 介绍
@@ -196,3 +196,8 @@ public class 客户{
 } 
 
 ```
+
+简书: http://www.jianshu.com/p/945396782853   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72719312   
+GitHub博客：http://lioil.win/2017/05/24/Factory_Pattern.html   
+Coding博客：http://c.lioil.win/2017/05/24/Factory_Pattern.html

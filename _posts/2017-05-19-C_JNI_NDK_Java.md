@@ -160,3 +160,8 @@ char* Jstring2CStr(JNIEnv* env, jstring jstr){
 }
 
 ```
+
+简书: http://www.jianshu.com/p/52b3774fbe2b   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72567183   
+GitHub博客：http://lioil.win/2017/05/19/C_JNI_NDK_Java.html   
+Coding博客：http://c.lioil.win/2017/05/19/C_JNI_NDK_Java.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android悬浮窗
+title: Android-系统悬浮窗
 tags: Android
 ---
 ```java
@@ -34,3 +34,8 @@ tags: Android
 	悬浮窗没有触摸点击事件,应该也是默认添加FLAG_NOT_TOUCHABLE
 
 	3.小米手机默认会关闭APP悬浮窗权限,需要用户手动设置开启APP权限！
+
+简书: http://www.jianshu.com/p/3653181a5c66   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/71379941   
+GitHub博客：http://lioil.win/2017/05/07/Android_Sys_Window.html
+Coding博客：http://c.lioil.win/2017/05/07/Android_Sys_Window.html

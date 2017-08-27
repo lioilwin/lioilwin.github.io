@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Http-断点-多线程-下载文件
+title: JavaSE-Http断点/多线程下载文件
 tags: JavaSE
 ---
 
@@ -96,3 +96,8 @@ public class MutiThreadDownload {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/cb8fab446acd   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/70180205   
+GitHub博客：http://lioil.win/2017/04/14/Java-MutiThreadDown.html   
+Coding博客：http://c.lioil.win/2017/04/14/Java-MutiThreadDown.html

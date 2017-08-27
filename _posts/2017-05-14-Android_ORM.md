@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android数据库-ORM框架
+title: Android-数据库-ORM框架
 tags: Android
 ---
 # 一.ORM介绍  
@@ -254,3 +254,7 @@ private void testDb2() {
 
 ```
 	
+简书: http://www.jianshu.com/p/ad04259ed980   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72034554   
+GitHub博客：http://lioil.win/2017/05/14/Android_ORM.html   
+Coding博客：http://c.lioil.win/2017/05/14/Android_ORM.html

@@ -67,3 +67,8 @@ tags: JavaScript
 </html>
 
 ```
+
+简书: http://www.jianshu.com/p/9e495ea9aea6   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72582063   
+GitHub博客：http://lioil.win/2017/05/20/JS_Html_Canvas.html   
+Coding博客：http://c.lioil.win/2017/05/20/JS_Html_Canvas.html

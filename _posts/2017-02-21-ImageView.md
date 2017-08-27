@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 图片裁剪/旋转/缩放
+title: Android-图片裁剪/旋转/缩放
 tags: Android
 ---
 ## 1.系统裁剪
@@ -45,3 +45,8 @@ tags: Android
 	}
 
 ```
+
+简书: http://www.jianshu.com/p/26a17eeed5b8   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/56278330   
+GitHub博客：http://lioil.win/2017/02/21/ImageView.html   
+Coding博客：http://c.lioil.win/2017/02/20/ImageView.html

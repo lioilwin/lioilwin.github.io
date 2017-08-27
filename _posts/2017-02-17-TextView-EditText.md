@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TextView-EditText笔记
+title: Android-TextView-EditText笔记
 tags: Android
 ---	
 
@@ -65,3 +65,8 @@ tags: Android
 	mulAuto.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,
 			new String[]{"Belgium", "France", "Italy", "Germany", "Spain"}));
 	mulAuto.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer()); // 逗号分隔多个输入
+
+简书: http://www.jianshu.com/p/0f7a332c99b2  
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/56278327   
+GitHub博客：http://lioil.win/2017/02/17/TextView-EditText.html   
+Coding博客：http://c.lioil.win/2017/02/17/TextView-EditText.html 

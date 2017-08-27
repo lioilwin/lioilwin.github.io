@@ -83,3 +83,8 @@ tags: Android
 		Gallery.LayoutParams
 		只继承了ViewGroup.LayoutParams，以layout_xxx开头参数只有layout_width,layout_height被定义了，
 		其它layout_xxx参数分别定义在FrameLayout，LinearLayout，RelativeLayout。
+
+简书: http://www.jianshu.com/p/b2b845f3a836   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/70462232   
+GitHub博客：http://lioil.win/2017/04/22/Android-LayoutParamsInvalid.html   
+Coding博客：http://c.lioil.win/2017/04/22/Android-LayoutParamsInvalid.html

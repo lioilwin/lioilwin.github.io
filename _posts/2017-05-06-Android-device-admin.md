@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 设备管理器Device Administration
+title: Android-设备管理器Device Administration
 tags: Android
 ---
 官方文档中国版: https://developer.android.google.cn/guide/topics/admin/device-admin.html   
@@ -123,3 +123,8 @@ tags: Android
 	intent.addCategory("android.intent.category.DEFAULT");
 	intent.setData(Uri.parse("package:"+getPackageName()));
 	startActivity(intent);
+
+简书: http://www.jianshu.com/p/46c0fb914421   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/71270479   
+GitHub博客：http://lioil.win/2017/05/06/Android-device-admin.html   
+Coding博客：http://c.lioil.win/2017/05/06/Android-device-admin.html

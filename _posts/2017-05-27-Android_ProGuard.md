@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android SDK-ProGuard-默认混淆配置
+title: Android-SDK默认混淆配置ProGuard
 tags: Android
 ---	
 # 一.介绍	
@@ -130,3 +130,8 @@ tags: Android
 }
 
 ```
+
+简书: http://www.jianshu.com/p/c667764f1f3a   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72785344   
+GitHub博客：http://lioil.win/2017/05/27/Android_ProGuard.html   
+Coding博客：http://c.lioil.win/2017/02/27/Android_ProGuard.html

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android绘图-绘制导航箭头
+title: Android-绘图-绘制导航箭头
 tags: Android
 ---
 
@@ -155,3 +155,8 @@ public class MainSurfaceView extends SurfaceView {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/824674356f05   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/65946310   
+GitHub博客：http://lioil.win/2017/03/25/Canvas-Arrow.html   
+Coding博客：http://c.lioil.win/2017/03/25/Canvas-Arrow.html

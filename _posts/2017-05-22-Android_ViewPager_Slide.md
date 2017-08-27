@@ -87,3 +87,8 @@ public class MainActivity extends Activity {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/bcb4ff9cdca7   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72633317   
+GitHub博客：http://lioil.win/2017/05/22/Android_ViewPager_Slide.html
+Coding博客：http://c.lioil.win/2017/05/22/Android_ViewPager_Slide.html

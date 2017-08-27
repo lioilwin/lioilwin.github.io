@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android控件-View自定义属性-简化写法
+title: Android-View自定义属性-简化写法
 tags: Android
 ---
 ## 一.声明属性类型(res/values/attrs.xml)
@@ -78,3 +78,8 @@ public class MyView extends View{
 }
 
 ```
+
+简书: http://www.jianshu.com/p/b03ef5fab122   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/72670139   
+GitHub博客：http://lioil.win/2017/05/23/Android_View_attr.html   
+Coding博客：http://c.lioil.win/2017/05/23/Android_View_attr.html

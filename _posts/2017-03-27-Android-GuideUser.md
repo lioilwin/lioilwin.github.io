@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android绘图-半透明图引导用户
+title: Android-绘图-半透明图引导用户
 tags: Android
 ---
 
@@ -284,3 +284,8 @@ public class GuideUserView extends RelativeLayout {
 }
 
 ```
+
+简书: http://www.jianshu.com/p/48a078632fd4   
+CSDN博客: http://blog.csdn.net/qq_32115439/article/details/67006241   
+GitHub博客：http://lioil.win/2017/03/27/Android-GuideUser.html   
+Coding博客：http://c.lioil.win/2017/03/27/Android-GuideUser.html
