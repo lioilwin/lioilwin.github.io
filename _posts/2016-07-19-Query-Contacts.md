@@ -29,8 +29,8 @@ tags: Android
 			sms.body AS snippet,
 			sms.thread_id AS thread_id,
 			groups.msg_count AS msg_count,
-			sms.date AS,
-			sms.address
+			sms.date AS date,
+			sms.address AS addr
 		FROM  
 			sms, (SELECT thread_id AS group_thread_id, MAX(date) AS group_date, 
 			COUNT(*) AS msg_count FROM sms GROUP BY thread_id) AS groups

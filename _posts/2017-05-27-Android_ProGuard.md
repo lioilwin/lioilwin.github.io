@@ -36,7 +36,7 @@ tags: Android
 #基本指令----------------------------------
 -printmapping proguardMapping.txt #输出混淆前后代码映射关系
 -keepattributes Signature #保留泛型
-# -renamesourcefileattribute 重命名源码文件.java #崩溃抛出异常时,源码文件名自定义
+# -renamesourcefileattribute XXX.java #崩溃抛出异常时,源码文件名自定义
 -keepattributes SourceFile, LineNumberTable #崩溃抛出异常时,保留源码文件名和源码行号
  
 #移除log代码
