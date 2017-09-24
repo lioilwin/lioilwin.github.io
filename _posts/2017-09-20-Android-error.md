@@ -3,7 +3,7 @@ layout: post
 title: Android-易错点归纳
 tags: Android
 ---
-## 1.在Service中启动Activity的问题
+## 1.在Service中启动Activity/Dialog的问题
 	在Service中启动startActivity会出现异常: 
 	android.util.AndroidRuntimeException: Calling startActivity() from outside of an Activity
 	context requires the FLAG_ACTIVITY_NEW_TASK flag

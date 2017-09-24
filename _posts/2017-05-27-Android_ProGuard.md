@@ -80,7 +80,7 @@ tags: Android
 -dontskipnonpubliclibraryclasses
 -verbose
 -dontpreverify
--keepattributes *Annotation*
+-keepattributes *Annotation* #注解
 
 -keep public class com.google.vending.licensing.ILicensingService
 -keep public class com.android.vending.licensing.ILicensingService
