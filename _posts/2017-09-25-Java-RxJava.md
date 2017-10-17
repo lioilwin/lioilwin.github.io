@@ -145,6 +145,7 @@ http://www.jianshu.com/nb/5864063
                 System.out.println(integer);
             }
         });
+		
 ### 2.flatMap-数据集合扁平化(遍历循环每一个元素)
     List<String> list = new ArrayList<>();
     list.add("1");
