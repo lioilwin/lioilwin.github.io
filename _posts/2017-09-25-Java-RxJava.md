@@ -167,7 +167,7 @@ http://www.jianshu.com/nb/5864063
         }
     });
 
-### 3.map-缓存满后,以list集合发送数据
+### 3.buffer-缓存满后,以list集合发送数据
     List<String> list = new ArrayList<>();
     list.add("1");
     list.add("2");
