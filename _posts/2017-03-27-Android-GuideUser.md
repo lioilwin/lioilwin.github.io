@@ -1,51 +1,36 @@
 ---
 layout: post
-title: Android-绘图-半透明图引导用户
+title: Android-绘图-半透明/蒙层引导用户
 tags: Android
 ---
-
-一.使用半透明图引导
+## 一.使用半透明图引导
 
 ```java
 	
-	// 布局1
-	TextView tv = new TextView(getActivity());
-	tv.setText("yyyyyy");
-	tv.setTextColor(Color.WHITE);
-	tv.setTextSize(14);
-	ImageView iv = new ImageView(getActivity());
-	iv.setImageResource(R.drawable.arrow);
-	LinearLayout layout1 = new LinearLayout(getActivity());
-	layout1.setOrientation(LinearLayout.VERTICAL);
-	layout1.addView(iv);
-	layout1.addView(tv);
+// 同时添加两个目标View，即同一层图两个高亮目标View
+GuideUserView.show(MainActivity.this,
+	new ViewEntity(目标View1, R.layout.guide1, Direction.BOTTOM),
+	new ViewEntity(目标View2, R.layout.guide2, Direction.BOTTOM));
 	
-	// 布局2
-	TextView tv2 = new TextView(getActivity());
-	tv2.setText("xxxxxx");
-	tv2.setTextColor(Color.WHITE);
-	tv2.setTextSize(14);
-	ImageView iv2 = new ImageView(getActivity());
-	iv2.setImageResource(R.drawable.arrow);
-	LinearLayout layout2 = new LinearLayout(getActivity());
-	layout2.setOrientation(LinearLayout.VERTICAL);
-	layout2.addView(tv2);
-	iv2.setRotation(180);
-	layout2.addView(iv2);
-	
-	// 显示半透明引导界面
-	// layout1，layout2分别为自定义布局
-	// targetView1，targetView2分别为需要高亮的目标控件，Shape.ELLIPSE，Shape.RECTANGULAR是高亮形状
-	// Direction.BOTTOM，Direction.TOP分别是layout1，layout2布局相对于targetView1，targetView2的方位
-	new GuideUserView(getActivity(),
-			new ViewEntity(targetView1, Shape.ELLIPSE, layout1, Direction.BOTTOM),
-			new ViewEntity(targetView2, Shape.RECTANGULAR, layout2, Direction.TOP))
-			.show();			
+// 自定义布局guide1.xml
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <View
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/arrow"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用说明"/>
+</LinearLayout>
 
 ```
 
-# 二.GuideUserView类
-	
+## 二.GuideUserView类	
 	1.GuideUserView类继承相对布局  	
 	2.添加自定义布局mCustomLayout，通过Margins设置mCustomLayout的位置  
 	3.用canvas在mTargetView周围绘制高亮圆圈  
@@ -53,39 +38,184 @@ tags: Android
 
 ```java
 
-public class GuideUserView extends RelativeLayout {
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
+import static com.wellcell.view.GuideUserView.Shape.CIRCULAR;
+import static com.wellcell.view.GuideUserView.Shape.ELLIPSE;
+import static com.wellcell.view.GuideUserView.Shape.RECTANGULAR;
+
+@SuppressLint("ViewConstructor")
+public class GuideUserView extends RelativeLayout implements ViewTreeObserver.OnGlobalLayoutListener {
     private final static String TAG = "GuideUserView";
-    private final static String PREID = "isShowGuideUserView_";
-    private String guideID;
+    private final static String PRI = "GuideUserViewID_";
+    private final ClickListener mClickListener;
     private Context mContent;
     private final Paint mPaint = new Paint();
     private final RectF mRect = new RectF();
-
-    private int mBgColor = 0x88000000; // 半透明背景
     private ViewEntity[] mViews; // 目标View、自定义布局等参数实体数组
+    private boolean handleTouch = false;
 
-    public GuideUserView(Context context, ViewEntity... views) {
+    /**
+     * 默认显示一次
+     */
+    public static void show(Context context, ViewEntity... views) {
+        GuideUserView.show(true, null, context, views);
+    }
+
+    /**
+     * 默认显示一次，监听点击
+     */
+    public static void show(ClickListener clickListener, Context context, ViewEntity... views) {
+        GuideUserView.show(true, clickListener, context, views);
+    }
+
+    public static void show(boolean showOne, ClickListener clickListener, Context context, ViewEntity... views) {
+        try {
+            if (showOne) {
+                String id = PRI + views[0].mCustomLayoutID;
+                if (context.getSharedPreferences(TAG, Context.MODE_PRIVATE).getBoolean(id, false))
+                    return;
+                context.getSharedPreferences(TAG, Context.MODE_PRIVATE).edit().putBoolean(id, true).apply();
+            }
+            new GuideUserView(context, clickListener, views);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private GuideUserView(Context context, ClickListener clickListener, ViewEntity... views) {
         super(context);
         mContent = context;
+        mClickListener = clickListener;
         mViews = views;
         mPaint.setAntiAlias(true);
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT)); // 去除两次绘图的交集
+        setBackgroundColor(Color.TRANSPARENT);
+        getViewTreeObserver().addOnGlobalLayoutListener(this);
+        /*
+            在Activity上面添加半透明/蒙层的引导View，有两种方法
+            方法一
+            ((FrameLayout) ((Activity) mContent).getWindow().getDecorView()).addView(this);
+            ((FrameLayout) ((Activity) mContent).getWindow().getDecorView()).removeView(this);
+            使用DecorView().addView，引导蒙层界面会被PopupWindow，Dialog等弹窗遮挡
+
+            方法二
+            WindowManager.LayoutParams params = new WindowManager.LayoutParams();
+            params.format = PixelFormat.TRANSLUCENT;
+            ((Activity) mContent).getWindow().getWindowManager().addView(this, params);
+            ((Activity) mContent).getWindow().getWindowManager().removeView(this);
+            该方法能覆盖PopupWindow，Dialog等弹窗，但有时获取目标View的坐标偶尔会失效，
+            获取目标View的坐标方法：View.getLocationOnScreen, View.getLocationOnScreen,
+                              View.getGlobalVisibleRect, View.getLocalVisibleRect
+        */
+        ((FrameLayout) ((Activity) mContent).getWindow().getDecorView()).addView(this); //添加蒙层View
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.i(TAG, "onMeasure: " + getMeasuredWidth() + "," + getMeasuredWidth());
+    public boolean onTouchEvent(MotionEvent event) {
+        if (!handleTouch) {
+            handleTouch = true;
+            if (mClickListener != null)
+                mClickListener.onClick();
+//            ((Activity) mContent).getWindow().getWindowManager().removeView(this);
+            ((FrameLayout) ((Activity) mContent).getWindow().getDecorView()).removeView(this);//移除蒙层View
+        }
+        return true;
+    }
+
+    @Override
+    public void onGlobalLayout() {// 监听全局视图树开始布局
+        getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        addCustomView();
+    }
+
+    protected void addCustomView() {// 在目标view周围添加自定义布局
+        int statusBarHeight = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0)
+            statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+        for (final ViewEntity ve : mViews) {
+            // 获取targetView的中心坐标
+            if (ve.mTargetView != null) {
+                ve.targetW = ve.mTargetView.getWidth() / 2;
+                ve.targetH = ve.mTargetView.getHeight() / 2;
+                ve.mTargetView.getLocationOnScreen(ve.mCenter);
+                ve.mCenter[0] += ve.targetW;
+                ve.mCenter[1] += ve.targetH;
+            }
+            // 方位
+            LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            if (ve.mDirection != null) {
+                int width = getWidth();
+                int height = getHeight();
+                int left = ve.mCenter[0] - ve.targetW;
+                int right = ve.mCenter[0] + ve.targetW;
+                int top = ve.mCenter[1] - ve.targetH;
+                int bottom = ve.mCenter[1] + ve.targetH;
+                switch (ve.mDirection) {
+                    case TOP:
+                        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                        params.setMargins(0, 0, 0, height - top);
+                        break;
+                    case LEFT:
+                        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                        params.setMargins(0, top, width - left, 0);
+                        break;
+                    case BOTTOM:
+                        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                        params.setMargins(0, bottom, 0, 0);
+                        break;
+                    case RIGHT:
+                        params.setMargins(right, top, 0, 0);
+                        break;
+                    case LEFT_TOP:
+                        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                        params.setMargins(0, 0, width - left, height - top);
+                        break;
+                    case LEFT_BOTTOM:
+                        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                        params.setMargins(0, bottom, width - left, 0);
+                        break;
+                    case RIGHT_TOP:
+                        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                        params.setMargins(right, 0, 0, height - top);
+                        break;
+                    case RIGHT_BOTTOM:
+                        params.setMargins(right, bottom, 0, 0);
+                        break;
+                }
+            } else {
+                params.addRule(RelativeLayout.CENTER_IN_PARENT);
+            }
+            View view = LayoutInflater.from(getContext()).inflate(ve.mCustomLayoutID, this, false);
+            addViewInLayout(view, -1, params, true);// 添加view, 不会重新布局
+        }
+        requestLayout();// 统一重新布局
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        addCustomView();// 添加自定义布局
         canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG); // 新建图层
-        canvas.drawColor(mBgColor);// 绘制半透明背景
+        canvas.drawColor(0x77000000);// 绘制半透明背景
         // 在目标View周围裁剪出高亮圆圈
         for (ViewEntity ve : mViews) {
-            if (ve.targetW == 0 || ve.targetH == 0) return;
+            if (ve.targetW == 0 || ve.targetH == 0)
+                return;
             if (ve.mShape == ELLIPSE) {
                 // 椭圆
                 mRect.left = ve.mCenter[0] - ve.targetW;
@@ -100,185 +230,51 @@ public class GuideUserView extends RelativeLayout {
                 mRect.right = ve.mCenter[0] + ve.targetW;
                 mRect.bottom = ve.mCenter[1] + ve.targetH;
                 canvas.drawRoundRect(mRect, 16, 16, mPaint);
-            } else {
+            } else if (ve.mShape == CIRCULAR) {
                 // 圆形
                 canvas.drawCircle(ve.mCenter[0], ve.mCenter[1], ve.targetW, mPaint);
             }
         }
     }
 
-
-    /**
-     * 在targetView周围添加mCustomGuideView布局，默认在下方
-     */
-    protected void addCustomView() {
-        for (ViewEntity ve : mViews) {
-            if (ve.mCustomLayout.getParent() != null || ve.mCustomLayout == null) return;
-            // 获取targetView的中心坐标
-            if (ve.mTargetView != null) {
-                ve.targetW = ve.mTargetView.getWidth() / 2;
-                ve.targetH = ve.mTargetView.getHeight() / 2;
-                ve.mTargetView.getLocationInWindow(ve.mCenter);
-                ve.mCenter[0] += ve.targetW;
-                ve.mCenter[1] += ve.targetH;
-            }
-
-            LayoutParams params = (LayoutParams) ve.mCustomLayout.getLayoutParams();
-            if (params == null) {
-                params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-            }
-            if (ve.mDirection != null) {
-                int width = getWidth();
-                int height = getHeight();
-                int left = ve.mCenter[0] - ve.targetW;
-                int right = ve.mCenter[0] + ve.targetW;
-                int top = ve.mCenter[1] - ve.targetH;
-                int bottom = ve.mCenter[1] + ve.targetH;
-                switch (ve.mDirection) {
-                    case TOP:
-                        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-                        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                        params.setMargins(0, -height + top, 0, height - top);
-                        break;
-                    case LEFT:
-                        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-                        params.setMargins(width + left, top, width - left, -top);
-                        break;
-                    case BOTTOM:
-                        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                        params.setMargins(0, bottom, 0, -bottom);
-                        break;
-                    case RIGHT:
-                        params.setMargins(right, top, -right, -top);
-                        break;
-                    case LEFT_TOP:
-                        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-                        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-                        params.setMargins(width + left, -height + top, width - left, height - top);
-                        break;
-                    case LEFT_BOTTOM:
-                        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-                        params.setMargins(-width + left, bottom, width - left, -bottom);
-                        break;
-                    case RIGHT_TOP:
-                        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-                        params.setMargins(right, -height + top, -right, height - top);
-                        break;
-                    case RIGHT_BOTTOM:
-                        params.setMargins(right, bottom, -right, -top);
-                        break;
-                }
-            } else {
-                params.addRule(RelativeLayout.CENTER_IN_PARENT);
-            }
-            ve.mCustomLayout.setX(ve.offsetX);
-            ve.mCustomLayout.setY(ve.offsetY);
-            // 添加view，但阻止重新布局和重绘
-            addViewInLayout(ve.mCustomLayout, -1, params, true);
-        }
-        // 统一重新布局和重绘
-        requestLayout();
-        invalidate();
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        hide();
-        return super.onTouchEvent(event);
-    }
-
-    public void show() {
-//        if (mContent.getSharedPreferences(TAG, Context.MODE_PRIVATE)
-//                .getBoolean(getUniqId(), false)) return;
-//        mContent.getSharedPreferences(TAG, Context.MODE_PRIVATE)
-//                .edit().putBoolean(getUniqId(), true).apply();
-        setBackgroundColor(Color.TRANSPARENT);
-        ((FrameLayout) ((Activity) mContent).getWindow().getDecorView()).addView(this);
-    }
-
-    public void hide() {
-        removeAllViews();
-        ((FrameLayout) ((Activity) mContent).getWindow().getDecorView()).removeView(this);
-    }
-
-    private String getUniqId() {
-        String id;
-        if (mViews[0].mTargetView != null) {
-            id = PREID + mViews[0].mTargetView.getId();
-        } else {
-            id = PREID + guideID;
-        }
-        return PREID + id;
-    }
-
-    public GuideUserView setGuideID(String guideID) {
-        this.guideID = guideID;
-        return this;
+    public interface ClickListener {
+        void onClick();
     }
 
     /**
-     * 目标View、自定义布局等参数实体
+     * 目标View和自定义布局等参数实体
      */
     public static class ViewEntity {
         private View mTargetView; // 目标wiew
-        private int[] mCenter = new int[2]; // 目标wiew中心
+        private int[] mCenter = new int[2]; // 目标wiew中心坐标
         private Shape mShape; // 目标wiew高亮圆圈形状
         private int targetW = -1; // 目标wiew高亮宽半径
         private int targetH = -1; // 目标wiew高亮高半径
 
-        private View mCustomLayout; // 自定义布局
-        private Direction mDirection; // 自定义布局相对于mTargetView的方向
+        private int mCustomLayoutID; // 自定义布局资源ID
+        private Direction mDirection; // 自定义布局相对于目标wiew的方向
 
-        /**
-         * 目标wiew中心
-         */
-        public ViewEntity setCenter(int... mCenter) {
-            this.mCenter = mCenter;
-            return this;
+        public ViewEntity(View targetView, int customLayoutID, Direction direction) {
+            this(targetView, null, Shape.RECTANGULAR, customLayoutID, direction);
         }
 
-        /**
-         * 目标wiew高亮圆圈尺寸
-         */
-        public ViewEntity setTargetSize(int... targetSize) {
-            targetW = targetSize[0] / 2;
-            targetH = targetSize[1] / 2;
-            return this;
-        }
-
-        public ViewEntity setOffsetX(int offsetX) {
-            this.offsetX = offsetX;
-            return this;
-        }
-
-        public ViewEntity setOffsetY(int offsetY) {
-            this.offsetY = offsetY;
-            return this;
-        }
-
-        private int offsetX = 0, offsetY = 0; // 自定义布局偏移
-
-        public ViewEntity(View mTargetView, Shape mShape, View mCustomLayout, Direction mDirection) {
-            this.mTargetView = mTargetView;
-            this.mShape = mShape;
-            this.mCustomLayout = mCustomLayout;
-            this.mDirection = mDirection;
+        public ViewEntity(View targetView, int[] targetSize, Shape shape, int customLayoutID, Direction direction) {
+            this.mTargetView = targetView;
+            this.mShape = shape;
+            this.mCustomLayoutID = customLayoutID;
+            this.mDirection = direction;
+            if (targetSize != null) {
+                targetW = targetSize[0] / 2;
+                targetH = targetSize[1] / 2;
+            }
         }
     }
 
-    /**
-     * mCustomGuideView相对于targetView的方位,默认在targetView下方
-     */
-    public enum Direction {
-        LEFT, TOP, RIGHT, BOTTOM,
-        LEFT_TOP, LEFT_BOTTOM,
-        RIGHT_TOP, RIGHT_BOTTOM
+    public enum Direction { // 相对于目标wiew的方位
+        LEFT, TOP, RIGHT, BOTTOM, LEFT_TOP, LEFT_BOTTOM, RIGHT_TOP, RIGHT_BOTTOM
     }
 
-    /**
-     * targetView高亮圆圈形状，圆形，椭圆，圆角矩形，默认是圆形
-     */
-    public enum Shape {
+    public enum Shape { // 目标wiew的高亮圆圈形状: 圆形，椭圆，圆角矩形
         CIRCULAR, ELLIPSE, RECTANGULAR
     }
 }
