@@ -167,17 +167,15 @@ public class GuideUserView extends RelativeLayout implements ViewTreeObserver.On
                 int bottom = ve.mCenter[1] + ve.targetH;
                 switch (ve.mDirection) {
                     case TOP:
-                        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
                         params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-                        params.setMargins(0, 0, 0, height - top);
+                        params.setMargins(left, 0, 0, height - top);
                         break;
                     case LEFT:
                         params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
                         params.setMargins(0, top, width - left, 0);
                         break;
                     case BOTTOM:
-                        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                        params.setMargins(0, bottom, 0, 0);
+                        params.setMargins(left, bottom, 0, 0);
                         break;
                     case RIGHT:
                         params.setMargins(right, top, 0, 0);
