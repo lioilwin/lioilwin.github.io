@@ -157,7 +157,8 @@ public class GuideUserView extends RelativeLayout implements ViewTreeObserver.On
                 ve.mCenter[1] += ve.targetH;
             }
             // 方位
-            LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            View view = LayoutInflater.from(getContext()).inflate(ve.mCustomLayoutID, this, false);
+            LayoutParams params = (LayoutParams) view.getLayoutParams();
             if (ve.mDirection != null) {
                 int width = getWidth();
                 int height = getHeight();
@@ -200,7 +201,6 @@ public class GuideUserView extends RelativeLayout implements ViewTreeObserver.On
             } else {
                 params.addRule(RelativeLayout.CENTER_IN_PARENT);
             }
-            View view = LayoutInflater.from(getContext()).inflate(ve.mCustomLayoutID, this, false);
             addViewInLayout(view, -1, params, true);// 添加view, 不会重新布局
         }
         requestLayout();// 统一重新布局
