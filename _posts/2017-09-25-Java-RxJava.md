@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-RxJava2笔记
-tags: JavaSE
+title: Java-RxJava2笔记
+tags: Java
 ---
 参考：  
 http://blog.csdn.net/maplejaw_/article/details/52442065  

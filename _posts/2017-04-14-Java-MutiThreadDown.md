@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-Http断点/多线程下载文件
-tags: JavaSE
+title: Java-Http断点/多线程下载文件
+tags: Java
 ---
 
 ```java

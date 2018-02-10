@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-设计模式-观察者模式
-tags: JavaSE
+title: Java-设计模式-观察者模式
+tags: Java
 ---
 # 一.介绍
 	观察者模式Observer(又称为发布publish-订阅Subscribe模式、模型-视图模式、源-收听者模式或从属者模式)是软件设计模式的一种!

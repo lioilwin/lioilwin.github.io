@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-Properties配置文件
-tags: JavaSE
+title: Java-Properties配置文件
+tags: Java
 ---
 
 1、读取Properties文件

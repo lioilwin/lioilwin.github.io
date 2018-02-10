@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-java, javax, org和com.sun包的区别
-tags: JavaSE
+title: (转)Java-java, javax, org和com.sun包的区别
+tags: Java
 ---
 
 原文：http://blog.csdn.net/ooppookid/article/details/51704792

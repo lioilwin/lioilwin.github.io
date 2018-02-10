@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-Java注解(Annotation)
-tags: JavaSE
+title: Java-Java注解(Annotation)
+tags: Java
 ---
 	注解(Annotation): 
 		与类、接口、枚举等在同一层次;

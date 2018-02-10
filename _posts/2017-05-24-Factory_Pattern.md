@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-设计模式-三种工厂模式-比较区分
-tags: JavaSE
+title: Java-设计模式-三种工厂模式-比较区分
+tags: Java
 ---
 # 介绍
 	三大类：产品类——工厂类——客户类

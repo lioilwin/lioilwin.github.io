@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JavaSE-Java泛型(Generic)
-tags: JavaSE
+title: Java-Java泛型(Generic)
+tags: Java
 ---
 	泛型本质是参数化类型,即数据类型是一个参数。
 	可用在类/接口/方法中,分别称为泛型类/泛型接口/泛型方法,
