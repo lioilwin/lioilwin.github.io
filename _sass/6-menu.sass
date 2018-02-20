@@ -1,9 +1,16 @@
 
-#au
+audio::-webkit-media-controls
+  overflow: hidden !important
+
+audio::-webkit-media-controls-enclosure
+  width: calc(100% + 30px)
+  margin-left: auto
+
+audio
   position: fixed
   right: 3*$menu-size
   z-index: 29				  
-  max-width: 80%
+  max-width: 70%
 
 .ctr
   position: fixed
