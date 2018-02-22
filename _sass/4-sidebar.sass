@@ -83,7 +83,7 @@
   font-size: $tag-font-size
   font-family: 'Trebuchet MS', sans-serif
   font-weight: bold
-  text-shadow: 0px 0px 10px #668B8B
+  text-shadow: 6px 4px 4px #bcd0d0
   line-height: $tag-height
   text-align: center
   color: $tag-color
@@ -163,9 +163,8 @@
   float: left
   clear: both
   margin: 5px 0
-  padding: 0 15px 0 32px
+  padding: 0 0 0 12px
   font-size: $toc-font-size
-  line-height: $toc-line-height
   white-space: nowrap
   text-decoration: none
   text-overflow: ellipsis
@@ -174,15 +173,17 @@
   outline: none
   &:before
     position: absolute
-    top: 2px
-    left: 12px
+    top: 1.2px
+    left: 0px
     z-index: 1
     @extend %icon
     @extend %icon-bullet
     font-size: $toc-bullet-size
     color: $toc-bullet-unread
     transition: transform .15s linear
-  &:visited:before
+  &:visited, &:visited:before
     color: $toc-bullet-read
-  &:hover:before
+  &:hover, &:hover:before
     animation: joggle .6s linear
+    color: $toc-bullet-read
+    font-size: 18px
