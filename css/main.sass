@@ -19,9 +19,9 @@ $sidebar-rebg: linear-gradient(90deg, $gradient-end, $gradient-start)
 // # Sidebar Left
 $sidebar-left-width: 106px
 // # Sidebar Right
-$sidebar-right-width: 286px
+$sidebar-right-width: 320px
 // # Sidebar width
-$sidebar-width: $sidebar-left-width + $sidebar-right-width
+$sidebar-width: $sidebar-left-width + $sidebar-right-width + 1px
 
 // Avatar
 $avatar-size: 90px
@@ -57,11 +57,11 @@ $toc-font-size: 16px
 $toc-line-height: 16px
 $toc-bullet-size: 12px
 $toc-bullet-unread: $toc-color
-$toc-bullet-read: #000
+$toc-bullet-read: #666
 
 // # Post
 $post-max-width: 4096px
-$post-width-at-3-columns: 90%
+$post-width-at-3-columns: calc(100% - 10px)
 $post-width-at-1-column: 3720px
 $post-meta-color: #bdb0b0
 $post-title-color: #19b6de
@@ -85,9 +85,9 @@ $menu-top: $menu-size
 $menu-right: 0px
 
 // # Customise webkit scrollbar
-$toc-scrollbar-width: 3px
+$toc-scrollbar-width: 4px
 $toc-scrollbar-color: $gradient-end
-$code-scrollbar-height: 7px
+$code-scrollbar-height: 12px
 $code-scrollbar-color: $post-meta-color
 
 // # NProgerss
