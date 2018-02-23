@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (转)Win10的IE和Edge无法上网
-tags: Windows
+tags: 工具
 ---
 
 网银不支持最新版的chrome，只好用IE！ 

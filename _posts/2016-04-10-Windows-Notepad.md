@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Windows记事本UTF-8编码异常
-tags: Windows
+tags: 工具
 ---
 
 简书：http://www.jianshu.com/p/34b261d23998   
