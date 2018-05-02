@@ -58,10 +58,20 @@ tags: Android
 	App检测是否在白名单: PowerManager.isIgnoringBatteryOptimizations()
 	
 	App请求加入白名单:
-		1.通过创建Intent ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS  引导用户前往电池优化界面,加入白名单
-		2.持有权限 REQUEST_IGNORE_BATTERY_OPTIMIZATIONS  可直接触发系统Dialog来提醒用户,加入白名单(无需进入设置界面)
-		3.创建Intent ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS  触发上述系统Dialog
-	
+	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+		if (pm != null && !pm.isIgnoringBatteryOptimizations(getPackageName())) {
+			//1.进入系统电池优化设置界面,把当前APP加入白名单
+			//startActivity(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
+			
+			//2.弹出系统对话框,把当前APP加入白名单(无需进入设置界面)
+			//在manifest添加权限 <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+			Intent intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+			intent.setData(Uri.parse("package:" + getPackageName()));
+			startActivity(intent);
+		}
+	}
+
 ## 二.AlarmManager定时闹钟失效
 	1.App被Kill后,AlarmManager失效(只有App进程在运行时,才会收到系统定时AlarmManager通知)
 		添加守护进程,相互监听重启; 提醒用户加入锁屏清理白名单
