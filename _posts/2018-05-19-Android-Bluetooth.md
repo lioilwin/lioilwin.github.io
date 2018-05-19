@@ -66,8 +66,9 @@ tags: Android
 	.BluetoothSocket 蓝牙Socket接口(类似TCP Socket),通过InputStream和OutputStream与其他设备传输数据
 	
 ## 三.经典蓝牙-长连接-传输短消息/文件
-完整源码：https://github.com/lifegh/Bluetooth
-	
+完整源码: https://github.com/lifegh/Bluetooth   
+![client](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/client.png) ![server](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/client.png)
+
 ### 1.蓝牙权限/开关蓝牙
 	在manifest添加
 	<uses-permission android:name="android.permission.BLUETOOTH" />        请求连接、接受连接和传输数据
