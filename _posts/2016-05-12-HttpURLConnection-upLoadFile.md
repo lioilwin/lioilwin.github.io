@@ -35,37 +35,48 @@ Http请求post格式:
 
 ```java
 
-String Boundary = UUID.randomUUID().toString(); // 文件边界
+public static String upFile(String url, File file) throws Throwable {
+	String PREFIX = "--";  // 前缀符
+	String BOUNDARY = "*"; // 边界符(任意字符串)
+	String CRLF = "\r\n";  // 换行符
 
-// 1.开启Http连接
-HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
-conn.setConnectTimeout(10*1000);
-conn.setDoOutput(true); // 允许输出
+	HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+	conn.setChunkedStreamingMode(4 * 1024);// 切换为分块流模式,取消内部缓冲区(默认模式是数据全部写入内存后才开始上传,对于大文件,明显内存不足导致崩溃)
+	conn.setConnectTimeout(10 * 1000);
+	conn.setDoOutput(true); // 允许输出
 
-// 2.Http请求行/头
-conn.setRequestMethod("POST");
-conn.setRequestProperty("Charset", "utf-8");
-conn.setRequestProperty("Content-Type", "multipart/form-data; boundary="+Boundary);
+	// 1.Http请求行/头
+	conn.setRequestMethod("POST");
+	conn.setRequestProperty("Connection", "Keep-Alive");
+	conn.setRequestProperty("Charset", "UTF-8");
+	conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 
-// 3.Http请求体
-DataOutputStream out = new DataOutputStream(conn.getOutputStream());
-out.writeUTF("--"+Boundary+"\r\n"
-			+"Content-Disposition: form-data; name=\"file\"; filename=\"filename\"\r\n"
-			+"Content-Type: application/octet-stream; charset=utf-8"+"\r\n\r\n");
-InputStream in = new FileInputStream(file);
-byte[] b = new byte[1024];
-int l = 0;
-while((l = in.read(b)) != -1) out.write(b,0,l); // 写入文件
-out.writeUTF("\r\n--"+Boundary+"--\r\n");
-out.flush();
-out.close();
-in.close();
+	// 2.Http请求体
+	DataOutputStream out = new DataOutputStream(conn.getOutputStream());
+	out.writeUTF(PREFIX + BOUNDARY + CRLF);
+	out.writeUTF("Content-Disposition: form-data; name=\"file\"; filename=\"" + file.getName() + "\"" + CRLF);
+	out.writeUTF("Content-Type: application/octet-stream" + CRLF);
+	out.writeUTF(CRLF);
+	InputStream fin = new FileInputStream(file);
+	byte[] b = new byte[4 * 1024];
+	int len;
+	while ((len = fin.read(b)) != -1)
+		out.write(b, 0, len); // 写入文件
+	fin.close();
+	out.writeUTF(CRLF);
+	out.writeUTF(PREFIX + BOUNDARY + PREFIX + CRLF);
+	out.flush();
+	out.close();
 
-// 4.Http响应
-BufferedReader bf = new BufferedReader(new InputStreamReader(conn.getInputStream(),"utf-8"));
-String line = null;
-while ((line=bf.readLine())!=null) {
-	System.out.println(line);
+	// 3.Http响应
+	BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+	StringBuilder result = new StringBuilder();
+	String line;
+	while ((line = in.readLine()) != null)
+		result.append(line);
+	in.close();
+//  conn.disconnect(); // 断开TCP连接,后续HTTP请求不能重用该连接
+	return result.toString();
 }
 
 ```

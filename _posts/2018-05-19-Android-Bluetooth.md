@@ -1,56 +1,61 @@
 ---
 layout: post
-title: Android-Classic Bluetooth(经典蓝牙-长连接-传输短消息/文件)
+title: Android-经典蓝牙(BT)-建立长连接传输短消息和文件
 tags: Android
 ---
-参考: https://developer.android.com/guide/topics/connectivity/bluetooth
+参考:  
+https://developer.android.com/guide/topics/connectivity/bluetooth   
+http://bbs.eeworld.com.cn/thread-500972-1-1.html
 
-## 一.蓝牙版本介绍
-	蓝牙有两种模块: 经典蓝牙(Classic Bluetooth, 简称BT)、低功耗蓝牙(Bluetooth Low Energy, 简称BLE)
-	经典蓝牙: 蓝牙4.0以下都是"经典蓝牙", 功耗高/传输数据量大/传输距离只有10米。
-	低功耗蓝牙: 蓝牙4.0及以上含有"低功耗蓝牙", 低功耗/数据量小/距离50米左右。	
-	现在Android手机的蓝牙4.x都是双模蓝牙(既有经典蓝牙也有低功耗蓝牙)，而某些新蓝牙设备是单模，只支持低功耗蓝牙
+## 一.蓝牙模块简介
+![模块分类](http://5.eewimg.cn/data/attachment/forum/201609/22/162701daocmpez0hkmmnfp.png.thumb.jpg)
+![协议对比](http://5.eewimg.cn/data/attachment/forum/201609/22/162705qgw9wyff2o2gf96u.png.thumb.jpg)
+
+	从蓝牙4.0开始包含两个蓝牙芯片模块：传统/经典蓝牙模块(Classic Bluetooth,简称BT)和低功耗蓝牙(Bluetooth Low Energy,简称BLE)	
+	经典蓝牙是在之前的蓝牙1.0,1.2,2.0+EDR,2.1+EDR,3.0+EDR等基础上发展和完善起来的, 而低功耗蓝牙是Nokia的Wibree标准上发展起来的，是完全不同两个标准。
+	1.经典蓝牙模块(BT)
+	泛指蓝牙4.0以下的模块，一般用于数据量比较大的传输，如：语音、音乐、较高数据量传输等。
+	经典蓝牙模块可再细分为：传统蓝牙模块和高速蓝牙模块。
+	传统蓝牙模块在2004年推出，主要代表是支持蓝牙2.1协议的模块，在智能手机爆发的时期得到广泛支持。
+	高速蓝牙模块在2009年推出，速率提高到约24Mbps，是传统蓝牙模块的八倍。	
+	传统蓝牙有3个功率级别，Class1,Class2,Class3,分别支持100m,10m,1m的传输距离
 	
-	如何抉择,经典蓝牙,还是BLE?(以下来源: http://baijiahao.baidu.com/s?id=1594727739470471520&wfr=spider&for=pc )
-		1.传声音的，用经典蓝牙：
+	2.低功耗蓝牙模块(BLE)
+	泛指蓝牙4.0或更高的模块，蓝牙低功耗技术是低成本、短距离、可互操作的鲁棒性无线技术，工作在免许可的2.4GHz ISM射频频段。
+	因为BLE技术采用非常快速的连接方式，因此平时可以处于“非连接”状态（节省能源），
+	此时链路两端相互间只是知晓对方，只有在必要时才开启链路，然后在尽可能短的时间内关闭链路(每次最多传输20字节)。
+	低功耗蓝牙无功率级别，一般发送功率在7dBm，一般在空旷距离，达到20m应该是没有问题
+	
+	Android手机蓝牙4.x都是双模蓝牙(既有经典蓝牙也有低功耗蓝牙)，而某些蓝牙设备为了省电是单模(只支持低功耗蓝牙)
+			
+	开发者选经典蓝牙,还是BLE?(参考: http://baijiahao.baidu.com/s?id=1594727739470471520&wfr=spider&for=pc )
+	经典蓝牙：	
+		1.传声音
 		如蓝牙耳机、蓝牙音箱。蓝牙设计的时候就是为了传声音的，所以是近距离的音频传输的不二选择。
 		现在也有基于WIFI的音频传输方案，例如Airplay等，但是WIFI功耗比蓝牙大很多，设备无法做到便携。
 		因此固定的音响有WIFI的，移动的如耳机、便携音箱清一色都是基于经典蓝牙协议的。
 		
-		2.电池供电、连手机APP的，用BLE：
-		如共享单车锁、蓝牙智能锁、蓝牙防丢器、蓝牙室内定位，是目前手机和智能硬件通信的性价比最高的手段。
-		直线距离约50米，一节5号电池能用一年，传输模组成本10块钱，远比WIFI、4G等大数据量的通信协议更实用。
-		虽然蓝牙距离近了点，但胜在直连手机，价格超便宜。以室内定位为例，商场每家门店挂个蓝牙beacon，
-		就可以对手机做到精度10米级的室内定位，一个beacon的价格也就几十块钱而已。
-		（WIFI距离和BLE类似，但功耗高速度快；4G距离远，但功耗更高价格很贵。）
-		
-		3.又要声音又要数据的，用双模蓝牙：
-		双模蓝牙，就是同时支持经典蓝牙音频和低功耗蓝牙。
-		如智能电视遥控器、降噪耳机等。很多智能电视配的遥控器带有语音识别，需要用经典蓝牙才能传输声音。
-		而如果做复杂的按键，例如原本键盘表上没有的功能，经典蓝牙的HID按键协议就不行了，得用BLE做私有协议。
-		包括很多降噪耳机上通过APP来调节降噪效果，也是通过BLE来实现的私有通信协议。
-		
-		4.传大数据量的，用经典蓝牙：
+		2.传大量数据
 		例如某些工控场景，使用Android或Linux主控，外挂蓝牙遥控设备的，
 		可以使用经典蓝牙里的SPP协议，当作一个无线串口使用。速度比BLE传输快多了。
 		这里要注意的是，iPhone没有开放
 		
-		5.远距离的，不用蓝牙。
-		固定供电的、不考虑功耗的、要传超过几十米距离的、要传高速数据的，这些都不适合蓝牙。
-		远距离的可以用2G、4G、NB-IOT，大数据量的可以用WIFI。
-		
-## 二.Android Classic Bluetooth(经典蓝牙)介绍
-	本文介绍经典蓝牙，经典蓝牙适用于电池使用强度较大的操作，例如Android之间流式传输和通信等(音频/文件等大数据)。 
-	Android 4.3(API 18)才有API支持低功耗蓝牙(BLE)，更多功能下篇再介绍。
-	Android经典蓝牙API的开发步骤如下:
-		1.扫描其他蓝牙设备
-		2.查询本地蓝牙适配器的配对蓝牙设备
-		3.建立 RFCOMM 通道 (传输通道 SPP协议)
-		4.通过服务发现连接到其他设备
-		5.与其他设备进行双向数据传输
-		6.管理多个连接
+	BLE蓝牙:
+		耗电低，数据量小，如遥控类(鼠标、键盘)，传感设备(心跳带、血压计、温度传感器、共享单车锁、智能锁、防丢器、室内定位)
+		是目前手机和智能硬件通信的性价比最高的手段，直线距离约50米，一节5号电池能用一年，传输模组成本10块钱，远比WIFI、4G等大数据量的通信协议更实用。
+		虽然蓝牙距离近了点，但胜在直连手机，价格超便宜。以室内定位为例，商场每家门店挂个蓝牙beacon，
+		就可以对手机做到精度10米级的室内定位，一个beacon的价格也就几十块钱而已
 
-	android.bluetooth 提供了所有经典蓝牙API
+	双模蓝牙:
+		如智能电视遥控器、降噪耳机等。很多智能电视配的遥控器带有语音识别，需要用经典蓝牙才能传输声音。
+		而如果做复杂的按键，例如原本键盘表上没有的功能，经典蓝牙的HID按键协议就不行了，得用BLE做私有协议。
+		包括很多降噪耳机上通过APP来调节降噪效果，也是通过BLE来实现的私有通信协议。
+
+## 二.Android 经典蓝牙(Classic Bluetooth)的API简介
+	本文介绍经典蓝牙，经典蓝牙适用于电池使用强度较大的操作，例如Android之间流式传输和通信等(音频/文件等大数据)。 
+	从Android 4.3(API 18)才有API支持低功耗蓝牙(BLE)，BLE相关API下篇再介绍。
+	经典蓝牙API如下:
+	android.bluetooth
 	.BluetoothA2dp 音频分发配置文件,高质量音频通过蓝牙连接和流式传输
 	.BluetoothAdapter 本地蓝牙适配器,是所有蓝牙交互的入口,发现设备,查询配对设备,创建BluetoothServerSocket侦听其他设备
 	.BluetoothAssignedNumbers
@@ -62,23 +67,54 @@ tags: Android
 	.BluetoothHealthCallback 实现 BluetoothHealth 回调的抽象类
 	.BluetoothManager 
 	.BluetoothProfile 蓝牙配置文件,蓝牙通信的无线接口规范
-	.BluetoothServerSocket 侦听请求的服务器Socket(类似TCP ServerSocket)
-	.BluetoothSocket 蓝牙Socket接口(类似TCP Socket),通过InputStream和OutputStream与其他设备传输数据
+	.BluetoothServerSocket 服务端监听,连接RFCOMM通道(类似TCP ServerSocket)
+	.BluetoothSocket 建立RFCOMM通道,蓝牙Socket接口(类似TCP Socket),通过InputStream和OutputStream与其他设备传输数据
 	
-## 三.经典蓝牙-长连接-传输短消息/文件
-完整源码: https://github.com/lifegh/Bluetooth   
-![client](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/client.png) ![server](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/client.png)
+	Android经典蓝牙的开发步骤如下:
+		1.扫描其他蓝牙设备
+		2.查询本地蓝牙适配器的配对蓝牙设备
+		3.建立 RFCOMM 通道 (SPP协议)
+		4.通过服务发现连接到其他设备
+		5.与其他设备进行双向数据传输
+		6.管理多个连接
 
-### 1.蓝牙权限/开关蓝牙
-	在manifest添加
-	<uses-permission android:name="android.permission.BLUETOOTH" />        请求连接、接受连接和传输数据
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />  启动设备发现或操作蓝牙设置
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />  发现设备还需要定位权限
+	RFCOMM是蓝牙简单传输协议, 在两个蓝牙设备间的一条物理链上提供多个模拟串口进行传输数据, 可同时保持高达60路的通信连接。
+	SPP(Serial Port Profile)是通过蓝牙设备之间的串口进行数据传输协议，spp协议处于RFCOMM上层,
+	如果能使用RFCOMM传输数据,就不需要使用SPP(省去一些流程,速度更快),但还是推荐用SPP,兼容性有保证
 	
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+## 三.经典蓝牙-客户端和服务端建立长连接,传输短消息/文件
+完整源码: https://github.com/lifegh/Bluetooth   
+蓝牙耳机的音频传输也是采用这种长连接实现,我们可以通过广播监听连接状态   
+![](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/bt_client.png) ![](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/bt_server.png)
+
+### 1.蓝牙权限和设置蓝牙
+	(1).在manifest中添加权限	
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />	
+	<!--建立蓝牙连接和传输权限-->
+	<uses-permission android:name="android.permission.BLUETOOTH" />	
+    <!--扫描蓝牙设备或修改蓝牙设置权限-->
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />	
+    <!--Android 6.0及后续版本扫描蓝牙,需要定位权限(进入GPS设置,可以看到蓝牙定位)-->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	
-	//在Activity添加动态请求权限
+	(2).在Activity中设置蓝牙
+	// 检查蓝牙开关
+	BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+	if (adapter == null) {
+		Util.toast(this, "本机没有找到蓝牙硬件或驱动！");
+		finish();
+		return;
+	} else {
+		if (!adapter.isEnabled()) {
+			//直接开启蓝牙
+			adapter.enable();
+			//跳转到设置界面
+			//startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), 112);
+		}
+	}
+	
+	// Android 6.0动态请求权限
 	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 		String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE
 				, Manifest.permission.READ_EXTERNAL_STORAGE
@@ -86,31 +122,18 @@ tags: Android
 		for (String str : permissions) {
 			if (checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
 				requestPermissions(permissions, 111);
-				return;
+				break;
 			}
 		}
 	}
 	
-	//打开蓝牙
-	BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-	if (adapter == null) {
-		Util.toast(this, "本机没有找到蓝牙硬件或驱动");
-		finish();
-	} else {
-		if (!adapter.isEnabled())
-			adapter.enable();
-		//跳转到设置界面
-		//startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), 112);
-	}
-	
-### 2.查找远端设备
+### 2.客户端-扫描经典蓝牙设备(不包含BLE蓝牙设备)
 	// 1.获取已配对设备
 	Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 	List<BluetoothDevice> devices = new ArrayList<>();
 	devices.addAll(pairedDevices);
 	
 	// 2.获取未配对设备
-	BluetoothAdapter.getDefaultAdapter().startDiscovery(); //开始扫描发现设备
 	BroadcastReceiver mReceiver = new BroadcastReceiver() {
 		public void onReceive(Context context, Intent intent) {
 			String action = intent.getAction();			
@@ -121,8 +144,9 @@ tags: Android
 		}
 	};
 	registerReceiver(mReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+	BluetoothAdapter.getDefaultAdapter().startDiscovery(); //开始扫描设备
 
-### 3.客户端
+### 3.客户端-建立连接
 	通用唯一标识符(UUID)是用于唯一标识信息的字符串ID的128位标准化格式,UUID足够庞大,不会发生冲突。	
 	蓝牙MAC相当于TCP的IP，蓝牙UUID相当于TCP的端口，用于标识服务端蓝牙进程，
 	所以客户端和服务端两个UUID必须一致！
@@ -142,8 +166,8 @@ tags: Android
 		public void connect(BluetoothDevice dev) {
 			close();
 			try {
-            // final BluetoothSocket socket = dev.createRfcommSocketToServiceRecord(SPP_UUID); //加密传输，会自动执行配对(系统UI弹出配对码)
-				final BluetoothSocket socket = dev.createInsecureRfcommSocketToServiceRecord(SPP_UUID); //明文传输，无需配对
+            // final BluetoothSocket socket = dev.createRfcommSocketToServiceRecord(SPP_UUID); //加密传输，Android强制执行配对，弹窗显示配对码
+				final BluetoothSocket socket = dev.createInsecureRfcommSocketToServiceRecord(SPP_UUID); //明文传输(不安全)，无需配对
 				// 开启子线程
 				Util.EXECUTOR.execute(new Runnable() {
 					@Override
@@ -157,7 +181,7 @@ tags: Android
 		}
 	}
 	
-### 4.服务端
+### 4.服务端-监听连接
 	/**
 	 * 服务端监听和连接线程，只连接一个设备
 	 */
@@ -176,8 +200,8 @@ tags: Android
 		public void listen() {
 			try {
 				BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-	//            mSSocket = adapter.listenUsingRfcommWithServiceRecord(TAG, SPP_UUID); //加密传输，会自动执行配对
-				mSSocket = adapter.listenUsingInsecureRfcommWithServiceRecord(TAG, SPP_UUID); //明文传输，无需配对
+	//            mSSocket = adapter.listenUsingRfcommWithServiceRecord(TAG, SPP_UUID); //加密传输，Android强制执行配对，弹窗显示配对码
+				mSSocket = adapter.listenUsingInsecureRfcommWithServiceRecord(TAG, SPP_UUID); //明文传输(不安全)，无需配对
 				// 开启子线程
 				Util.EXECUTOR.execute(new Runnable() {
 					@Override
@@ -209,7 +233,7 @@ tags: Android
 	
 ### 5.客户端和服务端的基类,用于管理socket长连接,读写短消息/文件
 	public class BtBase {
-		static final UUID SPP_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+		static final UUID SPP_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //自定义
 		private static final String FILE_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/bluetooth/";
 		private static final int FLAG_MSG = 0;  //消息标记
 		private static final int FLAG_FILE = 1; //文件标记
@@ -362,6 +386,6 @@ tags: Android
 	}
 	
 简书: https://www.jianshu.com/p/977ab323c0a5   
-CSDN: https://blog.csdn.net/qq_32115439/article/details/80379262   
+CSDN: https://blog.csdn.net/qq_32115439/article/details/80379262  
 GitHub博客: http://lioil.win/2018/05/19/Android-Bluetooth.html   
 Coding博客: http://c.lioil.win/2018/05/19/Android-Bluetooth.html
