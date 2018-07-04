@@ -59,7 +59,7 @@ http://a1anwang.com/post-47.html
 		return;
 	}
 	
-## 2.BLE客户端(也叫主机/中心设备/Central)
+### 2.BLE客户端(也叫主机/中心设备/Central)
 #### (1).扫描BLE设备(不包含经典蓝牙)
 	注意: BLE设备地址是动态变化(每隔一段时间都会变化),而经典蓝牙设备是出厂就固定不变了！
 	BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
