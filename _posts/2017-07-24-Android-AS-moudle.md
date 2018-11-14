@@ -1,47 +1,48 @@
 ---
 layout: post
-title: Android-Studio多个项目添加依赖同一个模块
+title: Android-Studio多个项目共享同一个模块
 tags: Android
 ---
 参考: https://stackoverflow.com/questions/16588064/how-do-i-add-a-library-project-to-android-studio
- 
-eclipse的多个工作空间可以共享/引用/引入/依赖同一个项目(不勾选Copy projects into workspace),   
-同样在Android Studio也可以这样做, 但使用AS提供的import moudle直接导入模块,默认会复制一个副本模块到当前项目,   
-所以不能使用这个功能, 需要自定义配置gradle共享外部项目的模块!
 
-在Android Studio中多个项目共享/引用/引入/依赖其它项目的模块library, 有3种方法配置gradle!
+提示:   
+Eclipse工作空间(workspace) = Android Studio项目(Project)   
+Eclipse项目(Project) = Android Studio模块(Module)   
 
-## 实例:
-    在ProjectA中有一个模块moduleLib, 在ProjectB的一个模块app需要依赖使用在ProjectA中的moduleLib
-    - ProjectA/
-          - moduleLib/
-               - build.gradle
-          - moduleLib2/
-               - build.gradle
-          - build.gradle
-          - settings.gradle
+Eclipse多个工作空间可以导入共享同一个项目(不勾选Copy projects into workspace);   
+然而Android Studio提供的import moudle直接导入模块，默认会复制一个副本模块到AS当前文件夹;   
+所以不能使用这个功能, 要通过配置Gradle来实现共享其它项目的模块!   
 
-    - ProjectB/
-          - app/
-                - build.gradle
-          - build.gradle
-          - settings.gradle
+## 实例
+	在ProjectB中如何使用ProjectA的模块moduleLib ?
+    D:/ProjectA/
+		- moduleLib/
+		   - build.gradle
+		- build.gradle
+		- settings.gradle
+
+    D:/ProjectB/
+		- app/
+			- build.gradle
+		- build.gradle
+		- settings.gradle
 
 ## 方法一
-    1.在ProjectB/Settings.gradle下,导入ProjectA的模块moduleLib
+    1.在ProjectB/settings.gradle下,导入ProjectA的模块moduleLib
     include ':moduleLib'
-    project(':moduleLib').projectDir = new File(settingsDir, '../ProjectA/moduleLib')
+    project(':moduleLib').projectDir = new File(settingsDir, '../ProjectA/moduleLib') // settingsDir是指settings.gradle文件目录
+    // project(':moduleLib').projectDir = new File('D:/ProjectA/moduleLib') // 绝对路径
 
     2.在ProjectB/app/build.gradle下,添加依赖
     dependencies {
         compile project(':moduleLib')
     }
 
-    提示: ..代表当前目录的上一级目录
+    注: ..代表settingsDir目录的上一级目录
 
 
 ## 方法二
-    1.在ProjectB/Settings.gradle下,导入ProjectA的所有模块
+    1.在ProjectB/settings.gradle下,导入ProjectA的所有模块
     include ':ProjectA'    
     project (':ProjectA').projectDir = new File('../ProjectA')
     include ':ProjectA:moduleLib'
@@ -52,15 +53,15 @@ eclipse的多个工作空间可以共享/引用/引入/依赖同一个项目(不
     }
 
 ## 方法三
-    1.在ProjectB/Settings.gradle下,导入ProjectA的模块moduleLib
+    1.在ProjectB/settings.gradle下,导入ProjectA的模块moduleLib
     include ':..:ProjectA:moduleLib'
 
     2.在ProjectB/app/build.gradle下,添加依赖
     dependencies {        
         compile project(':..:ProjectA:moduleLib')
     }
-    
-    此方法导入模块,在as中显示目录结构不好看! 建议使用方法一或二
+
+注：仅推荐方法一，因为方法二和三混杂Project和Model同时使用容易混乱！
 
 简书: http://www.jianshu.com/p/47156a6be8ce   
 CSDN博客: http://blog.csdn.net/qq_32115439/article/details/76039327   
