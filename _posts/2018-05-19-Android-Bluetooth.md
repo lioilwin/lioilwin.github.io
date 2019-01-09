@@ -83,9 +83,9 @@ http://bbs.eeworld.com.cn/thread-500972-1-1.html
 	如果能使用RFCOMM传输数据,就不需要使用SPP(省去一些流程,速度更快),但还是推荐用SPP,兼容性有保证
 	
 ## 三.经典蓝牙-客户端和服务端建立长连接,传输短消息/文件
-完整源码: https://github.com/lifegh/Bluetooth   
+完整源码: https://github.com/lioilwin/Bluetooth   
 蓝牙耳机的音频传输也是采用这种长连接实现,我们可以通过广播监听连接状态   
-![](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/bt_client.png) ![](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/bt_server.png)
+![](https://raw.githubusercontent.com/lioilwin/Bluetooth/master/png/bt_client.png) ![](https://raw.githubusercontent.com/lioilwin/Bluetooth/master/png/bt_server.png)
 
 ### 1.蓝牙权限和设置蓝牙
 	(1).在manifest中添加权限	

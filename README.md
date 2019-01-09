@@ -1,5 +1,5 @@
 ### 本博客基于[Jekyll](https://github.com/jekyll/jekyll)和[3-Jekyll](https://github.com/P233/3-Jekyll)主题修改而成
-### 同时部署在[[lioil.win](http://lioil.win)@[GitHub](https://github.com/lifegh/lifegh.github.io)]和[[c.lioil.win](http://c.lioil.win)@[Coding](https://coding.net/u/lifec/p/lifec/git)]
+### 同时部署在[[lioil.win](http://lioil.win)@[GitHub](https://github.com/lioilwin/lioilwin.github.io)]和[[c.lioil.win](http://c.lioil.win)@[Coding腾讯云](https://dev.tencent.com/u/lifec/p/lioilwin/git)]
 1. _config.yml设置
   * 社交帐号Twitter, Weibo, Github, Codepen, Dribbble
   * Disqus_shortname启用Disqus评论(因为墙所以国内访问麻烦，可以采用多说、畅言等第三方社会化评论系统替代)

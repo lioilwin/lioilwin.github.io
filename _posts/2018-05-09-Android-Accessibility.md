@@ -26,7 +26,7 @@ https://developer.android.com/training/accessibility/service
 	技术实现看起来非常简单，麻烦在于国内千奇百怪Android系统安装界面，现在只能自己动手适配项目需要的几台手机。。。
 	
 ## 二.自动安装的基本步骤
-完整源码：https://github.com/lifegh/AutoInstall
+完整源码：https://github.com/lioilwin/AutoInstall
 	
 ### 1.manifest添加辅助服务, res/xml配置辅助功能
 	在AndroidManifest.xml中

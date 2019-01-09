@@ -4,7 +4,7 @@ title: Android-绘图-绘制导航箭头
 tags: Android
 ---
 
-项目源码：https://github.com/lifegh/StepOrient  
+项目源码：https://github.com/lioilwin/StepOrient  
 利用Android传感器-方向和计步组合使用,可以在地图上记录人行走的轨迹图
 
 本文主要是在行走轨迹上增加方向导航箭头(类似地图导航箭头)

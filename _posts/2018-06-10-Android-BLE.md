@@ -39,8 +39,8 @@ http://a1anwang.com/post-47.html
 	BLE数据的核心类是 BluetoothGattCharacteristic 和 BluetoothGattDescriptor
 	
 ## 二.低功耗蓝牙(BLE)-手机同时作为BLE客户端和BLE服务端,读写Characteristic数据
-完整源码: https://github.com/lifegh/Bluetooth   
-![](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/ble_client.png) ![](https://raw.githubusercontent.com/lifegh/Bluetooth/master/png/ble_server.png)
+完整源码: https://github.com/lioilwin/Bluetooth   
+![](https://raw.githubusercontent.com/lioilwin/Bluetooth/master/png/ble_client.png) ![](https://raw.githubusercontent.com/lioilwin/Bluetooth/master/png/ble_server.png)
 
 ### 1.蓝牙权限
 	BLE权限增加了BEL支持检查，其它与上篇的经典蓝牙相同，不再写了
