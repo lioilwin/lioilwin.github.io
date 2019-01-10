@@ -9,8 +9,8 @@ https://blog.csdn.net/qq_29924041/article/details/80141514
 
 本文介绍Android手机通过OTG数据线读写USB存储设备(U盘,移动硬盘,存储卡)的两种方法
 
-### 方法一: 和UsbDevice建立USB连接,借助第三方库libaums识别U盘的文件系统
-由于libaums只支持FAT32文件系统,所以U盘的格式化必须采用FAT32,否则无法识别!   
+### 方法一: 直接和USB设备建立连接，借助第三方库libaums识别U盘的文件系统
+由于libaums只支持FAT32文件系统，所以U盘的格式化必须采用FAT32！ 
 该库的GitHub地址: https://github.com/magnusja/libaums
 	
 #### 1.权限	
@@ -144,8 +144,10 @@ https://blog.csdn.net/qq_29924041/article/details/80141514
     }
 	
 ### 方法二: 获取U盘的挂载路径,直接读写U盘(就像挂载sdcard读写文件)
-	对于U盘的文件系统,只依赖于手机系统是否支持,无需我们做额外工作(所有手机都支持FAT32, 仅个别手机支持NTFS)
+	对于U盘的文件系统，只依赖于手机系统是否支持，无需我们做额外工作(所有Android手机都支持FAT32，有个别手机还支持NTFS)
+	但是有些手机无法获取挂载路径（如小米等，就算通过mount命令找到挂载路径也没有权限读写），所以该方法通用性其实不如方法一！
 	
+#### 1.通过MEDIA广播获取挂载路径
 	// 注册系统广播
 	<receiver android:name=".MediaReceiver">
 		<intent-filter>
@@ -182,6 +184,23 @@ https://blog.csdn.net/qq_29924041/article/details/80141514
 					break;
 			}
 		}
+	}
+#### 2.通过反射系统方法获取挂载路径
+	public static List<String> getUsbPaths(Context cxt) {
+		List<String> usbPaths = new ArrayList<>();
+		try {
+			StorageManager srgMgr = (StorageManager) cxt.getSystemService(Context.STORAGE_SERVICE);
+			Class<StorageManager> srgMgrClass = StorageManager.class;
+			String[] paths = (String[]) srgMgrClass.getMethod("getVolumePaths").invoke(srgMgr);
+			for (String path : paths) {
+				Object volumeState = srgMgrClass.getMethod("getVolumeState", String.class).invoke(srgMgr, path);
+				if (!path.contains("emulated") && Environment.MEDIA_MOUNTED.equals(volumeState))
+					usbPaths.add(path);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return usbPaths;
 	}
 
 简书: https://www.jianshu.com/p/a32e376ea70e   
